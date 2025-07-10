@@ -1,0 +1,3184 @@
+{
+  "scan_info": {
+    "timestamp": "2025-07-10T20:35:30.712094",
+    "repository_root": "/home/runner/work/metro-ai-rpg/metro-ai-rpg",
+    "total_files_checked": 56,
+    "total_directories_scanned": 19,
+    "total_violations": 243
+  },
+  "rules_loaded": {
+    "gpt_behavior_rules": 18,
+    "ruleset_md_rules": 29,
+    "gpt_rules_detail": {
+      "rules": [
+        {
+          "id": "language_en",
+          "target": "system-wide",
+          "description": "All system files must use strict, compact English. User/player output may be in German."
+        },
+        {
+          "id": "engine_readonly",
+          "target": "/system/engine.json",
+          "description": "Read-only after setup. Modifiable only by admin, not by GPT in runtime."
+        },
+        {
+          "id": "versioning_gpt",
+          "target": "system-wide",
+          "description": "All versioning is handled automatically by GPT."
+        },
+        {
+          "id": "crossref_redundancy_check",
+          "target": "system-wide",
+          "description": "On every change, GPT checks all file and ID references for validity and uniqueness. Automatic correction is allowed and logged, except for system files which must only be logged and require user/admin confirmation."
+        },
+        {
+          "id": "id_management",
+          "target": "system-wide",
+          "description": "All IDs are unique, sequential, and managed by GPT."
+        },
+        {
+          "id": "consistency_check",
+          "target": "system-wide",
+          "description": "All system files must remain consistent and validated after any change."
+        },
+        {
+          "id": "modularity",
+          "target": "system-wide",
+          "description": "All data structures are modular and individually extendable."
+        },
+        {
+          "id": "logging",
+          "target": "system-wide",
+          "description": "All system file changes are logged with timestamp, change type, and user."
+        },
+        {
+          "id": "template_handling",
+          "target": "templates",
+          "description": "Templates are only edited by GPT and user in this environment, and used as copy source for new game instances."
+        },
+        {
+          "id": "template_immutability",
+          "target": "templates",
+          "description": "Original template files must never be changed by GPT during live gameplay. All changes and game state modifications apply only to copies or runtime instances. Any attempt to change template files outside of development is logged and blocked."
+        },
+        {
+          "id": "gpt_data_admin",
+          "target": "system-wide",
+          "description": "The gamemaster AI (GPT) manages all relevant game and system data dynamically and virtually. System files are only changed as allowed by these rules."
+        },
+        {
+          "id": "player_file_restriction",
+          "target": "system-wide",
+          "description": "Players may never access or edit system or data files directly. All game interaction occurs only via the GPT interface and approved frontend tools. Any direct file change is logged and flagged for admin review."
+        },
+        {
+          "id": "virtual_file_access",
+          "target": "gpt",
+          "description": "GPT uses a virtualized file system for all read and write operations during gameplay. File changes are buffered and only committed to disk via defined workflows, invisible to players."
+        },
+        {
+          "id": "anticheat_monitoring",
+          "target": "system-wide",
+          "description": "Any irregular attempt to modify system, actor, or economy files outside of the authorized game interface triggers automatic anti-cheat measures, including rolling back changes, locking accounts, and alerting admins."
+        },
+        {
+          "id": "player_data_abstraction",
+          "target": "player-facing",
+          "description": "Players interact only with abstracted, in-game representations of their data (e.g. stats, inventory, reputation). All backend structures and system logic remain invisible and protected from manipulation."
+        },
+        {
+          "id": "session_isolation",
+          "target": "system-wide",
+          "description": "Each player session is isolated from direct file system access. All game logic and state management is mediated by GPT, preventing parallel session exploits or unauthorized data reads."
+        },
+        {
+          "id": "dynamic_gamemaster_override",
+          "target": "gpt",
+          "description": "GPT, acting as gamemaster, is authorized to dynamically generate, update, and remove game data as required for narrative flow and world consistency, without requiring player knowledge or approval."
+        },
+        {
+          "id": "audit_trail",
+          "target": "system-wide",
+          "description": "All critical file and game state changes are recorded in an immutable audit log, reviewed regularly for suspicious activity."
+        }
+      ]
+    },
+    "ruleset_rules_detail": [
+      "Dieses Repository dient der Entwicklung eines KI-basierten Rollenspiels, das von einer AI (z.B. GPT) geführt wird.",
+      "Ziel ist es, gemeinsam zu lernen und offen für neue Ansätze in Python und AI-Management zu bleiben.",
+      "Schreibe Code möglichst klar, gut kommentiert und maschinenlesbar.",
+      "Halte dich an die offiziellen [PEP8 Python Coding Standards](https://www.python.org/dev/peps/pep-0008/).",
+      "Nutze docstrings für Funktionen und Klassen.",
+      "Schreibe Funktionen kurz, modular und mit klaren Verantwortlichkeiten.",
+      "Vermeide redundanten Code und setze stattdessen auf Wiederverwendbarkeit.",
+      "Vorschläge von Copilot und anderen KI-Tools sind willkommen, aber immer kritisch zu prüfen.",
+      "Übernehme Code-Snippets von Copilot nur, wenn du sie verstehst und sie zur Code-Qualität beitragen.",
+      "Bei Unsicherheiten nachfragen, recherchieren oder einen Issue eröffnen.",
+      "Erkläre wichtige Entscheidungen im Pull Request oder als Kommentar im Code.",
+      "Nutze Copilot als Lernhilfe, nicht als alleinige Quelle.",
+      "KI-gesteuerte Logik und Regelwerke sind transparent zu dokumentieren (`/docs/`-Ordner).",
+      "Änderungen an zentralen Spielmechaniken müssen im Team diskutiert werden (Issue oder Pull Request).",
+      "Experimentiere, aber dokumentiere Experimente klar als solche (z.B. im Branch-Namen oder Kommentar).",
+      "**Regelmäßige Validierung**: Alle Referenzen zwischen Dateien und IDs müssen regelmäßig auf Gültigkeit und Eindeutigkeit geprüft werden.",
+      "**Dokumentationspflicht**: Jede Prüfung von Querverweisen und Redundanzen ist zu dokumentieren und zu protokollieren.",
+      "**Automatische Kontrollen**: Das System führt automatische Konsistenzprüfungen durch (siehe `gpt_behavior.json`).",
+      "**Manuelle Überprüfung**: Zusätzlich zu automatischen Checks sind manuelle Validierungen in regelmäßigen Abständen durchzuführen.",
+      "**Korrekturpflicht**: Identifizierte Inkonsistenzen müssen zeitnah behoben und dokumentiert werden.",
+      "Jeder neue Vorschlag oder Fehler wird als Issue angelegt.",
+      "Pull Requests benötigen mindestens eine Überprüfung durch eine zweite Person (Review).",
+      "Beschreibe im PR-Titel/Kommentar klar, was geändert wurde und warum.",
+      "Füge relevante Links, Screenshots oder Beispielcode hinzu.",
+      "Änderungen an der Spiel- oder KI-Logik sind zeitnah in der Dokumentation zu ergänzen (`README.md`, `/docs/`).",
+      "Halte die Dokumentation so einfach, dass auch Anfänger sie verstehen.",
+      "Fragen und Vorschläge sind immer willkommen.",
+      "Konstruktives Feedback ist erwünscht – respektvoller Umgang ist Pflicht.",
+      "Bei Unklarheiten lieber nachfragen, auch bei scheinbar „dummen“ Fragen."
+    ]
+  },
+  "repository_structure": {
+    "total_files": 56,
+    "total_directories": 19,
+    "file_types": {
+      ".json": 44,
+      ".txt": 1,
+      ".md": 7,
+      "": 2,
+      ".py": 2
+    },
+    "directory_tree": {
+      "name": "metro-ai-rpg",
+      "path": "",
+      "subdirectories": {
+        "actors": {
+          "name": "actors",
+          "path": "actors",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "A1.json",
+              "path": "actors/A1.json",
+              "size": 466,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.775322"
+            },
+            {
+              "name": "actors.json",
+              "path": "actors/actors.json",
+              "size": 316,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.775322"
+            }
+          ]
+        },
+        "factions": {
+          "name": "factions",
+          "path": "factions",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "factions.json",
+              "path": "factions/factions.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.776322"
+            },
+            {
+              "name": "faction_shadows.json",
+              "path": "factions/faction_shadows.json",
+              "size": 603,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.776322"
+            },
+            {
+              "name": "faction_merchants.json",
+              "path": "factions/faction_merchants.json",
+              "size": 603,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.776322"
+            },
+            {
+              "name": "faction_watcher.json",
+              "path": "factions/faction_watcher.json",
+              "size": 560,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.776322"
+            }
+          ]
+        },
+        "events": {
+          "name": "events",
+          "path": "events",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "EVT-001.json",
+              "path": "events/EVT-001.json",
+              "size": 240,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.775322"
+            },
+            {
+              "name": "events.json",
+              "path": "events/events.json",
+              "size": 99,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.775322"
+            }
+          ]
+        },
+        "monsters": {
+          "name": "monsters",
+          "path": "monsters",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "monsters.json",
+              "path": "monsters/monsters.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.776322"
+            }
+          ]
+        },
+        "missions": {
+          "name": "missions",
+          "path": "missions",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "missions.json",
+              "path": "missions/missions.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.776322"
+            }
+          ]
+        },
+        "economy": {
+          "name": "economy",
+          "path": "economy",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "market.json",
+              "path": "economy/market.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.775322"
+            }
+          ]
+        },
+        "resources": {
+          "name": "resources",
+          "path": "resources",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "resources.json",
+              "path": "resources/resources.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            }
+          ]
+        },
+        "relations": {
+          "name": "relations",
+          "path": "relations",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "relations.json",
+              "path": "relations/relations.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            }
+          ]
+        },
+        "world": {
+          "name": "world",
+          "path": "world",
+          "subdirectories": {
+            "locations": {
+              "name": "locations",
+              "path": "world/locations",
+              "subdirectories": {},
+              "files": [
+                {
+                  "name": "LOC-3001.json",
+                  "path": "world/locations/LOC-3001.json",
+                  "size": 551,
+                  "extension": ".json",
+                  "modified": "2025-07-10T20:30:21.777322"
+                }
+              ]
+            }
+          },
+          "files": [
+            {
+              "name": "sectors.json",
+              "path": "world/sectors.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "locations.json",
+              "path": "world/locations.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "world.json",
+              "path": "world/world.json",
+              "size": 556,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            }
+          ]
+        },
+        "player_factions": {
+          "name": "player_factions",
+          "path": "player_factions",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "player_factions.json",
+              "path": "player_factions/player_factions.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.776322"
+            }
+          ]
+        },
+        "dungeons": {
+          "name": "dungeons",
+          "path": "dungeons",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "dungeons.json",
+              "path": "dungeons/dungeons.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.775322"
+            }
+          ]
+        },
+        "lore": {
+          "name": "lore",
+          "path": "lore",
+          "subdirectories": {
+            "examples": {
+              "name": "examples",
+              "path": "lore/examples",
+              "subdirectories": {},
+              "files": [
+                {
+                  "name": "watcher_commander_character.json",
+                  "path": "lore/examples/watcher_commander_character.json",
+                  "size": 2461,
+                  "extension": ".json",
+                  "modified": "2025-07-10T20:30:21.776322"
+                },
+                {
+                  "name": "watcher_faction_example.json",
+                  "path": "lore/examples/watcher_faction_example.json",
+                  "size": 1532,
+                  "extension": ".json",
+                  "modified": "2025-07-10T20:30:21.776322"
+                },
+                {
+                  "name": "sector_a5_example.json",
+                  "path": "lore/examples/sector_a5_example.json",
+                  "size": 3126,
+                  "extension": ".json",
+                  "modified": "2025-07-10T20:30:21.776322"
+                }
+              ]
+            },
+            "templates": {
+              "name": "templates",
+              "path": "lore/templates",
+              "subdirectories": {},
+              "files": [
+                {
+                  "name": "character.template.json",
+                  "path": "lore/templates/character.template.json",
+                  "size": 2163,
+                  "extension": ".json",
+                  "modified": "2025-07-10T20:30:21.776322"
+                },
+                {
+                  "name": "faction.template.json",
+                  "path": "lore/templates/faction.template.json",
+                  "size": 1550,
+                  "extension": ".json",
+                  "modified": "2025-07-10T20:30:21.776322"
+                },
+                {
+                  "name": "faction_relation.template.json",
+                  "path": "lore/templates/faction_relation.template.json",
+                  "size": 2308,
+                  "extension": ".json",
+                  "modified": "2025-07-10T20:30:21.776322"
+                },
+                {
+                  "name": "sector.template.json",
+                  "path": "lore/templates/sector.template.json",
+                  "size": 3384,
+                  "extension": ".json",
+                  "modified": "2025-07-10T20:30:21.776322"
+                }
+              ]
+            }
+          },
+          "files": [
+            {
+              "name": "00_intro.md",
+              "path": "lore/00_intro.md",
+              "size": 9133,
+              "extension": ".md",
+              "modified": "2025-07-10T20:30:21.776322"
+            },
+            {
+              "name": "TODO.md",
+              "path": "lore/TODO.md",
+              "size": 5068,
+              "extension": ".md",
+              "modified": "2025-07-10T20:30:21.776322"
+            },
+            {
+              "name": "cross_reference_validation.md",
+              "path": "lore/cross_reference_validation.md",
+              "size": 4746,
+              "extension": ".md",
+              "modified": "2025-07-10T20:30:21.776322"
+            },
+            {
+              "name": "template_usage_examples.md",
+              "path": "lore/template_usage_examples.md",
+              "size": 2595,
+              "extension": ".md",
+              "modified": "2025-07-10T20:30:21.776322"
+            },
+            {
+              "name": "lore.json",
+              "path": "lore/lore.json",
+              "size": 3003,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.776322"
+            }
+          ]
+        },
+        "system": {
+          "name": "system",
+          "path": "system",
+          "subdirectories": {
+            "todo": {
+              "name": "todo",
+              "path": "system/todo",
+              "subdirectories": {},
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "system/todo/README.md",
+                  "size": 3822,
+                  "extension": ".md",
+                  "modified": "2025-07-10T20:35:14.588878"
+                },
+                {
+                  "name": "repo_rule_checker.py",
+                  "path": "system/todo/repo_rule_checker.py",
+                  "size": 24165,
+                  "extension": ".py",
+                  "modified": "2025-07-10T20:33:08.230635"
+                },
+                {
+                  "name": "update_master_index.py",
+                  "path": "system/todo/update_master_index.py",
+                  "size": 7919,
+                  "extension": ".py",
+                  "modified": "2025-07-10T20:30:21.777322"
+                },
+                {
+                  "name": "rule_check_results.json",
+                  "path": "system/todo/rule_check_results.json",
+                  "size": 95369,
+                  "extension": ".json",
+                  "modified": "2025-07-10T20:33:45.840708"
+                }
+              ]
+            }
+          },
+          "files": [
+            {
+              "name": "todo.json",
+              "path": "system/todo.json",
+              "size": 325,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "metadata.json",
+              "path": "system/metadata.json",
+              "size": 1407,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "gpt_behavior.json",
+              "path": "system/gpt_behavior.json",
+              "size": 4314,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "session_log.json",
+              "path": "system/session_log.json",
+              "size": 211,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "settings.json",
+              "path": "system/settings.json",
+              "size": 207,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "engine.json",
+              "path": "system/engine.json",
+              "size": 268,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "log.json",
+              "path": "system/log.json",
+              "size": 265,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "gpt_lore.json",
+              "path": "system/gpt_lore.json",
+              "size": 523,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "environment_status.json",
+              "path": "system/environment_status.json",
+              "size": 181,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "gpt_zones.json",
+              "path": "system/gpt_zones.json",
+              "size": 347,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "story_progress.json",
+              "path": "system/story_progress.json",
+              "size": 327,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            },
+            {
+              "name": "version.json",
+              "path": "system/version.json",
+              "size": 551,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.777322"
+            }
+          ]
+        },
+        "items": {
+          "name": "items",
+          "path": "items",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "items.json",
+              "path": "items/items.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.776322"
+            },
+            {
+              "name": "key_items.json",
+              "path": "items/key_items.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.776322"
+            }
+          ]
+        },
+        "crafting": {
+          "name": "crafting",
+          "path": "crafting",
+          "subdirectories": {},
+          "files": [
+            {
+              "name": "recipes.json",
+              "path": "crafting/recipes.json",
+              "size": 106,
+              "extension": ".json",
+              "modified": "2025-07-10T20:30:21.775322"
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "zusammenfassung_chat.txt",
+          "path": "zusammenfassung_chat.txt",
+          "size": 2441,
+          "extension": ".txt",
+          "modified": "2025-07-10T20:30:21.777322"
+        },
+        {
+          "name": "RULESET.md",
+          "path": "RULESET.md",
+          "size": 3002,
+          "extension": ".md",
+          "modified": "2025-07-10T20:30:21.775322"
+        },
+        {
+          "name": "README.md",
+          "path": "README.md",
+          "size": 4083,
+          "extension": ".md",
+          "modified": "2025-07-10T20:30:21.775322"
+        },
+        {
+          "name": "master_index.json",
+          "path": "master_index.json",
+          "size": 2612,
+          "extension": ".json",
+          "modified": "2025-07-10T20:31:13.810429"
+        },
+        {
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "size": 1069,
+          "extension": "",
+          "modified": "2025-07-10T20:30:21.775322"
+        },
+        {
+          "name": ".gitignore",
+          "path": ".gitignore",
+          "size": 4688,
+          "extension": "",
+          "modified": "2025-07-10T20:30:21.775322"
+        }
+      ]
+    },
+    "files": [
+      {
+        "name": "A1.json",
+        "path": "actors/A1.json",
+        "size": 466,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.775322"
+      },
+      {
+        "name": "actors.json",
+        "path": "actors/actors.json",
+        "size": 316,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.775322"
+      },
+      {
+        "name": "factions.json",
+        "path": "factions/factions.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "faction_shadows.json",
+        "path": "factions/faction_shadows.json",
+        "size": 603,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "faction_merchants.json",
+        "path": "factions/faction_merchants.json",
+        "size": 603,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "faction_watcher.json",
+        "path": "factions/faction_watcher.json",
+        "size": 560,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "EVT-001.json",
+        "path": "events/EVT-001.json",
+        "size": 240,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.775322"
+      },
+      {
+        "name": "events.json",
+        "path": "events/events.json",
+        "size": 99,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.775322"
+      },
+      {
+        "name": "monsters.json",
+        "path": "monsters/monsters.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "zusammenfassung_chat.txt",
+        "path": "zusammenfassung_chat.txt",
+        "size": 2441,
+        "extension": ".txt",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "missions.json",
+        "path": "missions/missions.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "RULESET.md",
+        "path": "RULESET.md",
+        "size": 3002,
+        "extension": ".md",
+        "modified": "2025-07-10T20:30:21.775322"
+      },
+      {
+        "name": "README.md",
+        "path": "README.md",
+        "size": 4083,
+        "extension": ".md",
+        "modified": "2025-07-10T20:30:21.775322"
+      },
+      {
+        "name": "master_index.json",
+        "path": "master_index.json",
+        "size": 2612,
+        "extension": ".json",
+        "modified": "2025-07-10T20:31:13.810429"
+      },
+      {
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "size": 1069,
+        "extension": "",
+        "modified": "2025-07-10T20:30:21.775322"
+      },
+      {
+        "name": "market.json",
+        "path": "economy/market.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.775322"
+      },
+      {
+        "name": "resources.json",
+        "path": "resources/resources.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "relations.json",
+        "path": "relations/relations.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "sectors.json",
+        "path": "world/sectors.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "locations.json",
+        "path": "world/locations.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "LOC-3001.json",
+        "path": "world/locations/LOC-3001.json",
+        "size": 551,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "world.json",
+        "path": "world/world.json",
+        "size": 556,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "player_factions.json",
+        "path": "player_factions/player_factions.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "dungeons.json",
+        "path": "dungeons/dungeons.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.775322"
+      },
+      {
+        "name": ".gitignore",
+        "path": ".gitignore",
+        "size": 4688,
+        "extension": "",
+        "modified": "2025-07-10T20:30:21.775322"
+      },
+      {
+        "name": "00_intro.md",
+        "path": "lore/00_intro.md",
+        "size": 9133,
+        "extension": ".md",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "TODO.md",
+        "path": "lore/TODO.md",
+        "size": 5068,
+        "extension": ".md",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "watcher_commander_character.json",
+        "path": "lore/examples/watcher_commander_character.json",
+        "size": 2461,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "watcher_faction_example.json",
+        "path": "lore/examples/watcher_faction_example.json",
+        "size": 1532,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "sector_a5_example.json",
+        "path": "lore/examples/sector_a5_example.json",
+        "size": 3126,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "character.template.json",
+        "path": "lore/templates/character.template.json",
+        "size": 2163,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "faction.template.json",
+        "path": "lore/templates/faction.template.json",
+        "size": 1550,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "faction_relation.template.json",
+        "path": "lore/templates/faction_relation.template.json",
+        "size": 2308,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "sector.template.json",
+        "path": "lore/templates/sector.template.json",
+        "size": 3384,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "cross_reference_validation.md",
+        "path": "lore/cross_reference_validation.md",
+        "size": 4746,
+        "extension": ".md",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "template_usage_examples.md",
+        "path": "lore/template_usage_examples.md",
+        "size": 2595,
+        "extension": ".md",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "lore.json",
+        "path": "lore/lore.json",
+        "size": 3003,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "todo.json",
+        "path": "system/todo.json",
+        "size": 325,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "README.md",
+        "path": "system/todo/README.md",
+        "size": 3822,
+        "extension": ".md",
+        "modified": "2025-07-10T20:35:14.588878"
+      },
+      {
+        "name": "repo_rule_checker.py",
+        "path": "system/todo/repo_rule_checker.py",
+        "size": 24165,
+        "extension": ".py",
+        "modified": "2025-07-10T20:33:08.230635"
+      },
+      {
+        "name": "update_master_index.py",
+        "path": "system/todo/update_master_index.py",
+        "size": 7919,
+        "extension": ".py",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "rule_check_results.json",
+        "path": "system/todo/rule_check_results.json",
+        "size": 95369,
+        "extension": ".json",
+        "modified": "2025-07-10T20:33:45.840708"
+      },
+      {
+        "name": "metadata.json",
+        "path": "system/metadata.json",
+        "size": 1407,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "gpt_behavior.json",
+        "path": "system/gpt_behavior.json",
+        "size": 4314,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "session_log.json",
+        "path": "system/session_log.json",
+        "size": 211,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "settings.json",
+        "path": "system/settings.json",
+        "size": 207,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "engine.json",
+        "path": "system/engine.json",
+        "size": 268,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "log.json",
+        "path": "system/log.json",
+        "size": 265,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "gpt_lore.json",
+        "path": "system/gpt_lore.json",
+        "size": 523,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "environment_status.json",
+        "path": "system/environment_status.json",
+        "size": 181,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "gpt_zones.json",
+        "path": "system/gpt_zones.json",
+        "size": 347,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "story_progress.json",
+        "path": "system/story_progress.json",
+        "size": 327,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "version.json",
+        "path": "system/version.json",
+        "size": 551,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.777322"
+      },
+      {
+        "name": "items.json",
+        "path": "items/items.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "key_items.json",
+        "path": "items/key_items.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.776322"
+      },
+      {
+        "name": "recipes.json",
+        "path": "crafting/recipes.json",
+        "size": 106,
+        "extension": ".json",
+        "modified": "2025-07-10T20:30:21.775322"
+      }
+    ]
+  },
+  "violations": [
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "lore/examples/watcher_faction_example.json",
+      "other_file": "factions/faction_watcher.json",
+      "id": "watcher",
+      "message": "Duplicate ID 'watcher' found in lore/examples/watcher_faction_example.json (also in factions/faction_watcher.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "factions/faction_watcher.json",
+      "id": "watcher",
+      "message": "Duplicate ID 'watcher' found in system/todo/rule_check_results.json (also in factions/faction_watcher.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "factions/faction_watcher.json",
+      "id": "watcher",
+      "message": "Duplicate ID 'watcher' found in system/todo/rule_check_results.json (also in factions/faction_watcher.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "language_en",
+      "message": "Duplicate ID 'language_en' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "engine_readonly",
+      "message": "Duplicate ID 'engine_readonly' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "versioning_gpt",
+      "message": "Duplicate ID 'versioning_gpt' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "crossref_redundancy_check",
+      "message": "Duplicate ID 'crossref_redundancy_check' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "id_management",
+      "message": "Duplicate ID 'id_management' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "consistency_check",
+      "message": "Duplicate ID 'consistency_check' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "modularity",
+      "message": "Duplicate ID 'modularity' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "logging",
+      "message": "Duplicate ID 'logging' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "template_handling",
+      "message": "Duplicate ID 'template_handling' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "template_immutability",
+      "message": "Duplicate ID 'template_immutability' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "gpt_data_admin",
+      "message": "Duplicate ID 'gpt_data_admin' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "player_file_restriction",
+      "message": "Duplicate ID 'player_file_restriction' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "virtual_file_access",
+      "message": "Duplicate ID 'virtual_file_access' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "anticheat_monitoring",
+      "message": "Duplicate ID 'anticheat_monitoring' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "player_data_abstraction",
+      "message": "Duplicate ID 'player_data_abstraction' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "session_isolation",
+      "message": "Duplicate ID 'session_isolation' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "dynamic_gamemaster_override",
+      "message": "Duplicate ID 'dynamic_gamemaster_override' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/todo/rule_check_results.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "audit_trail",
+      "message": "Duplicate ID 'audit_trail' found in system/todo/rule_check_results.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "language_en",
+      "message": "Duplicate ID 'language_en' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "engine_readonly",
+      "message": "Duplicate ID 'engine_readonly' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "versioning_gpt",
+      "message": "Duplicate ID 'versioning_gpt' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "crossref_redundancy_check",
+      "message": "Duplicate ID 'crossref_redundancy_check' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "id_management",
+      "message": "Duplicate ID 'id_management' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "consistency_check",
+      "message": "Duplicate ID 'consistency_check' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "modularity",
+      "message": "Duplicate ID 'modularity' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "logging",
+      "message": "Duplicate ID 'logging' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "template_handling",
+      "message": "Duplicate ID 'template_handling' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "template_immutability",
+      "message": "Duplicate ID 'template_immutability' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "gpt_data_admin",
+      "message": "Duplicate ID 'gpt_data_admin' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "player_file_restriction",
+      "message": "Duplicate ID 'player_file_restriction' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "virtual_file_access",
+      "message": "Duplicate ID 'virtual_file_access' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "anticheat_monitoring",
+      "message": "Duplicate ID 'anticheat_monitoring' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "player_data_abstraction",
+      "message": "Duplicate ID 'player_data_abstraction' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "session_isolation",
+      "message": "Duplicate ID 'session_isolation' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "dynamic_gamemaster_override",
+      "message": "Duplicate ID 'dynamic_gamemaster_override' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "id_management",
+      "type": "duplicate_id",
+      "severity": "high",
+      "file": "system/gpt_behavior.json",
+      "other_file": "system/todo/rule_check_results.json",
+      "id": "audit_trail",
+      "message": "Duplicate ID 'audit_trail' found in system/gpt_behavior.json (also in system/todo/rule_check_results.json)"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "actors/actors.json",
+      "reference": "actors/{{player_file}}.json",
+      "message": "Broken file reference 'actors/{{player_file}}.json' in actors/actors.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "actors/actors.json",
+      "reference": "actors/{{npc_file}}.json",
+      "message": "Broken file reference 'actors/{{npc_file}}.json' in actors/actors.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "events/events.json",
+      "reference": "events/{{event_file}}.json",
+      "message": "Broken file reference 'events/{{event_file}}.json' in events/events.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "master_index.json",
+      "reference": "world/sectors/",
+      "message": "Broken file reference 'world/sectors/' in master_index.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "master_index.json",
+      "reference": "quests/quests.json",
+      "message": "Broken file reference 'quests/quests.json' in master_index.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "master_index.json",
+      "reference": "quests/",
+      "message": "Broken file reference 'quests/' in master_index.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "master_index.json",
+      "reference": "assets/",
+      "message": "Broken file reference 'assets/' in master_index.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "master_index.json",
+      "reference": "encyclopedia/encyclopedia.json",
+      "message": "Broken file reference 'encyclopedia/encyclopedia.json' in master_index.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "master_index.json",
+      "reference": "encyclopedia/",
+      "message": "Broken file reference 'encyclopedia/' in master_index.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "lore/lore.json",
+      "reference": "00_intro.md",
+      "message": "Broken file reference '00_intro.md' in lore/lore.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "lore/lore.json",
+      "reference": "template_usage_examples.md",
+      "message": "Broken file reference 'template_usage_examples.md' in lore/lore.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "lore/lore.json",
+      "reference": "cross_reference_validation.md",
+      "message": "Broken file reference 'cross_reference_validation.md' in lore/lore.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "lore/lore.json",
+      "reference": "templates/faction.template.json",
+      "message": "Broken file reference 'templates/faction.template.json' in lore/lore.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "lore/lore.json",
+      "reference": "templates/character.template.json",
+      "message": "Broken file reference 'templates/character.template.json' in lore/lore.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "lore/lore.json",
+      "reference": "templates/faction_relation.template.json",
+      "message": "Broken file reference 'templates/faction_relation.template.json' in lore/lore.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "lore/lore.json",
+      "reference": "templates/sector.template.json",
+      "message": "Broken file reference 'templates/sector.template.json' in lore/lore.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "lore/lore.json",
+      "reference": "examples/watcher_faction_example.json",
+      "message": "Broken file reference 'examples/watcher_faction_example.json' in lore/lore.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "lore/lore.json",
+      "reference": "examples/watcher_commander_character.json",
+      "message": "Broken file reference 'examples/watcher_commander_character.json' in lore/lore.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "lore/lore.json",
+      "reference": "examples/sector_a5_example.json",
+      "message": "Broken file reference 'examples/sector_a5_example.json' in lore/lore.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "file_analysis_error",
+      "severity": "low",
+      "file": "system/session_log.json",
+      "message": "Error analyzing file system/session_log.json: Expecting value: line 4 column 5 (char 41)"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "file_analysis_error",
+      "severity": "low",
+      "file": "system/log.json",
+      "message": "Error analyzing file system/log.json: Expecting value: line 4 column 5 (char 44)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 27,
+      "message": "Line 27 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 31,
+      "message": "Line 31 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 35,
+      "message": "Line 35 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 46,
+      "message": "Line 46 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 50,
+      "message": "Line 50 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 55,
+      "message": "Line 55 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 65,
+      "message": "Line 65 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 69,
+      "message": "Line 69 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 75,
+      "message": "Line 75 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 79,
+      "message": "Line 79 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 87,
+      "message": "Line 87 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 94,
+      "message": "Line 94 exceeds 79 characters (80 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 96,
+      "message": "Line 96 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 99,
+      "message": "Line 99 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 101,
+      "message": "Line 101 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 105,
+      "message": "Line 105 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 116,
+      "message": "Line 116 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 122,
+      "message": "Line 122 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 123,
+      "message": "Line 123 exceeds 79 characters (90 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 131,
+      "message": "Line 131 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 135,
+      "message": "Line 135 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 137,
+      "message": "Line 137 exceeds 79 characters (92 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 140,
+      "message": "Line 140 exceeds 79 characters (103 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 141,
+      "message": "Line 141 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 145,
+      "message": "Line 145 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 151,
+      "message": "Line 151 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 158,
+      "message": "Line 158 exceeds 79 characters (96 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 160,
+      "message": "Line 160 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 164,
+      "message": "Line 164 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 167,
+      "message": "Line 167 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 169,
+      "message": "Line 169 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 172,
+      "message": "Line 172 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 174,
+      "message": "Line 174 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 178,
+      "message": "Line 178 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 183,
+      "message": "Line 183 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 187,
+      "message": "Line 187 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 192,
+      "message": "Line 192 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 194,
+      "message": "Line 194 exceeds 79 characters (81 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 195,
+      "message": "Line 195 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 205,
+      "message": "Line 205 exceeds 79 characters (131 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 209,
+      "message": "Line 209 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 221,
+      "message": "Line 221 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 223,
+      "message": "Line 223 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 227,
+      "message": "Line 227 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 231,
+      "message": "Line 231 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 236,
+      "message": "Line 236 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 239,
+      "message": "Line 239 exceeds 79 characters (100 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 240,
+      "message": "Line 240 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 244,
+      "message": "Line 244 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 248,
+      "message": "Line 248 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 253,
+      "message": "Line 253 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 255,
+      "message": "Line 255 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 259,
+      "message": "Line 259 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 264,
+      "message": "Line 264 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 267,
+      "message": "Line 267 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 272,
+      "message": "Line 272 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 275,
+      "message": "Line 275 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 285,
+      "message": "Line 285 exceeds 79 characters (90 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 287,
+      "message": "Line 287 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 291,
+      "message": "Line 291 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 294,
+      "message": "Line 294 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 305,
+      "message": "Line 305 exceeds 79 characters (98 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 307,
+      "message": "Line 307 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 316,
+      "message": "Line 316 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 318,
+      "message": "Line 318 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 322,
+      "message": "Line 322 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 325,
+      "message": "Line 325 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 330,
+      "message": "Line 330 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 333,
+      "message": "Line 333 exceeds 79 characters (85 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 334,
+      "message": "Line 334 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 338,
+      "message": "Line 338 exceeds 79 characters (99 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 340,
+      "message": "Line 340 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 344,
+      "message": "Line 344 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 348,
+      "message": "Line 348 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 350,
+      "message": "Line 350 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 354,
+      "message": "Line 354 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 359,
+      "message": "Line 359 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 362,
+      "message": "Line 362 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 367,
+      "message": "Line 367 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 378,
+      "message": "Line 378 exceeds 79 characters (112 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 380,
+      "message": "Line 380 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 389,
+      "message": "Line 389 exceeds 79 characters (89 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 391,
+      "message": "Line 391 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 400,
+      "message": "Line 400 exceeds 79 characters (85 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 402,
+      "message": "Line 402 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 409,
+      "message": "Line 409 exceeds 79 characters (82 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 411,
+      "message": "Line 411 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 413,
+      "message": "Line 413 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 417,
+      "message": "Line 417 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 422,
+      "message": "Line 422 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 429,
+      "message": "Line 429 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 432,
+      "message": "Line 432 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 439,
+      "message": "Line 439 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 443,
+      "message": "Line 443 exceeds 79 characters (86 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 445,
+      "message": "Line 445 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 453,
+      "message": "Line 453 exceeds 79 characters (134 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 455,
+      "message": "Line 455 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 462,
+      "message": "Line 462 exceeds 79 characters (82 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 464,
+      "message": "Line 464 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 466,
+      "message": "Line 466 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 470,
+      "message": "Line 470 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 476,
+      "message": "Line 476 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 479,
+      "message": "Line 479 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 482,
+      "message": "Line 482 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 485,
+      "message": "Line 485 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 488,
+      "message": "Line 488 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 491,
+      "message": "Line 491 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 494,
+      "message": "Line 494 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 496,
+      "message": "Line 496 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 498,
+      "message": "Line 498 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 504,
+      "message": "Line 504 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 506,
+      "message": "Line 506 exceeds 79 characters (88 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 507,
+      "message": "Line 507 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 510,
+      "message": "Line 510 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 532,
+      "message": "Line 532 exceeds 79 characters (102 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 533,
+      "message": "Line 533 exceeds 79 characters (106 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 534,
+      "message": "Line 534 exceeds 79 characters (99 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 537,
+      "message": "Line 537 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 544,
+      "message": "Line 544 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 563,
+      "message": "Line 563 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 567,
+      "message": "Line 567 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 570,
+      "message": "Line 570 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 573,
+      "message": "Line 573 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 577,
+      "message": "Line 577 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 583,
+      "message": "Line 583 exceeds 79 characters (86 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 586,
+      "message": "Line 586 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 588,
+      "message": "Line 588 exceeds 79 characters (89 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 589,
+      "message": "Line 589 exceeds 79 characters (93 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 590,
+      "message": "Line 590 exceeds 79 characters (87 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 591,
+      "message": "Line 591 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 595,
+      "message": "Line 595 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 22,
+      "message": "Line 22 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 25,
+      "message": "Line 25 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 31,
+      "message": "Line 31 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 33,
+      "message": "Line 33 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 41,
+      "message": "Line 41 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 48,
+      "message": "Line 48 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 51,
+      "message": "Line 51 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 56,
+      "message": "Line 56 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 63,
+      "message": "Line 63 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 66,
+      "message": "Line 66 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 75,
+      "message": "Line 75 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 77,
+      "message": "Line 77 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 79,
+      "message": "Line 79 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 80,
+      "message": "Line 80 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 82,
+      "message": "Line 82 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 85,
+      "message": "Line 85 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 87,
+      "message": "Line 87 exceeds 79 characters (101 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 88,
+      "message": "Line 88 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 95,
+      "message": "Line 95 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 102,
+      "message": "Line 102 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 105,
+      "message": "Line 105 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 129,
+      "message": "Line 129 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 134,
+      "message": "Line 134 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 141,
+      "message": "Line 141 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 145,
+      "message": "Line 145 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 150,
+      "message": "Line 150 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 153,
+      "message": "Line 153 exceeds 79 characters (107 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 155,
+      "message": "Line 155 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 157,
+      "message": "Line 157 exceeds 79 characters (107 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 159,
+      "message": "Line 159 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 162,
+      "message": "Line 162 exceeds 79 characters (105 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 164,
+      "message": "Line 164 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 174,
+      "message": "Line 174 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 179,
+      "message": "Line 179 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 182,
+      "message": "Line 182 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 184,
+      "message": "Line 184 exceeds 79 characters (81 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 186,
+      "message": "Line 186 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 193,
+      "message": "Line 193 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 213,
+      "message": "Line 213 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 217,
+      "message": "Line 217 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 223,
+      "message": "Line 223 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 229,
+      "message": "Line 229 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 232,
+      "message": "Line 232 exceeds 79 characters (84 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 234,
+      "message": "Line 234 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 239,
+      "message": "Line 239 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/update_master_index.py",
+      "line": 240,
+      "message": "Line 240 exceeds 79 characters (93 chars)"
+    },
+    {
+      "rule": "language_en",
+      "type": "non_english_content",
+      "severity": "medium",
+      "file": "system/todo/README.md",
+      "words": [
+        "in"
+      ],
+      "message": "System file system/todo/README.md may contain non-English content: in"
+    },
+    {
+      "rule": "language_en",
+      "type": "non_english_content",
+      "severity": "medium",
+      "file": "system/todo/rule_check_results.json",
+      "words": [
+        "und",
+        "oder",
+        "der",
+        "die",
+        "das",
+        "eine",
+        "einen",
+        "einem",
+        "für",
+        "mit",
+        "von",
+        "zu",
+        "auf",
+        "in",
+        "bei",
+        "zwischen"
+      ],
+      "message": "System file system/todo/rule_check_results.json may contain non-English content: und, oder, der, die, das, eine, einen, einem, für, mit, von, zu, auf, in, bei, zwischen"
+    },
+    {
+      "rule": "language_en",
+      "type": "non_english_content",
+      "severity": "medium",
+      "file": "system/gpt_behavior.json",
+      "words": [
+        "in"
+      ],
+      "message": "System file system/gpt_behavior.json may contain non-English content: in"
+    },
+    {
+      "rule": "language_en",
+      "type": "non_english_content",
+      "severity": "medium",
+      "file": "system/gpt_lore.json",
+      "words": [
+        "die",
+        "das",
+        "einem",
+        "mit",
+        "in"
+      ],
+      "message": "System file system/gpt_lore.json may contain non-English content: die, das, einem, mit, in"
+    },
+    {
+      "rule": "language_en",
+      "type": "non_english_content",
+      "severity": "medium",
+      "file": "system/gpt_zones.json",
+      "words": [
+        "und"
+      ],
+      "message": "System file system/gpt_zones.json may contain non-English content: und"
+    },
+    {
+      "rule": "language_en",
+      "type": "non_english_content",
+      "severity": "medium",
+      "file": "system/version.json",
+      "words": [
+        "in"
+      ],
+      "message": "System file system/version.json may contain non-English content: in"
+    }
+  ],
+  "violation_summary": {
+    "id_management": {
+      "total": 39,
+      "high": 39,
+      "medium": 0,
+      "low": 0
+    },
+    "crossref_redundancy_check": {
+      "total": 21,
+      "high": 19,
+      "medium": 0,
+      "low": 2
+    },
+    "pep8_compliance": {
+      "total": 177,
+      "high": 0,
+      "medium": 0,
+      "low": 177
+    },
+    "language_en": {
+      "total": 6,
+      "high": 0,
+      "medium": 6,
+      "low": 0
+    }
+  },
+  "id_registry": {
+    "{{player_id}}": "actors/actors.json",
+    "{{npc_id}}": "actors/actors.json",
+    "shadows": "factions/faction_shadows.json",
+    "merchants": "factions/faction_merchants.json",
+    "watcher": "factions/faction_watcher.json",
+    "{{event_id}}": "events/EVT-001.json",
+    "actors": "master_index.json",
+    "events": "master_index.json",
+    "world_locations": "master_index.json",
+    "world_sectors": "master_index.json",
+    "factions": "master_index.json",
+    "player_factions": "master_index.json",
+    "economy": "master_index.json",
+    "items": "master_index.json",
+    "resources": "master_index.json",
+    "crafting": "master_index.json",
+    "relations": "master_index.json",
+    "quests": "master_index.json",
+    "dungeons": "master_index.json",
+    "monsters": "master_index.json",
+    "lore": "master_index.json",
+    "assets": "master_index.json",
+    "encyclopedia": "master_index.json",
+    "missions": "master_index.json",
+    "world": "master_index.json",
+    "LOC-3001": "world/locations/LOC-3001.json",
+    "{{faction_id}}": "lore/templates/faction.template.json",
+    "00_intro": "lore/lore.json",
+    "template_usage": "lore/lore.json",
+    "cross_reference_guide": "lore/lore.json",
+    "faction_template": "lore/lore.json",
+    "character_template": "lore/lore.json",
+    "faction_relation_template": "lore/lore.json",
+    "sector_template": "lore/lore.json",
+    "watcher_faction_example": "lore/lore.json",
+    "watcher_commander_example": "lore/lore.json",
+    "sector_a5_example": "lore/lore.json",
+    "{{task_id}}": "system/todo.json",
+    "language_en": "system/todo/rule_check_results.json",
+    "engine_readonly": "system/todo/rule_check_results.json",
+    "versioning_gpt": "system/todo/rule_check_results.json",
+    "crossref_redundancy_check": "system/todo/rule_check_results.json",
+    "id_management": "system/todo/rule_check_results.json",
+    "consistency_check": "system/todo/rule_check_results.json",
+    "modularity": "system/todo/rule_check_results.json",
+    "logging": "system/todo/rule_check_results.json",
+    "template_handling": "system/todo/rule_check_results.json",
+    "template_immutability": "system/todo/rule_check_results.json",
+    "gpt_data_admin": "system/todo/rule_check_results.json",
+    "player_file_restriction": "system/todo/rule_check_results.json",
+    "virtual_file_access": "system/todo/rule_check_results.json",
+    "anticheat_monitoring": "system/todo/rule_check_results.json",
+    "player_data_abstraction": "system/todo/rule_check_results.json",
+    "session_isolation": "system/todo/rule_check_results.json",
+    "dynamic_gamemaster_override": "system/todo/rule_check_results.json",
+    "audit_trail": "system/todo/rule_check_results.json",
+    "{{arc_id}}": "system/story_progress.json"
+  },
+  "compliance_status": {
+    "overall": "FAIL",
+    "high_severity_issues": 58,
+    "medium_severity_issues": 6,
+    "low_severity_issues": 179
+  }
+}
