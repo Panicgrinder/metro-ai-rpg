@@ -1,0 +1,17 @@
+{
+  "is_template": true,
+  "id": "i01",
+  "name": "{{item_name}}",
+  "type": "{{item_type}}",
+  "description": "{{item_description}}",
+  "value": "{{item_value}}",
+  "weight": "{{item_weight}}",
+  "rarity": "{{item_rarity}}",
+  "properties": ["{{property}}"],
+  "faction_id": "{{faction_id}}",
+  "location_id": "{{location_id}}",
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "{{iso_timestamp}}"
+  }
+}

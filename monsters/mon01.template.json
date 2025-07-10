@@ -1,0 +1,17 @@
+{
+  "is_template": true,
+  "id": "mon01",
+  "name": "{{monster_name}}",
+  "type": "{{monster_type}}",
+  "health": "{{monster_health}}",
+  "damage": "{{monster_damage}}",
+  "abilities": ["{{ability}}"],
+  "behavior": "{{monster_behavior}}",
+  "location_id": "{{location_id}}",
+  "loot": ["{{item_id}}"],
+  "threat_level": "{{threat_level}}",
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "{{iso_timestamp}}"
+  }
+}

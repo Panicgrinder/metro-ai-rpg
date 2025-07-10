@@ -1,0 +1,16 @@
+{
+  "is_template": true,
+  "id": "q01",
+  "title": "{{quest_title}}",
+  "description": "{{quest_description}}",
+  "story_arc": "{{story_arc}}",
+  "missions": ["{{mission_id}}"],
+  "prerequisites": ["{{quest_id}}"],
+  "faction_id": "{{faction_id}}",
+  "status": "{{quest_status}}",
+  "rewards": ["{{reward}}"],
+  "meta": {
+    "created_by": "AI-System", 
+    "created_at": "{{iso_timestamp}}"
+  }
+}

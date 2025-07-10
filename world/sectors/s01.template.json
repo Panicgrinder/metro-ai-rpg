@@ -1,6 +1,6 @@
 {
   "is_template": true,
-  "sector_id": "A1",
+  "id": "s01",
   "status": "{{sector_status}}",
   "environmental_flags": ["{{flag}}"],
   "last_visited": "{{iso_timestamp}}",

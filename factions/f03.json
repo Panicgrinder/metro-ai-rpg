@@ -1,0 +1,20 @@
+{
+  "id": "f03",
+  "name": "Händlergilde",
+  "territory": ["A2", "C1"],
+  "leader": {
+    "name": "{{leader_name}}",
+    "traits": ["charismatisch", "geschäftstüchtig", "diplomatisch"]
+  },
+  "resources": ["Handelsrouten", "Warenlager", "Kontaktnetzwerke", "Transportmittel"],
+  "relations": {
+    "f01": "neutral",
+    "f02": "neutral", 
+    "f04": "verbündet"
+  },
+  "objectives": [
+    "Ausbau der Handelsrouten zwischen Sektoren",
+    "Monopolisierung des Warenhandels",
+    "Friedliche Beziehungen zu allen Fraktionen"
+  ]
+}

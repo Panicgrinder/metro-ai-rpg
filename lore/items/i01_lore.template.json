@@ -1,0 +1,9 @@
+{
+  "item_id": "{{item_id}}",
+  "name": "{{item_name}}",
+  "description": "{{detailed_description}}",
+  "history": "{{item_history}}",
+  "cultural_significance": "{{cultural_significance}}",
+  "legendary_properties": ["{{legendary_property}}"],
+  "stories": ["{{story}}"]
+}

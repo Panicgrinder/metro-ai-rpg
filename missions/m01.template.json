@@ -1,0 +1,17 @@
+{
+  "is_template": true,
+  "id": "m01",
+  "title": "{{mission_title}}",
+  "description": "{{mission_description}}",
+  "objectives": ["{{objective}}"],
+  "rewards": ["{{reward}}"],
+  "requirements": ["{{requirement}}"],
+  "faction_id": "{{faction_id}}",
+  "location_id": "{{location_id}}",
+  "status": "{{mission_status}}",
+  "difficulty": "{{mission_difficulty}}",
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "{{iso_timestamp}}"
+  }
+}

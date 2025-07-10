@@ -1,0 +1,12 @@
+{
+  "faction_id": "f02",
+  "name": "Die Schatten",
+  "description": "Schmuggler und Spione, die geheime Routen und versteckte Wege durch die Metro nutzen. Ihr Einfluss ist vor allem in den Rand- und Dunkelzonen spürbar.",
+  "history": "Entstanden aus Überlebenden, die sich in den entlegenen und gefährlichen Bereichen der Metro angesiedelt haben. Sie entwickelten ein Netzwerk aus geheimen Pfaden und Verstecken.",
+  "leader": {
+    "name": "{{leader_name}}",
+    "description": "Ein geheimnisvoller Anführer, der die Schatten aus dem Verborgenen heraus leitet."
+  },
+  "influence_zones": ["outer", "dark"],
+  "faction_flags": ["smuggle", "espionage"]
+}

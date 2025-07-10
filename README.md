@@ -109,6 +109,7 @@ Wir freuen uns über Beiträge zu diesem Projekt! Bitte beachten Sie folgende Ri
 ### Development Guidelines
 
 - Follow the guidelines in `RULESET.md`
+- Use the standardized ID schema defined in `docs/ID_SCHEMA.md`
 - System files must be in English
 - Maintain machine-readable JSON structure
 - Ensure all references and IDs remain consistent

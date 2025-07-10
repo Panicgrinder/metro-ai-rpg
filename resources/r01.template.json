@@ -1,0 +1,16 @@
+{
+  "is_template": true,
+  "id": "r01",
+  "name": "{{resource_name}}",
+  "type": "{{resource_type}}",
+  "description": "{{resource_description}}",
+  "base_value": "{{base_value}}",
+  "availability": "{{availability}}",
+  "sources": ["{{location_id}}"],
+  "used_in": ["{{recipe_id}}"],
+  "faction_id": "{{controlling_faction}}",
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "{{iso_timestamp}}"
+  }
+}

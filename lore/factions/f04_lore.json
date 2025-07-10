@@ -1,0 +1,12 @@
+{
+  "faction_id": "f04",
+  "name": "Die Wächter", 
+  "description": "Ehemalige Polizei- und Militäreinheiten, die für Sicherheit und Ordnung in zentralen Metro-Sektoren sorgen.",
+  "history": "Entstanden aus den Überresten der Strafverfolgungsbehörden und militärischen Einheiten vor dem Zusammenbruch. Sie haben ihre Disziplin und Struktur beibehalten.",
+  "leader": {
+    "name": "{{leader_name}}",
+    "description": "Ein ehemaliger Offizier mit starken Führungsqualitäten und unbeugsamer Loyalität zur Ordnung."
+  },
+  "influence_zones": ["central"],
+  "faction_flags": ["security", "law"]
+}

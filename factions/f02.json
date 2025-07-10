@@ -1,0 +1,20 @@
+{
+  "id": "f02",
+  "name": "Die Schatten",
+  "territory": ["D3"],
+  "leader": {
+    "name": "{{leader_name}}",
+    "traits": ["heimlich", "geschickt", "misstrauisch"]
+  },
+  "resources": ["Geheimwege", "Informationsnetzwerke", "Schmuggelware"],
+  "relations": {
+    "f01": "misstrauisch",
+    "f03": "neutral",
+    "f04": "feindlich"
+  },
+  "objectives": [
+    "Kontrolle über Schmuggelrouten",
+    "Informationshandel",
+    "Autonomie in den Dunkelzonen"
+  ]
+}
