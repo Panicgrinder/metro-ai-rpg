@@ -1,6 +1,6 @@
 {
   "scan_info": {
-    "timestamp": "2025-07-10T21:09:36.159799",
+    "timestamp": "2025-07-10T21:10:15.375524",
     "repository_root": "/home/runner/work/metro-ai-rpg/metro-ai-rpg",
     "total_files_checked": 58,
     "total_directories_scanned": 23,
@@ -453,9 +453,9 @@
                 {
                   "name": "rule_check_results.json",
                   "path": "system/todo/rule_check_results.json",
-                  "size": 186986,
+                  "size": 80975,
                   "extension": ".json",
-                  "modified": "2025-07-10T21:09:06.609114"
+                  "modified": "2025-07-10T21:09:36.161679"
                 }
               ]
             }
@@ -933,9 +933,9 @@
       {
         "name": "rule_check_results.json",
         "path": "system/todo/rule_check_results.json",
-        "size": 186986,
+        "size": 80975,
         "extension": ".json",
-        "modified": "2025-07-10T21:09:06.609114"
+        "modified": "2025-07-10T21:09:36.161679"
       },
       {
         "name": "metadata.json",
