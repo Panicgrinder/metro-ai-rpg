@@ -1,0 +1,19 @@
+{
+  "is_template": true,
+  "faction_id": "watcher",
+  "name": "Die Wächter",
+  "description": "Ehemalige Polizei- und Militäreinheiten, die für Sicherheit und Ordnung in zentralen Metro-Sektoren sorgen.",
+  "home_sectors": ["A5", "B5", "B4"],
+  "relations": {
+    "allies": ["merchants"],
+    "enemies": ["shadows"],
+    "neutral": ["enlightened", "scientists"]
+  },
+  "influence_zones": ["central"],
+  "leadership": "{{leader_id}}",
+  "faction_flags": ["security", "law"],
+  "meta": {
+    "created_by": "GPT-4o",
+    "created_at": "{{iso_timestamp}}"
+  }
+}

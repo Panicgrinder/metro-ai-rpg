@@ -1,0 +1,13 @@
+{
+  "is_template": true,
+  "zone_id": "central",
+  "name": "Zentrale Zone",
+  "description": "Haupttunnel und Stationen. Kontrolliert, beleuchtet, sicher.",
+  "default_security": 2,
+  "default_lighting": 2,
+  "possible_sector_ids": ["A5", "B5", "C5", "B4", "B6"],
+  "meta": {
+    "created_by": "GPT-4o",
+    "created_at": "{{iso_timestamp}}"
+  }
+}
