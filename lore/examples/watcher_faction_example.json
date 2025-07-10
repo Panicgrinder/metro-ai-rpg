@@ -1,6 +1,6 @@
 {
   "is_template": false,
-  "faction_id": "watcher",
+  "faction_id": "watcher_example",
   "name": "Die Wächter (The Watchers)",
   "description": "Former police and military units that maintain security and order in central Metro sectors. They evolved from survivors who had law enforcement or military training before the collapse.",
   "home_sectors": ["A5", "B5"],
