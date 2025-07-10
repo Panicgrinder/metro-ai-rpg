@@ -1,14 +1,105 @@
 {
   "scan_info": {
-    "timestamp": "2025-07-10T21:57:15.552750",
-    "total_files_checked": 59,
-    "total_violations": 48,
+    "timestamp": "2025-07-10T23:27:06.101057",
+    "total_files_checked": 73,
+    "total_violations": 57,
     "status": "FAIL"
   },
   "priority_violations": {
-    "high_severity": 0,
+    "high_severity": 9,
     "medium_severity": 0,
-    "actionable_files": {}
+    "actionable_files": {
+      "missions/m01.template.json": [
+        {
+          "rule": "id_management",
+          "type": "duplicate_id",
+          "severity": "high",
+          "message": "Duplicate ID '{{faction_id}}' found in missions/m01.template.json (also in actors/a01.template.json)",
+          "line": null,
+          "reference": null
+        }
+      ],
+      "quests/q01.template.json": [
+        {
+          "rule": "id_management",
+          "type": "duplicate_id",
+          "severity": "high",
+          "message": "Duplicate ID '{{faction_id}}' found in quests/q01.template.json (also in actors/a01.template.json)",
+          "line": null,
+          "reference": null
+        }
+      ],
+      "world/locations/l01.template.json": [
+        {
+          "rule": "id_management",
+          "type": "duplicate_id",
+          "severity": "high",
+          "message": "Duplicate ID '{{faction_id}}' found in world/locations/l01.template.json (also in actors/a01.template.json)",
+          "line": null,
+          "reference": null
+        }
+      ],
+      "lore/factions/f04_lore.json": [
+        {
+          "rule": "id_management",
+          "type": "duplicate_id",
+          "severity": "high",
+          "message": "Duplicate ID 'f04' found in lore/factions/f04_lore.json (also in factions/f04.json)",
+          "line": null,
+          "reference": null
+        }
+      ],
+      "lore/factions/f02_lore.json": [
+        {
+          "rule": "id_management",
+          "type": "duplicate_id",
+          "severity": "high",
+          "message": "Duplicate ID 'f02' found in lore/factions/f02_lore.json (also in factions/f02.json)",
+          "line": null,
+          "reference": null
+        }
+      ],
+      "lore/factions/f01_lore.json": [
+        {
+          "rule": "id_management",
+          "type": "duplicate_id",
+          "severity": "high",
+          "message": "Duplicate ID 'f01' found in lore/factions/f01_lore.json (also in factions/f01.json)",
+          "line": null,
+          "reference": null
+        }
+      ],
+      "lore/factions/f03_lore.json": [
+        {
+          "rule": "id_management",
+          "type": "duplicate_id",
+          "severity": "high",
+          "message": "Duplicate ID 'f03' found in lore/factions/f03_lore.json (also in factions/f03.json)",
+          "line": null,
+          "reference": null
+        }
+      ],
+      "lore/templates/faction.template.json": [
+        {
+          "rule": "id_management",
+          "type": "duplicate_id",
+          "severity": "high",
+          "message": "Duplicate ID '{{faction_id}}' found in lore/templates/faction.template.json (also in actors/a01.template.json)",
+          "line": null,
+          "reference": null
+        }
+      ],
+      "items/i01.template.json": [
+        {
+          "rule": "id_management",
+          "type": "duplicate_id",
+          "severity": "high",
+          "message": "Duplicate ID '{{faction_id}}' found in items/i01.template.json (also in actors/a01.template.json)",
+          "line": null,
+          "reference": null
+        }
+      ]
+    }
   },
   "pep8_summary": {
     "files_affected": 2,
@@ -16,6 +107,12 @@
     "total_issues": 48
   },
   "violation_breakdown": {
+    "id_management": {
+      "total": 9,
+      "high": 9,
+      "medium": 0,
+      "low": 0
+    },
     "pep8_compliance": {
       "total": 48,
       "high": 0,
