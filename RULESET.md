@@ -23,6 +23,13 @@
 - Änderungen an zentralen Spielmechaniken müssen im Team diskutiert werden (Issue oder Pull Request).
 - Experimentiere, aber dokumentiere Experimente klar als solche (z.B. im Branch-Namen oder Kommentar).
 
+### 4.1 Referenz- und Redundanzprüfung
+- **Regelmäßige Validierung**: Alle Referenzen zwischen Dateien und IDs müssen regelmäßig auf Gültigkeit und Eindeutigkeit geprüft werden.
+- **Dokumentationspflicht**: Jede Prüfung von Querverweisen und Redundanzen ist zu dokumentieren und zu protokollieren.
+- **Automatische Kontrollen**: Das System führt automatische Konsistenzprüfungen durch (siehe `gpt_behavior.json`).
+- **Manuelle Überprüfung**: Zusätzlich zu automatischen Checks sind manuelle Validierungen in regelmäßigen Abständen durchzuführen.
+- **Korrekturpflicht**: Identifizierte Inkonsistenzen müssen zeitnah behoben und dokumentiert werden.
+
 ## 5. Issues & Pull Requests
 - Jeder neue Vorschlag oder Fehler wird als Issue angelegt.
 - Pull Requests benötigen mindestens eine Überprüfung durch eine zweite Person (Review).
