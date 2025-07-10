@@ -1,10 +1,11 @@
 {
   "scan_info": {
-    "timestamp": "2025-07-10T21:13:56.358043",
+    "timestamp": "2025-07-10T21:17:16.700059",
     "repository_root": "/home/runner/work/metro-ai-rpg/metro-ai-rpg",
     "total_files_checked": 58,
     "total_directories_scanned": 21,
-    "total_violations": 195
+    "total_violations": 214,
+    "master_index_loaded": true
   },
   "rules_loaded": {
     "gpt_behavior_rules": 18,
@@ -427,9 +428,9 @@
                 {
                   "name": "repo_rule_checker.py",
                   "path": "system/todo/repo_rule_checker.py",
-                  "size": 25241,
+                  "size": 28300,
                   "extension": ".py",
-                  "modified": "2025-07-10T21:13:17.682428"
+                  "modified": "2025-07-10T21:17:08.260196"
                 },
                 {
                   "name": "update_master_index.py",
@@ -441,9 +442,9 @@
                 {
                   "name": "rule_check_results.json",
                   "path": "system/todo/rule_check_results.json",
-                  "size": 80973,
+                  "size": 87779,
                   "extension": ".json",
-                  "modified": "2025-07-10T21:13:17.682428"
+                  "modified": "2025-07-10T21:16:26.615874"
                 }
               ]
             }
@@ -907,9 +908,9 @@
       {
         "name": "repo_rule_checker.py",
         "path": "system/todo/repo_rule_checker.py",
-        "size": 25241,
+        "size": 28300,
         "extension": ".py",
-        "modified": "2025-07-10T21:13:17.682428"
+        "modified": "2025-07-10T21:17:08.260196"
       },
       {
         "name": "update_master_index.py",
@@ -921,9 +922,9 @@
       {
         "name": "rule_check_results.json",
         "path": "system/todo/rule_check_results.json",
-        "size": 80973,
+        "size": 87779,
         "extension": ".json",
-        "modified": "2025-07-10T21:13:17.682428"
+        "modified": "2025-07-10T21:16:26.615874"
       },
       {
         "name": "metadata.json",
@@ -1029,32 +1030,20 @@
     {
       "rule": "crossref_redundancy_check",
       "type": "broken_file_reference",
-      "severity": "high",
+      "severity": "low",
       "file": "master_index.json",
       "reference": "world/sectors/",
-      "message": "Broken file reference 'world/sectors/' in master_index.json"
+      "area_status": "inactive",
+      "message": "Broken file reference 'world/sectors/' in master_index.json (area marked as 'inactive' in master_index.json)"
     },
     {
       "rule": "crossref_redundancy_check",
       "type": "broken_file_reference",
-      "severity": "high",
+      "severity": "low",
       "file": "master_index.json",
       "reference": "assets/",
-      "message": "Broken file reference 'assets/' in master_index.json"
-    },
-    {
-      "rule": "crossref_redundancy_check",
-      "type": "file_analysis_error",
-      "severity": "low",
-      "file": "system/session_log.json",
-      "message": "Error analyzing file system/session_log.json: Expecting value: line 4 column 5 (char 41)"
-    },
-    {
-      "rule": "crossref_redundancy_check",
-      "type": "file_analysis_error",
-      "severity": "low",
-      "file": "system/log.json",
-      "message": "Error analyzing file system/log.json: Expecting value: line 4 column 5 (char 44)"
+      "area_status": "inactive",
+      "message": "Broken file reference 'assets/' in master_index.json (area marked as 'inactive' in master_index.json)"
     },
     {
       "rule": "pep8_compliance",
@@ -1082,43 +1071,51 @@
     },
     {
       "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
+      "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
       "line": 46,
-      "message": "Line 46 has trailing whitespace"
+      "message": "Line 46 exceeds 79 characters (93 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 50,
-      "message": "Line 50 has trailing whitespace"
+      "line": 47,
+      "message": "Line 47 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 55,
-      "message": "Line 55 has trailing whitespace"
+      "line": 51,
+      "message": "Line 51 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 65,
-      "message": "Line 65 has trailing whitespace"
+      "line": 56,
+      "message": "Line 56 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 69,
-      "message": "Line 69 has trailing whitespace"
+      "line": 66,
+      "message": "Line 66 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 70,
+      "message": "Line 70 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1133,40 +1130,32 @@
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 79,
-      "message": "Line 79 has trailing whitespace"
+      "line": 85,
+      "message": "Line 85 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 87,
-      "message": "Line 87 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 94,
-      "message": "Line 94 exceeds 79 characters (80 chars)"
+      "line": 89,
+      "message": "Line 89 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 96,
-      "message": "Line 96 has trailing whitespace"
+      "line": 92,
+      "message": "Line 92 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 99,
-      "message": "Line 99 has trailing whitespace"
+      "line": 98,
+      "message": "Line 98 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1178,19 +1167,43 @@
     },
     {
       "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
+      "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 105,
-      "message": "Line 105 has trailing whitespace"
+      "line": 104,
+      "message": "Line 104 exceeds 79 characters (92 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 116,
-      "message": "Line 116 has trailing whitespace"
+      "line": 106,
+      "message": "Line 106 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 108,
+      "message": "Line 108 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 112,
+      "message": "Line 112 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 118,
+      "message": "Line 118 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1202,27 +1215,11 @@
     },
     {
       "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 123,
-      "message": "Line 123 exceeds 79 characters (90 chars)"
-    },
-    {
-      "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 131,
-      "message": "Line 131 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 135,
-      "message": "Line 135 has trailing whitespace"
+      "line": 130,
+      "message": "Line 130 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1230,87 +1227,63 @@
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
       "line": 137,
-      "message": "Line 137 exceeds 79 characters (92 chars)"
+      "message": "Line 137 exceeds 79 characters (80 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 139,
+      "message": "Line 139 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 142,
+      "message": "Line 142 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 144,
+      "message": "Line 144 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 148,
+      "message": "Line 148 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 159,
+      "message": "Line 159 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 165,
+      "message": "Line 165 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 140,
-      "message": "Line 140 exceeds 79 characters (103 chars)"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 141,
-      "message": "Line 141 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 145,
-      "message": "Line 145 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 151,
-      "message": "Line 151 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 158,
-      "message": "Line 158 exceeds 79 characters (96 chars)"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 160,
-      "message": "Line 160 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 164,
-      "message": "Line 164 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 167,
-      "message": "Line 167 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 169,
-      "message": "Line 169 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 172,
-      "message": "Line 172 has trailing whitespace"
+      "line": 166,
+      "message": "Line 166 exceeds 79 characters (90 chars)"
     },
     {
       "rule": "pep8_compliance",
@@ -1330,171 +1303,179 @@
     },
     {
       "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 180,
+      "message": "Line 180 exceeds 79 characters (92 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
       "line": 183,
-      "message": "Line 183 has trailing whitespace"
+      "message": "Line 183 exceeds 79 characters (103 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 187,
-      "message": "Line 187 has trailing whitespace"
+      "line": 184,
+      "message": "Line 184 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
-      "type": "line_too_long",
+      "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
       "line": 188,
-      "message": "Line 188 exceeds 79 characters (90 chars)"
+      "message": "Line 188 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 191,
-      "message": "Line 191 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 196,
-      "message": "Line 196 has trailing whitespace"
+      "line": 194,
+      "message": "Line 194 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 198,
-      "message": "Line 198 exceeds 79 characters (81 chars)"
+      "line": 201,
+      "message": "Line 201 exceeds 79 characters (96 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 199,
-      "message": "Line 199 has trailing whitespace"
+      "line": 203,
+      "message": "Line 203 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 207,
+      "message": "Line 207 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 210,
+      "message": "Line 210 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 212,
+      "message": "Line 212 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 215,
+      "message": "Line 215 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 217,
+      "message": "Line 217 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 221,
+      "message": "Line 221 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 226,
+      "message": "Line 226 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 230,
+      "message": "Line 230 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 209,
-      "message": "Line 209 exceeds 79 characters (131 chars)"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 213,
-      "message": "Line 213 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 225,
-      "message": "Line 225 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 227,
-      "message": "Line 227 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
       "line": 231,
-      "message": "Line 231 has trailing whitespace"
+      "message": "Line 231 exceeds 79 characters (90 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 235,
-      "message": "Line 235 has trailing whitespace"
+      "line": 234,
+      "message": "Line 234 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 240,
-      "message": "Line 240 has trailing whitespace"
+      "line": 239,
+      "message": "Line 239 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 243,
-      "message": "Line 243 exceeds 79 characters (100 chars)"
+      "line": 241,
+      "message": "Line 241 exceeds 79 characters (81 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 244,
-      "message": "Line 244 has trailing whitespace"
+      "line": 242,
+      "message": "Line 242 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 248,
-      "message": "Line 248 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
+      "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
       "line": 252,
-      "message": "Line 252 has trailing whitespace"
+      "message": "Line 252 exceeds 79 characters (131 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 257,
-      "message": "Line 257 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 259,
-      "message": "Line 259 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 263,
-      "message": "Line 263 has trailing whitespace"
+      "line": 256,
+      "message": "Line 256 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1509,32 +1490,24 @@
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 271,
-      "message": "Line 271 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 272,
-      "message": "Line 272 exceeds 79 characters (90 chars)"
+      "line": 270,
+      "message": "Line 270 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 275,
-      "message": "Line 275 has trailing whitespace"
+      "line": 274,
+      "message": "Line 274 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 280,
-      "message": "Line 280 has trailing whitespace"
+      "line": 278,
+      "message": "Line 278 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1546,51 +1519,59 @@
     },
     {
       "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 288,
-      "message": "Line 288 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 289,
-      "message": "Line 289 exceeds 79 characters (90 chars)"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 294,
-      "message": "Line 294 exceeds 79 characters (86 chars)"
+      "line": 286,
+      "message": "Line 286 exceeds 79 characters (100 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 297,
-      "message": "Line 297 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 305,
-      "message": "Line 305 exceeds 79 characters (90 chars)"
+      "line": 287,
+      "message": "Line 287 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 307,
-      "message": "Line 307 has trailing whitespace"
+      "line": 291,
+      "message": "Line 291 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 295,
+      "message": "Line 295 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 300,
+      "message": "Line 300 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 302,
+      "message": "Line 302 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 306,
+      "message": "Line 306 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1613,8 +1594,40 @@
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
+      "line": 315,
+      "message": "Line 315 exceeds 79 characters (90 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 318,
+      "message": "Line 318 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 323,
+      "message": "Line 323 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 324,
+      "message": "Line 324 exceeds 79 characters (81 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
       "line": 325,
-      "message": "Line 325 exceeds 79 characters (98 chars)"
+      "message": "Line 325 exceeds 79 characters (86 chars)"
     },
     {
       "rule": "pep8_compliance",
@@ -1629,6 +1642,14 @@
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
+      "line": 333,
+      "message": "Line 333 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
       "line": 336,
       "message": "Line 336 has trailing whitespace"
     },
@@ -1637,24 +1658,24 @@
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 338,
-      "message": "Line 338 has trailing whitespace"
+      "line": 341,
+      "message": "Line 341 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
+      "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
       "line": 342,
-      "message": "Line 342 has trailing whitespace"
+      "message": "Line 342 exceeds 79 characters (90 chars)"
     },
     {
       "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
+      "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 345,
-      "message": "Line 345 has trailing whitespace"
+      "line": 347,
+      "message": "Line 347 exceeds 79 characters (86 chars)"
     },
     {
       "rule": "pep8_compliance",
@@ -1663,14 +1684,6 @@
       "file": "system/todo/repo_rule_checker.py",
       "line": 350,
       "message": "Line 350 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 353,
-      "message": "Line 353 exceeds 79 characters (85 chars)"
     },
     {
       "rule": "pep8_compliance",
@@ -1685,48 +1698,48 @@
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
+      "line": 355,
+      "message": "Line 355 exceeds 79 characters (85 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
       "line": 358,
-      "message": "Line 358 exceeds 79 characters (99 chars)"
+      "message": "Line 358 exceeds 79 characters (106 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 360,
-      "message": "Line 360 has trailing whitespace"
+      "line": 362,
+      "message": "Line 362 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 364,
-      "message": "Line 364 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 368,
-      "message": "Line 368 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
+      "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
       "line": 370,
-      "message": "Line 370 has trailing whitespace"
+      "message": "Line 370 exceeds 79 characters (106 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 374,
-      "message": "Line 374 has trailing whitespace"
+      "line": 372,
+      "message": "Line 372 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 376,
+      "message": "Line 376 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1738,83 +1751,99 @@
     },
     {
       "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
+      "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 382,
-      "message": "Line 382 has trailing whitespace"
+      "line": 390,
+      "message": "Line 390 exceeds 79 characters (98 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 387,
-      "message": "Line 387 has trailing whitespace"
+      "line": 392,
+      "message": "Line 392 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 401,
+      "message": "Line 401 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 403,
+      "message": "Line 403 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 407,
+      "message": "Line 407 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 410,
+      "message": "Line 410 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 415,
+      "message": "Line 415 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 398,
-      "message": "Line 398 exceeds 79 characters (112 chars)"
+      "line": 418,
+      "message": "Line 418 exceeds 79 characters (85 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 400,
-      "message": "Line 400 has trailing whitespace"
+      "line": 419,
+      "message": "Line 419 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 409,
-      "message": "Line 409 exceeds 79 characters (89 chars)"
+      "line": 423,
+      "message": "Line 423 exceeds 79 characters (99 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 411,
-      "message": "Line 411 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 420,
-      "message": "Line 420 exceeds 79 characters (85 chars)"
+      "line": 425,
+      "message": "Line 425 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 422,
-      "message": "Line 422 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
       "line": 429,
-      "message": "Line 429 exceeds 79 characters (82 chars)"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 431,
-      "message": "Line 431 has trailing whitespace"
+      "message": "Line 429 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1829,24 +1858,32 @@
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 437,
-      "message": "Line 437 has trailing whitespace"
+      "line": 435,
+      "message": "Line 435 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 442,
-      "message": "Line 442 has trailing whitespace"
+      "line": 439,
+      "message": "Line 439 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 449,
-      "message": "Line 449 has trailing whitespace"
+      "line": 444,
+      "message": "Line 444 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 447,
+      "message": "Line 447 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1858,19 +1895,11 @@
     },
     {
       "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 459,
-      "message": "Line 459 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
       "line": 463,
-      "message": "Line 463 exceeds 79 characters (86 chars)"
+      "message": "Line 463 exceeds 79 characters (112 chars)"
     },
     {
       "rule": "pep8_compliance",
@@ -1885,48 +1914,40 @@
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 473,
-      "message": "Line 473 exceeds 79 characters (134 chars)"
+      "line": 474,
+      "message": "Line 474 exceeds 79 characters (89 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 475,
-      "message": "Line 475 has trailing whitespace"
+      "line": 476,
+      "message": "Line 476 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 482,
-      "message": "Line 482 exceeds 79 characters (82 chars)"
+      "line": 485,
+      "message": "Line 485 exceeds 79 characters (85 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 484,
-      "message": "Line 484 has trailing whitespace"
+      "line": 487,
+      "message": "Line 487 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
+      "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 486,
-      "message": "Line 486 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 490,
-      "message": "Line 490 has trailing whitespace"
+      "line": 494,
+      "message": "Line 494 exceeds 79 characters (82 chars)"
     },
     {
       "rule": "pep8_compliance",
@@ -1941,8 +1962,8 @@
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 499,
-      "message": "Line 499 has trailing whitespace"
+      "line": 498,
+      "message": "Line 498 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1957,24 +1978,8 @@
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 505,
-      "message": "Line 505 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 508,
-      "message": "Line 508 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 511,
-      "message": "Line 511 has trailing whitespace"
+      "line": 507,
+      "message": "Line 507 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -1989,16 +1994,8 @@
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 516,
-      "message": "Line 516 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 518,
-      "message": "Line 518 has trailing whitespace"
+      "line": 517,
+      "message": "Line 517 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -2013,16 +2010,8 @@
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 526,
-      "message": "Line 526 exceeds 79 characters (88 chars)"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "trailing_whitespace",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 527,
-      "message": "Line 527 has trailing whitespace"
+      "line": 528,
+      "message": "Line 528 exceeds 79 characters (86 chars)"
     },
     {
       "rule": "pep8_compliance",
@@ -2037,32 +2026,56 @@
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 552,
-      "message": "Line 552 exceeds 79 characters (102 chars)"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 553,
-      "message": "Line 553 exceeds 79 characters (106 chars)"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 554,
-      "message": "Line 554 exceeds 79 characters (99 chars)"
+      "line": 538,
+      "message": "Line 538 exceeds 79 characters (134 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 557,
-      "message": "Line 557 has trailing whitespace"
+      "line": 540,
+      "message": "Line 540 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 547,
+      "message": "Line 547 exceeds 79 characters (82 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 549,
+      "message": "Line 549 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 551,
+      "message": "Line 551 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 555,
+      "message": "Line 555 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 561,
+      "message": "Line 561 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -2077,96 +2090,240 @@
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 583,
-      "message": "Line 583 has trailing whitespace"
+      "line": 567,
+      "message": "Line 567 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 587,
-      "message": "Line 587 has trailing whitespace"
+      "line": 570,
+      "message": "Line 570 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 590,
-      "message": "Line 590 has trailing whitespace"
+      "line": 573,
+      "message": "Line 573 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 593,
-      "message": "Line 593 has trailing whitespace"
+      "line": 576,
+      "message": "Line 576 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 597,
-      "message": "Line 597 has trailing whitespace"
+      "line": 579,
+      "message": "Line 579 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 582,
+      "message": "Line 582 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 584,
+      "message": "Line 584 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 586,
+      "message": "Line 586 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 592,
+      "message": "Line 592 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "line_too_long",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 603,
-      "message": "Line 603 exceeds 79 characters (86 chars)"
+      "line": 594,
+      "message": "Line 594 exceeds 79 characters (88 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 606,
-      "message": "Line 606 has trailing whitespace"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 608,
-      "message": "Line 608 exceeds 79 characters (89 chars)"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 609,
-      "message": "Line 609 exceeds 79 characters (93 chars)"
-    },
-    {
-      "rule": "pep8_compliance",
-      "type": "line_too_long",
-      "severity": "low",
-      "file": "system/todo/repo_rule_checker.py",
-      "line": 610,
-      "message": "Line 610 exceeds 79 characters (87 chars)"
+      "line": 595,
+      "message": "Line 595 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 611,
-      "message": "Line 611 has trailing whitespace"
+      "line": 598,
+      "message": "Line 598 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 621,
+      "message": "Line 621 exceeds 79 characters (102 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 622,
+      "message": "Line 622 exceeds 79 characters (106 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 623,
+      "message": "Line 623 exceeds 79 characters (99 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 625,
+      "message": "Line 625 exceeds 79 characters (97 chars)"
     },
     {
       "rule": "pep8_compliance",
       "type": "trailing_whitespace",
       "severity": "low",
       "file": "system/todo/repo_rule_checker.py",
-      "line": 615,
-      "message": "Line 615 has trailing whitespace"
+      "line": 627,
+      "message": "Line 627 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 634,
+      "message": "Line 634 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 653,
+      "message": "Line 653 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 657,
+      "message": "Line 657 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 660,
+      "message": "Line 660 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 663,
+      "message": "Line 663 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 667,
+      "message": "Line 667 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 673,
+      "message": "Line 673 exceeds 79 characters (86 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 676,
+      "message": "Line 676 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 678,
+      "message": "Line 678 exceeds 79 characters (89 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 679,
+      "message": "Line 679 exceeds 79 characters (93 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "line_too_long",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 680,
+      "message": "Line 680 exceeds 79 characters (87 chars)"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 681,
+      "message": "Line 681 has trailing whitespace"
+    },
+    {
+      "rule": "pep8_compliance",
+      "type": "trailing_whitespace",
+      "severity": "low",
+      "file": "system/todo/repo_rule_checker.py",
+      "line": 685,
+      "message": "Line 685 has trailing whitespace"
     },
     {
       "rule": "pep8_compliance",
@@ -2618,16 +2775,16 @@
   ],
   "violation_summary": {
     "crossref_redundancy_check": {
-      "total": 4,
-      "high": 2,
+      "total": 2,
+      "high": 0,
       "medium": 0,
       "low": 2
     },
     "pep8_compliance": {
-      "total": 185,
+      "total": 206,
       "high": 0,
       "medium": 0,
-      "low": 185
+      "low": 206
     },
     "language_en": {
       "total": 6,
@@ -2698,8 +2855,124 @@
   },
   "compliance_status": {
     "overall": "FAIL",
-    "high_severity_issues": 2,
+    "high_severity_issues": 0,
     "medium_severity_issues": 6,
-    "low_severity_issues": 187
-  }
+    "low_severity_issues": 208
+  },
+  "master_index_areas": [
+    {
+      "key": "actors",
+      "dir": "actors/",
+      "index": "actors/actors.json",
+      "status": "active"
+    },
+    {
+      "key": "events",
+      "dir": "events/",
+      "index": "events/events.json",
+      "status": "active"
+    },
+    {
+      "key": "world_locations",
+      "dir": "world/locations/",
+      "index": "world/locations.json",
+      "status": "inactive"
+    },
+    {
+      "key": "world_sectors",
+      "dir": "world/sectors/",
+      "index": "world/sectors.json",
+      "status": "inactive"
+    },
+    {
+      "key": "factions",
+      "dir": "factions/",
+      "index": "factions/factions.json",
+      "status": "active"
+    },
+    {
+      "key": "player_factions",
+      "dir": "player_factions/",
+      "index": "player_factions/player_factions.json",
+      "status": "active"
+    },
+    {
+      "key": "economy",
+      "dir": "economy/",
+      "index": "economy/market.json",
+      "status": "active"
+    },
+    {
+      "key": "items",
+      "dir": "items/",
+      "index": "items/items.json",
+      "status": "active"
+    },
+    {
+      "key": "resources",
+      "dir": "resources/",
+      "index": "resources/resources.json",
+      "status": "active"
+    },
+    {
+      "key": "crafting",
+      "dir": "crafting/",
+      "index": "crafting/recipes.json",
+      "status": "active"
+    },
+    {
+      "key": "relations",
+      "dir": "relations/",
+      "index": "relations/relations.json",
+      "status": "active"
+    },
+    {
+      "key": "quests",
+      "dir": "quests/",
+      "index": "quests/quests.json",
+      "status": "inactive"
+    },
+    {
+      "key": "dungeons",
+      "dir": "dungeons/",
+      "index": "dungeons/dungeons.json",
+      "status": "active"
+    },
+    {
+      "key": "monsters",
+      "dir": "monsters/",
+      "index": "monsters/monsters.json",
+      "status": "active"
+    },
+    {
+      "key": "lore",
+      "dir": "lore/",
+      "index": "lore/lore.json",
+      "status": "active"
+    },
+    {
+      "key": "assets",
+      "dir": "assets/",
+      "index": null,
+      "status": "inactive"
+    },
+    {
+      "key": "encyclopedia",
+      "dir": "encyclopedia/",
+      "index": "encyclopedia/encyclopedia.json",
+      "status": "inactive"
+    },
+    {
+      "key": "missions",
+      "dir": "missions/",
+      "index": "missions/missions.json",
+      "status": "active"
+    },
+    {
+      "key": "world",
+      "dir": "world/",
+      "index": "world/world.json",
+      "status": "active"
+    }
+  ]
 }

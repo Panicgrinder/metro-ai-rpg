@@ -43,6 +43,7 @@ class RuleChecker:
         self.scanned_directories = []
         self.id_registry = {}  # Track all IDs found in the repository
         self.file_references = {}  # Track file references and cross-references
+        self.master_index = {}  # Store master index configuration for intelligent validation
         
     def load_gpt_behavior_rules(self) -> Dict[str, Any]:
         """
@@ -62,6 +63,48 @@ class RuleChecker:
         except json.JSONDecodeError as e:
             print(f"Error: Invalid JSON in {gpt_behavior_path}: {e}")
             return {}
+    
+    def load_master_index(self) -> Dict[str, Any]:
+        """
+        Load and parse master_index.json for intelligent path validation.
+        
+        Returns:
+            Dict[str, Any]: Parsed master index configuration
+        """
+        master_index_path = self.repo_root / "master_index.json"
+        
+        try:
+            with open(master_index_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except FileNotFoundError:
+            print(f"Warning: {master_index_path} not found.")
+            return {}
+        except json.JSONDecodeError as e:
+            print(f"Error: Invalid JSON in {master_index_path}: {e}")
+            return {}
+    
+    def get_area_status(self, path: str) -> str:
+        """
+        Get the status of an area from master_index.json.
+        
+        Args:
+            path (str): Directory or file path to check
+            
+        Returns:
+            str: Status of the area ('active', 'inactive', 'unknown')
+        """
+        if not self.master_index or 'areas' not in self.master_index:
+            return 'unknown'
+        
+        # Normalize path for comparison
+        normalized_path = path.rstrip('/') + '/'
+        
+        for area in self.master_index['areas']:
+            area_dir = area.get('dir', '')
+            if normalized_path.startswith(area_dir) or area_dir.startswith(normalized_path):
+                return area.get('status', 'unknown')
+        
+        return 'unknown'
     
     def load_ruleset_md_rules(self) -> List[str]:
         """
@@ -276,7 +319,17 @@ class RuleChecker:
             try:
                 if file_path.suffix.lower() == '.json':
                     with open(file_path, 'r', encoding='utf-8') as f:
-                        content = json.load(f)
+                        content_text = f.read()
+                    
+                    # Skip template files that contain invalid JSON with comments
+                    if '"is_template": true' in content_text and '//' in content_text:
+                        continue
+                    
+                    try:
+                        content = json.loads(content_text)
+                    except json.JSONDecodeError:
+                        # Skip files that can't be parsed as valid JSON
+                        continue
                     
                     # Check for file path references in JSON
                     references = self._extract_file_references(content)
@@ -296,13 +349,25 @@ class RuleChecker:
                             ref_path = file_dir / ref
                         
                         if not ref_path.exists():
+                            # Determine severity based on area status
+                            area_status = self.get_area_status(ref)
+                            
+                            # For inactive areas, treat missing files as low severity
+                            if area_status == 'inactive':
+                                severity = 'low'
+                                message_suffix = f" (area marked as '{area_status}' in master_index.json)"
+                            else:
+                                severity = 'high'
+                                message_suffix = ""
+                            
                             violations.append({
                                 "rule": "crossref_redundancy_check",
                                 "type": "broken_file_reference",
-                                "severity": "high",
+                                "severity": severity,
                                 "file": file_info,
                                 "reference": ref,
-                                "message": f"Broken file reference '{ref}' in {file_info}"
+                                "area_status": area_status,
+                                "message": f"Broken file reference '{ref}' in {file_info}{message_suffix}"
                             })
                 
                 elif file_path.suffix.lower() == '.md':
@@ -491,6 +556,9 @@ class RuleChecker:
         Returns:
             Dict[str, Any]: Complete rule checking results
         """
+        print("Loading master index for intelligent validation...")
+        self.master_index = self.load_master_index()
+        
         print("Loading GPT behavior rules...")
         gpt_rules = self.load_gpt_behavior_rules()
         
@@ -535,7 +603,8 @@ class RuleChecker:
                 "repository_root": str(self.repo_root),
                 "total_files_checked": len(self.checked_files),
                 "total_directories_scanned": len(self.scanned_directories),
-                "total_violations": len(all_violations)
+                "total_violations": len(all_violations),
+                "master_index_loaded": bool(self.master_index)
             },
             "rules_loaded": {
                 "gpt_behavior_rules": len(gpt_rules.get('rules', [])),
@@ -552,7 +621,8 @@ class RuleChecker:
                 "high_severity_issues": sum(1 for v in all_violations if v.get('severity') == 'high'),
                 "medium_severity_issues": sum(1 for v in all_violations if v.get('severity') == 'medium'),
                 "low_severity_issues": sum(1 for v in all_violations if v.get('severity') == 'low')
-            }
+            },
+            "master_index_areas": self.master_index.get('areas', []) if self.master_index else []
         }
         
         return results
