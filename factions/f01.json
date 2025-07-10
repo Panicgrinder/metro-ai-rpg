@@ -1,0 +1,20 @@
+{
+  "id": "f01",
+  "name": "Metro-Garde",
+  "territory": ["A1", "A2", "B1"],
+  "leader": {
+    "name": "Kommandant Petrow",
+    "traits": ["diszipliniert", "gerecht", "unbestechlich"]
+  },
+  "resources": ["Waffen", "Rationen", "Schutzkleidung", "Trainingsanlagen"],
+  "relations": {
+    "faction_haendler": "neutral",
+    "faction_kultisten": "feindlich",
+    "faction_unabhaengige": "misstrauisch"
+  },
+  "objectives": [
+    "Sicherung der Metro vor Chaos und Überfällen",
+    "Erweiterung ihres Einflussgebietes",
+    "Aufrechterhaltung von Ordnung und Gesetz"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "faction_id": "f01",
+  "name": "Metro-Garde",
+  "description": "Die Metro-Garde ist eine paramilitärische Organisation, die als Hüter von Ordnung und Sicherheit in den Tunneln der Metro gilt. Sie patrouillieren Schlüsselabschnitte, sichern Ressourcen und setzen strenge Regeln durch.",
+  "history": "Gegründet aus den Resten der städtischen Polizei und Militärtruppen nach dem Zusammenbruch der Zivilisation. Die Garde hat sich im Laufe der Jahre zu einer der mächtigsten und bestorganisierten Fraktionen der Metro entwickelt.",
+  "leader": {
+    "name": "Kommandant Petrow",
+    "description": "Ein erfahrener und kompromissloser Veteran, der für seine eiserne Disziplin und strategischen Fähigkeiten bekannt ist."
+  }
+}
