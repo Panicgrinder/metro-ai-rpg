@@ -185,6 +185,10 @@ class RuleChecker:
         for file_info in self.checked_files:
             file_path = self.repo_root / file_info
             
+            # Skip the rule_check_results.json file as it's a report file, not a data file
+            if file_info == "system/todo/rule_check_results.json":
+                continue
+            
             if file_path.suffix.lower() == '.json':
                 try:
                     with open(file_path, 'r', encoding='utf-8') as f:
@@ -265,6 +269,10 @@ class RuleChecker:
         for file_info in self.checked_files:
             file_path = self.repo_root / file_info
             
+            # Skip the rule_check_results.json file as it's a report file, not a data file
+            if file_info == "system/todo/rule_check_results.json":
+                continue
+            
             try:
                 if file_path.suffix.lower() == '.json':
                     with open(file_path, 'r', encoding='utf-8') as f:
@@ -274,7 +282,19 @@ class RuleChecker:
                     references = self._extract_file_references(content)
                     
                     for ref in references:
-                        ref_path = self.repo_root / ref
+                        # Skip template placeholders (anything with {{ and }})
+                        if '{{' in ref and '}}' in ref:
+                            continue
+                            
+                        # Handle relative paths - resolve relative to the file's directory
+                        if ref.startswith('/'):
+                            # Absolute path from repo root
+                            ref_path = self.repo_root / ref.lstrip('/')
+                        else:
+                            # Relative path - resolve relative to the file's directory
+                            file_dir = file_path.parent
+                            ref_path = file_dir / ref
+                        
                         if not ref_path.exists():
                             violations.append({
                                 "rule": "crossref_redundancy_check",
@@ -520,7 +540,7 @@ class RuleChecker:
             "rules_loaded": {
                 "gpt_behavior_rules": len(gpt_rules.get('rules', [])),
                 "ruleset_md_rules": len(ruleset_rules),
-                "gpt_rules_detail": gpt_rules,
+                "gpt_rules_source": "system/gpt_behavior.json",
                 "ruleset_rules_detail": ruleset_rules
             },
             "repository_structure": repository_structure,
