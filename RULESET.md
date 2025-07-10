@@ -33,6 +33,11 @@
 - Änderungen an der Spiel- oder KI-Logik sind zeitnah in der Dokumentation zu ergänzen (`README.md`, `/docs/`).
 - Halte die Dokumentation so einfach, dass auch Anfänger sie verstehen.
 
+### 6.1 Referenz- und Konsistenzprüfung
+- **Regelmäßige Überprüfung aller Querverweise**: Alle IDs und Referenzen zwischen Dateien werden automatisch auf Gültigkeit und Eindeutigkeit geprüft (siehe `gpt_behavior.json` Regel `crossref_redundancy_check`).
+- **Redundanzvermeidung**: Das System prüft kontinuierlich auf doppelte oder widersprüchliche Datenstrukturen und korrigiert diese automatisch, wo möglich (siehe `gpt_behavior.json` Regel `consistency_check`).
+- **Audit-Trail**: Alle kritischen Änderungen werden in einem unveränderlichen Audit-Log dokumentiert und regelmäßig auf verdächtige Aktivitäten überprüft.
+
 ## 7. Kommunikation & Feedback
 - Fragen und Vorschläge sind immer willkommen.
 - Konstruktives Feedback ist erwünscht – respektvoller Umgang ist Pflicht.
