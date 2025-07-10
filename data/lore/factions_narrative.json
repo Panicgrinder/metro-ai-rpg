@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "type": "faction_lore",
+    "description": "Rich narrative content for faction storytelling - load only when detailed lore is needed",
+    "version": "1.0", 
+    "last_updated": "2025-01-08",
+    "usage": "Load for storytelling, character development, or detailed faction interactions"
+  },
+  "lore_modules": {
+    "f01_narrative": {
+      "faction_id": "f01",
+      "detailed_description": "Die Metro-Garde ist eine paramilitärische Organisation, die als Hüter von Ordnung und Sicherheit in den Tunneln der Metro gilt. Sie patrouillieren Schlüsselabschnitte, sichern Ressourcen und setzen strenge Regeln durch.",
+      "founding_story": "Gegründet aus den Resten der städtischen Polizei und Militärtruppen nach dem Zusammenbruch der Zivilisation. Die Garde hat sich im Laufe der Jahre zu einer der mächtigsten und bestorganisierten Fraktionen der Metro entwickelt.",
+      "culture": {
+        "values": ["Ordnung", "Disziplin", "Gerechtigkeit"],
+        "motto": "Ordnung durch Stärke",
+        "traditions": ["Tägliche Waffeninspektion", "Ehrenkodex für Soldaten"]
+      },
+      "objectives": [
+        "Sicherung der Metro vor Chaos und Überfällen",
+        "Erweiterung ihres Einflussgebietes", 
+        "Aufrechterhaltung von Ordnung und Gesetz"
+      ]
+    },
+    "f02_narrative": {
+      "faction_id": "f02",
+      "detailed_description": "Schmuggler und Spione, die geheime Routen und versteckte Wege durch die Metro nutzen. Ihr Einfluss ist vor allem in den Rand- und Dunkelzonen spürbar.",
+      "founding_story": "Entstanden aus Überlebenden, die sich in den entlegenen und gefährlichen Bereichen der Metro angesiedelt haben. Sie entwickelten ein Netzwerk aus geheimen Pfaden und Verstecken.",
+      "culture": {
+        "values": ["Freiheit", "Profit", "Geheimnisse"],
+        "motto": "Im Schatten gedeiht die Wahrheit",
+        "traditions": ["Verschlüsselte Kommunikation", "Vertrauenscode unter Schmugglern"]
+      },
+      "objectives": [
+        "Kontrolle über Schmuggelrouten",
+        "Informationshandel",
+        "Autonomie in den Dunkelzonen"
+      ]
+    },
+    "f03_narrative": {
+      "faction_id": "f03",
+      "detailed_description": "Die Händlergilde organisiert und kontrolliert den Handel zwischen den Sektoren. Sie besitzen viele Kontakte und sichern Nachschub für die Metro.",
+      "founding_story": "Gegründet von überlebenden Geschäftsleuten und Händlern, die ihre kommerziellen Fähigkeiten nutzen, um das Überleben in der Metro durch organisierten Handel zu sichern.",
+      "culture": {
+        "values": ["Profit", "Fairness", "Netzwerke"],
+        "motto": "Handel bringt Wohlstand", 
+        "traditions": ["Wöchentliche Handelsmärkte", "Vertragsrituale"]
+      },
+      "objectives": [
+        "Ausbau der Handelsrouten zwischen Sektoren",
+        "Monopolisierung des Warenhandels",
+        "Friedliche Beziehungen zu allen Fraktionen"
+      ]
+    },
+    "f04_narrative": {
+      "faction_id": "f04",
+      "detailed_description": "Ehemalige Polizei- und Militäreinheiten, die für Sicherheit und Ordnung in zentralen Metro-Sektoren sorgen.",
+      "founding_story": "Entstanden aus den Überresten der Strafverfolgungsbehörden und militärischen Einheiten vor dem Zusammenbruch. Sie haben ihre Disziplin und Struktur beibehalten.",
+      "culture": {
+        "values": ["Ordnung", "Sicherheit", "Hierarchie"],
+        "motto": "Sicherheit durch Wachsamkeit",
+        "traditions": ["Militärische Disziplin", "Rangzeichen und Protokolle"]
+      },
+      "objectives": [
+        "Sicherung der zentralen Metro-Sektoren",
+        "Durchsetzung von Recht und Ordnung",
+        "Schutz vor äußeren Bedrohungen"
+      ]
+    }
+  }
+}

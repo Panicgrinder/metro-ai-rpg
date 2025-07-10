@@ -1,6 +1,6 @@
 {
   "is_template": true,
-  "id": "q01",
+  "id": "quest_template",
   "title": "{{quest_title}}",
   "description": "{{quest_description}}",
   "story_arc": "{{story_arc}}",

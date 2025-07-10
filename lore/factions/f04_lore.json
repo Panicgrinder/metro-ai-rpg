@@ -1,12 +1,39 @@
 {
-  "faction_id": "f04",
+  "id": "f04_lore",
+  "references_faction": "f04",
   "name": "Die Wächter", 
   "description": "Ehemalige Polizei- und Militäreinheiten, die für Sicherheit und Ordnung in zentralen Metro-Sektoren sorgen.",
   "history": "Entstanden aus den Überresten der Strafverfolgungsbehörden und militärischen Einheiten vor dem Zusammenbruch. Sie haben ihre Disziplin und Struktur beibehalten.",
   "leader": {
     "name": "{{leader_name}}",
-    "description": "Ein ehemaliger Offizier mit starken Führungsqualitäten und unbeugsamer Loyalität zur Ordnung."
+    "description": "Ein ehemaliger Offizier mit starken Führungsqualitäten und unbeugsamer Loyalität zur Ordnung.",
+    "personality_traits": ["autoritär", "pflichtbewusst", "strategisch"],
+    "background": "Hochrangiger Militäroffizier aus der Vorkatastrophenzeit"
+  },
+  "objectives": [
+    "Sicherung der zentralen Metro-Sektoren",
+    "Durchsetzung von Recht und Ordnung",
+    "Schutz vor äußeren Bedrohungen"
+  ],
+  "culture": {
+    "values": ["Ordnung", "Sicherheit", "Hierarchie"],
+    "customs": ["Militärische Disziplin", "Rangzeichen und Protokolle"],
+    "motto": "Sicherheit durch Wachsamkeit"
   },
   "influence_zones": ["central"],
-  "faction_flags": ["security", "law"]
+  "faction_flags": ["security", "law"],
+  "relationships": {
+    "f01": {
+      "attitude": "misstrauisch",
+      "reason": "Konkurrierende Autoritätsansprüche"
+    },
+    "f02": {
+      "attitude": "feindlich",
+      "reason": "Kriminelle Aktivitäten gefährden Ordnung"
+    },
+    "f03": {
+      "attitude": "verbündet",
+      "reason": "Unterstützen stabilisierende Handelstätigkeiten"
+    }
+  }
 }

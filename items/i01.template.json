@@ -1,6 +1,6 @@
 {
   "is_template": true,
-  "id": "i01",
+  "id": "item_template",
   "name": "{{item_name}}",
   "type": "{{item_type}}",
   "description": "{{item_description}}",

@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Metro-AI-RPG specific
+# Rule checker output files (regenerated each time)
+system/todo/rule_check_results.json
+system/todo/rule_check_summary.json
+system/todo/modular_validation.json

@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "description": "Module loading configuration for AI-friendly token efficiency",
+    "version": "1.0",
+    "purpose": "Defines which data modules to load based on context needs"
+  },
+  "load_contexts": {
+    "basic_gameplay": {
+      "description": "Essential mechanics for standard game interactions",
+      "modules": [
+        "data/mechanics/factions_core.json"
+      ],
+      "token_estimate": 500
+    },
+    "faction_combat": {
+      "description": "Combat mechanics and faction relationships",
+      "modules": [
+        "data/mechanics/factions_core.json"
+      ],
+      "token_estimate": 500
+    },
+    "storytelling": {
+      "description": "Rich narrative content for immersive storytelling",
+      "modules": [
+        "data/mechanics/factions_core.json",
+        "data/lore/factions_narrative.json"
+      ],
+      "token_estimate": 1200
+    },
+    "faction_diplomacy": {
+      "description": "Detailed faction interactions and relationships",
+      "modules": [
+        "data/mechanics/factions_core.json",
+        "data/lore/factions_narrative.json"
+      ],
+      "token_estimate": 1200
+    },
+    "world_building": {
+      "description": "Comprehensive world and faction data",
+      "modules": [
+        "data/mechanics/factions_core.json",
+        "data/lore/factions_narrative.json"
+      ],
+      "token_estimate": 1200
+    }
+  },
+  "module_priority": {
+    "always_load": [
+      "data/mechanics/factions_core.json"
+    ],
+    "conditional_load": [
+      "data/lore/factions_narrative.json"
+    ],
+    "rarely_needed": []
+  },
+  "ai_usage_guidelines": {
+    "basic_mechanics": "Load only core mechanics for simple faction checks, combat resolution, territory queries",
+    "storytelling": "Load narrative modules when generating dialogue, describing faction culture, or creating immersive scenes",
+    "optimization_note": "Always start with core mechanics. Add narrative modules only when rich description is needed."
+  }
+}

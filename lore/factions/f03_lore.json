@@ -1,12 +1,39 @@
 {
-  "faction_id": "f03",
+  "id": "f03_lore",
+  "references_faction": "f03",
   "name": "Händlergilde",
   "description": "Die Händlergilde organisiert und kontrolliert den Handel zwischen den Sektoren. Sie besitzen viele Kontakte und sichern Nachschub für die Metro.",
   "history": "Gegründet von überlebenden Geschäftsleuten und Händlern, die ihre kommerziellen Fähigkeiten nutzen, um das Überleben in der Metro durch organisierten Handel zu sichern.",
   "leader": {
     "name": "{{leader_name}}",
-    "description": "Ein erfahrener Händler mit ausgezeichneten Verhandlungsfähigkeiten und einem weitreichenden Netzwerk an Kontakten."
+    "description": "Ein erfahrener Händler mit ausgezeichneten Verhandlungsfähigkeiten und einem weitreichenden Netzwerk an Kontakten.",
+    "personality_traits": ["charismatisch", "geschäftstüchtig", "diplomatisch"],
+    "background": "Ehemaliger Geschäftsführer eines großen Handelsunternehmens"
+  },
+  "objectives": [
+    "Ausbau der Handelsrouten zwischen Sektoren",
+    "Monopolisierung des Warenhandels", 
+    "Friedliche Beziehungen zu allen Fraktionen"
+  ],
+  "culture": {
+    "values": ["Profit", "Fairness", "Netzwerke"],
+    "customs": ["Wöchentliche Handelsmärkte", "Vertragsrituale"],
+    "motto": "Handel bringt Wohlstand"
   },
   "influence_zones": ["central", "outer"],
-  "faction_flags": ["trade", "supply"]
+  "faction_flags": ["trade", "supply"],
+  "relationships": {
+    "f01": {
+      "attitude": "neutral",
+      "reason": "Geschäftlich nützlich, aber autoritär"
+    },
+    "f02": {
+      "attitude": "neutral",
+      "reason": "Schwarzmarkt-Partner trotz moralischer Bedenken"
+    },
+    "f04": {
+      "attitude": "verbündet",
+      "reason": "Gemeinsame Interessen an Stabilität"
+    }
+  }
 }

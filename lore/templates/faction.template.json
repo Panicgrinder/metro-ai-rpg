@@ -1,6 +1,7 @@
 {
   "is_template": true,
-  "faction_id": "{{faction_id}}",
+  "id": "faction_lore_template",
+  "references_faction": "{{faction_id}}",
   "name": "{{faction_name}}",
   "description": "{{faction_description}}",
   "home_sectors": ["{{sector_1}}", "{{sector_2}}"],
@@ -33,6 +34,6 @@
     "created_by": "{{creator}}",
     "created_at": "{{iso_timestamp}}",
     "version": "1.0",
-    "template_notes": "Template for creating faction entries in the Metro-AI-RPG. Replace all {{placeholder}} values with actual faction data."
+    "template_notes": "Template for creating faction lore entries in the Metro-AI-RPG. Replace all {{placeholder}} values with actual faction data."
   }
 }
