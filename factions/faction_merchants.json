@@ -1,0 +1,19 @@
+{
+  "is_template": true,
+  "faction_id": "merchants",
+  "name": "Händlergilde",
+  "description": "Die Händlergilde organisiert und kontrolliert den Handel zwischen den Sektoren. Sie besitzen viele Kontakte und sichern Nachschub für die Metro.",
+  "home_sectors": ["A2", "C1"],
+  "relations": {
+    "allies": ["watcher"],
+    "enemies": [],
+    "neutral": ["shadows", "enlightened", "scientists"]
+  },
+  "influence_zones": ["central", "outer"],
+  "leadership": "{{leader_id}}",
+  "faction_flags": ["trade", "supply"],
+  "meta": {
+    "created_by": "GPT-4o",
+    "created_at": "{{iso_timestamp}}"
+  }
+}

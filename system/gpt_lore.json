@@ -1,0 +1,13 @@
+{
+  "is_template": true,
+  "lore_id": "world_novapolis",
+  "name": "Novapolis-Metro",
+  "description": "Nach einem globalen Atomkrieg leben die Menschen in einem unterirdischen Metro-Netzwerk, das ein 10x10-Sektorengrid umfasst. Die Oberfläche ist noch unbewohnbar, aber Wiederherstellung ist mit enormem Aufwand möglich.",
+  "surface_state": "unbewohnbar",
+  "surface_restoration_possible": true,
+  "surface_restoration_difficulty": 10,
+  "meta": {
+    "created_by": "GPT-4o",
+    "created_at": "{{iso_timestamp}}"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "is_template": true,
+  "faction_id": "shadows",
+  "name": "Die Schatten",
+  "description": "Schmuggler und Spione, die geheime Routen und versteckte Wege durch die Metro nutzen. Ihr Einfluss ist vor allem in den Rand- und Dunkelzonen spürbar.",
+  "home_sectors": ["D3"],
+  "relations": {
+    "allies": [],
+    "enemies": ["watcher"],
+    "neutral": ["merchants", "enlightened", "scientists"]
+  },
+  "influence_zones": ["outer", "dark"],
+  "leadership": "{{leader_id}}",
+  "faction_flags": ["smuggle", "espionage"],
+  "meta": {
+    "created_by": "GPT-4o",
+    "created_at": "{{iso_timestamp}}"
+  }
+}
