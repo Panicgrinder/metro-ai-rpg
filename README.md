@@ -68,6 +68,31 @@ The `master_index.json` file provides a central registry of all system areas, th
 
 🤖 **AI Management**: This system is designed to be managed by AI game masters with minimal human intervention during gameplay.
 
+## Installation and Setup
+
+### Requirements
+
+- Python 3.8 or higher
+- JSON-compatible text editor for data management
+- Git for version control
+
+### Getting Started
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Panicgrinder/metro-ai-rpg.git
+   cd metro-ai-rpg
+   ```
+
+2. **Installation**: No additional installation required - this is a data-driven system.
+
+3. **Usage**: The system is designed for AI management. See `system/gpt_behavior.json` for AI behavioral guidelines.
+
+4. **Setup validation**: Run the rule checker to validate system integrity:
+   ```bash
+   python system/todo/repo_rule_checker.py
+   ```
+
 ## Contributing
 
 ### Beitrag leisten (German)

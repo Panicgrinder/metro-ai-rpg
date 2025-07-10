@@ -1,67 +1,26 @@
 {
   "scan_info": {
-    "timestamp": "2025-07-10T21:32:58.763056",
+    "timestamp": "2025-07-10T21:57:15.552750",
     "total_files_checked": 59,
-    "total_violations": 242,
+    "total_violations": 48,
     "status": "FAIL"
   },
   "priority_violations": {
     "high_severity": 0,
     "medium_severity": 0,
-    "actionable_files": {
-      "master_index.json": [
-        {
-          "rule": "crossref_redundancy_check",
-          "type": "broken_file_reference",
-          "severity": "low",
-          "message": "Broken file reference 'world/sectors/' in master_index.json (area marked as 'inactive' in master_index.json)",
-          "line": null,
-          "reference": "world/sectors/"
-        },
-        {
-          "rule": "crossref_redundancy_check",
-          "type": "broken_file_reference",
-          "severity": "low",
-          "message": "Broken file reference 'assets/' in master_index.json (area marked as 'inactive' in master_index.json)",
-          "line": null,
-          "reference": "assets/"
-        }
-      ],
-      "README.md": [
-        {
-          "rule": "language_en",
-          "type": "missing_english_documentation",
-          "severity": "low",
-          "message": "Technical documentation README.md should include English sections for broader accessibility",
-          "line": null,
-          "reference": null
-        }
-      ]
-    }
+    "actionable_files": {}
   },
   "pep8_summary": {
     "files_affected": 2,
-    "quick_fixes": 181,
-    "total_issues": 239
+    "quick_fixes": 0,
+    "total_issues": 48
   },
   "violation_breakdown": {
-    "crossref_redundancy_check": {
-      "total": 2,
-      "high": 0,
-      "medium": 0,
-      "low": 2
-    },
     "pep8_compliance": {
-      "total": 239,
+      "total": 48,
       "high": 0,
       "medium": 0,
-      "low": 239
-    },
-    "language_en": {
-      "total": 1,
-      "high": 0,
-      "medium": 0,
-      "low": 1
+      "low": 48
     }
   }
 }

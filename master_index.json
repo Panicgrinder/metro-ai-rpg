@@ -19,12 +19,6 @@
       "status": "inactive"
     },
     {
-      "key": "world_sectors",
-      "dir": "world/sectors/",
-      "index": "world/sectors.json",
-      "status": "inactive"
-    },
-    {
       "key": "factions",
       "dir": "factions/",
       "index": "factions/factions.json",
@@ -89,12 +83,6 @@
       "dir": "lore/",
       "index": "lore/lore.json",
       "status": "active"
-    },
-    {
-      "key": "assets",
-      "dir": "assets/",
-      "index": null,
-      "status": "inactive"
     },
     {
       "key": "encyclopedia",
