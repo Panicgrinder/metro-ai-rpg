@@ -8,9 +8,9 @@
   },
   "resources": ["Waffen", "Rationen", "Schutzkleidung", "Trainingsanlagen"],
   "relations": {
-    "faction_haendler": "neutral",
-    "faction_kultisten": "feindlich",
-    "faction_unabhaengige": "misstrauisch"
+    "f02": "misstrauisch",
+    "f03": "neutral", 
+    "f04": "misstrauisch"
   },
   "objectives": [
     "Sicherung der Metro vor Chaos und Überfällen",

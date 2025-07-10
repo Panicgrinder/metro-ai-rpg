@@ -23,7 +23,24 @@
 - Änderungen an zentralen Spielmechaniken müssen im Team diskutiert werden (Issue oder Pull Request).
 - Experimentiere, aber dokumentiere Experimente klar als solche (z.B. im Branch-Namen oder Kommentar).
 
-### 4.1 Referenz- und Redundanzprüfung
+### 4.1 Standardisierte ID-Vergabe
+- **Einheitliches Schema**: Alle Entitäten verwenden ein standardisiertes ID-Format für maschinelle Verarbeitung.
+- **Format**: `[prefix][nummer]` mit 2-4 Zeichen Präfix + fortlaufende Nummer (z.B. `f01`, `a01`, `i01`).
+- **Präfixe nach Entitätstyp**:
+  - Fraktionen: `f##` (f01, f02, f03...)
+  - Akteure/NPCs: `a##` (a01, a02, a03...)
+  - Gegenstände: `i##` (i01, i02, i03...)
+  - Missionen: `m##` (m01, m02, m03...)
+  - Events: `e##` (e01, e02, e03...)
+  - Orte: `l##` (l01, l02, l03...)
+  - Monster: `mon##` (mon01, mon02...)
+  - Quests: `q##` (q01, q02, q03...)
+  - Ressourcen: `r##` (r01, r02, r03...)
+  - Sektoren: `s##` (s01, s02, s03...)
+- **Feldnamen**: Hauptfeld immer `"id"`, Querverweise als `"[entitätstyp]_id"`.
+- **Trennung von Mechanik und Lore**: Mechanikdateien in Hauptverzeichnissen, Lore-Dateien unter `lore/[typ]/`.
+
+### 4.2 Referenz- und Redundanzprüfung
 - **Regelmäßige Validierung**: Alle Referenzen zwischen Dateien und IDs müssen regelmäßig auf Gültigkeit und Eindeutigkeit geprüft werden.
 - **Dokumentationspflicht**: Jede Prüfung von Querverweisen und Redundanzen ist zu dokumentieren und zu protokollieren.
 - **Automatische Kontrollen**: Das System führt automatische Konsistenzprüfungen durch (siehe `gpt_behavior.json`).

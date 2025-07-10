@@ -1,0 +1,20 @@
+{
+  "id": "f04",
+  "name": "Die Wächter",
+  "territory": ["A5", "B5", "B4"],
+  "leader": {
+    "name": "{{leader_name}}",
+    "traits": ["autoritär", "pflichtbewusst", "strategisch"]
+  },
+  "resources": ["Überwachungsausrüstung", "Befestigungsanlagen", "Patrouilleneinheiten"],
+  "relations": {
+    "f01": "misstrauisch",
+    "f02": "feindlich",
+    "f03": "verbündet"
+  },
+  "objectives": [
+    "Sicherung der zentralen Metro-Sektoren",
+    "Durchsetzung von Recht und Ordnung",
+    "Schutz vor äußeren Bedrohungen"
+  ]
+}
