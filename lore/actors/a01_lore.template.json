@@ -1,0 +1,15 @@
+{
+  "actor_id": "{{actor_id}}",
+  "name": "{{actor_name}}",
+  "description": "{{detailed_description}}",
+  "background": "{{actor_background}}",
+  "personality": "{{personality_traits}}",
+  "relationships": {
+    "allies": ["{{actor_id}}"],
+    "enemies": ["{{actor_id}}"],
+    "family": ["{{actor_id}}"]
+  },
+  "personal_history": "{{personal_history}}",
+  "goals": ["{{personal_goal}}"],
+  "secrets": ["{{secret}}"]
+}
