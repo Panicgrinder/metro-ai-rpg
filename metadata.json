@@ -1,0 +1,47 @@
+{
+  "is_template": true,
+  "session_id": "{{session_id}}",
+  "user_id": "{{user_id}}",
+  "world_id": "{{world_id}}",
+  "version_ref": {
+    "engine": "{{engine_version}}",
+    "ruleset": "{{ruleset_id}}",
+    "features": [
+      "modular_save",
+      "github_sync",
+      "character_generator_v2"
+    ]
+  },
+  "session_tags": ["{{tag1}}", "{{tag2}}"],
+  "player_role": "{{player_role}}",
+  "active_actors": ["{{actor1}}", "{{actor2}}"],
+  "last_modified": "{{iso_timestamp}}",
+  "current_location": "{{location_id}}",
+  "world_time": "{{world_time}}",
+  "status": "{{session_status}}",
+  "save_allowed": "{{save_allowed}}",
+  "mode": "{{game_mode}}",
+  "story_arc": "{{story_arc}}",
+  "progression": "{{progression}}",
+  "last_checkpoints": ["{{checkpoint1}}", "{{checkpoint2}}"],
+  "flags": {},
+  "session_notes": "template file – do not modify directly",
+  "last_command": "{{last_command}}",
+  "last_conflict": {
+    "time": "{{conflict_time}}",
+    "participants": ["{{p1}}", "{{p2}}"],
+    "outcome": "{{conflict_outcome}}"
+  },
+  "world_state": "{{environment_status}}",
+  "last_log_id": "{{last_log_id}}",
+  "automation": {
+    "autosave": "{{autosave}}",
+    "github_commit": "{{github_commit}}"
+  },
+  "references": {
+    "todo": "system/todo.json",
+    "environment_status": "system/environment_status.json",
+    "story_progress": "system/story_progress.json",
+    "log": "system/log.json"
+  }
+}

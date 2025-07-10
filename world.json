@@ -1,0 +1,20 @@
+{
+  "is_template": true,
+  "name": "Metrocore",
+  "description": "Metrocore is a post-apocalyptic underground world in a vast, aging metro network. Restoring livability requires ingenuity and hard work. Are you up to the challenge? Who knows...",
+  "sectors": [],
+  "global_environmental_flags": [],
+  "exploration_progress": {
+    "visited_sectors": [],
+    "unlocked_features": []
+  },
+  "meta": {
+    "last_modified": "to_define",
+    "creator": "GPT-4o",
+    "admin": {
+      "name": "Licari",
+      "role": "admin"
+    },
+    "gpt_version": "4o"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "is_template": true,
+  "logs": [
+    // {
+    //   "timestamp": "{{iso_timestamp}}",
+    //   "event": "{{event_type}}",
+    //   "details": "{{event_details}}",
+    //   "user": "{{user_id}}"
+    // }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "rules": [
+    {
+      "id": "language_en",
+      "target": "system-wide",
+      "description": "All system files must use strict, compact English. User/player output may be in German."
+    },
+    {
+      "id": "engine_readonly",
+      "target": "/system/engine.json",
+      "description": "Read-only after setup. Modifiable only by admin, not by GPT in runtime."
+    },
+    {
+      "id": "versioning_gpt",
+      "target": "system-wide",
+      "description": "All versioning is handled automatically by GPT."
+    },
+    {
+      "id": "crossref_redundancy_check",
+      "target": "system-wide",
+      "description": "On every change, GPT checks all file and ID references for validity and uniqueness. Automatic correction is allowed and logged, except for system files which must only be logged and require user/admin confirmation."
+    },
+    {
+      "id": "id_management",
+      "target": "system-wide",
+      "description": "All IDs are unique, sequential, and managed by GPT."
+    },
+    {
+      "id": "consistency_check",
+      "target": "system-wide",
+      "description": "All system files must remain consistent and validated after any change."
+    },
+    {
+      "id": "modularity",
+      "target": "system-wide",
+      "description": "All data structures are modular and individually extendable."
+    },
+    {
+      "id": "logging",
+      "target": "system-wide",
+      "description": "All system file changes are logged with timestamp, change type, and user."
+    },
+    {
+      "id": "template_handling",
+      "target": "templates",
+      "description": "Templates are only edited by GPT and user in this environment, and used as copy source for new game instances."
+    },
+    {
+      "id": "template_immutability",
+      "target": "templates",
+      "description": "Original template files must never be changed by GPT during live gameplay. All changes and game state modifications apply only to copies or runtime instances. Any attempt to change template files outside of development is logged and blocked."
+    },
+    {
+      "id": "gpt_data_admin",
+      "target": "system-wide",
+      "description": "The gamemaster AI (GPT) manages all relevant game and system data dynamically and virtually. System files are only changed as allowed by these rules."
+    },
+    {
+      "id": "player_file_restriction",
+      "target": "system-wide",
+      "description": "Players may never access or edit system or data files directly. All game interaction occurs only via the GPT interface and approved frontend tools. Any direct file change is logged and flagged for admin review."
+    },
+    {
+      "id": "virtual_file_access",
+      "target": "gpt",
+      "description": "GPT uses a virtualized file system for all read and write operations during gameplay. File changes are buffered and only committed to disk via defined workflows, invisible to players."
+    },
+    {
+      "id": "anticheat_monitoring",
+      "target": "system-wide",
+      "description": "Any irregular attempt to modify system, actor, or economy files outside of the authorized game interface triggers automatic anti-cheat measures, including rolling back changes, locking accounts, and alerting admins."
+    },
+    {
+      "id": "player_data_abstraction",
+      "target": "player-facing",
+      "description": "Players interact only with abstracted, in-game representations of their data (e.g. stats, inventory, reputation). All backend structures and system logic remain invisible and protected from manipulation."
+    },
+    {
+      "id": "session_isolation",
+      "target": "system-wide",
+      "description": "Each player session is isolated from direct file system access. All game logic and state management is mediated by GPT, preventing parallel session exploits or unauthorized data reads."
+    },
+    {
+      "id": "dynamic_gamemaster_override",
+      "target": "gpt",
+      "description": "GPT, acting as gamemaster, is authorized to dynamically generate, update, and remove game data as required for narrative flow and world consistency, without requiring player knowledge or approval."
+    },
+    {
+      "id": "audit_trail",
+      "target": "system-wide",
+      "description": "All critical file and game state changes are recorded in an immutable audit log, reviewed regularly for suspicious activity."
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "areas": [
+    {
+      "key": "actors",
+      "dir": "actors/",
+      "index": "actors/actors.json",
+      "status": "active"
+    },
+    {
+      "key": "events",
+      "dir": "events/",
+      "index": "events/events.json",
+      "status": "active"
+    },
+    {
+      "key": "world_locations",
+      "dir": "world/locations/",
+      "index": "world/locations.json",
+      "status": "active"
+    },
+    {
+      "key": "world_sectors",
+      "dir": "world/sectors/",
+      "index": "world/sectors.json",
+      "status": "active"
+    },
+    {
+      "key": "factions",
+      "dir": "factions/",
+      "index": "factions/factions.json",
+      "status": "inactive"
+    },
+    {
+      "key": "player_factions",
+      "dir": "player_factions/",
+      "index": "player_factions/player_factions.json",
+      "status": "inactive"
+    },
+    {
+      "key": "economy",
+      "dir": "economy/",
+      "index": "economy/market.json",
+      "status": "inactive"
+    },
+    {
+      "key": "items",
+      "dir": "items/",
+      "index": "items/items.json",
+      "status": "inactive"
+    },
+    {
+      "key": "resources",
+      "dir": "resources/",
+      "index": "resources/resources.json",
+      "status": "inactive"
+    },
+    {
+      "key": "crafting",
+      "dir": "crafting/",
+      "index": "crafting/recipes.json",
+      "status": "inactive"
+    },
+    {
+      "key": "relations",
+      "dir": "relations/",
+      "index": "relations/relations.json",
+      "status": "inactive"
+    },
+    {
+      "key": "quests",
+      "dir": "quests/",
+      "index": "quests/quests.json",
+      "status": "inactive"
+    },
+    {
+      "key": "dungeons",
+      "dir": "dungeons/",
+      "index": "dungeons/dungeons.json",
+      "status": "inactive"
+    },
+    {
+      "key": "monsters",
+      "dir": "monsters/",
+      "index": "monsters/monsters.json",
+      "status": "inactive"
+    },
+    {
+      "key": "assets",
+      "dir": "assets/",
+      "index": null,
+      "status": "inactive"
+    },
+    {
+      "key": "encyclopedia",
+      "dir": "encyclopedia/",
+      "index": "encyclopedia/encyclopedia.json",
+      "status": "inactive"
+    }
+  ],
+  "meta": {
+    "last_modified": "2025-07-03T12:40:00+02:00",
+    "created_by": "licari"
+  }
+}

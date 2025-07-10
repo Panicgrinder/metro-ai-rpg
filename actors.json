@@ -1,0 +1,17 @@
+{
+  "is_template": true,
+  "index": [
+    {
+      "id": "{{player_id}}",
+      "type": "player",
+      "name": "{{player_name}}",
+      "file": "actors/{{player_file}}.json"
+    },
+    {
+      "id": "{{npc_id}}",
+      "type": "npc",
+      "name": "{{npc_name}}",
+      "file": "actors/{{npc_file}}.json"
+    }
+  ]
+}
