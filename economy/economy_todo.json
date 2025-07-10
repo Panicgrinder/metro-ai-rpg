@@ -1,0 +1,107 @@
+{
+  "is_template": false,
+  "type": "economy_todo",
+  "title": "To-Do-Liste: Economy-System",
+  "description": "Aufgabenliste zur Entwicklung und Erweiterung des Wirtschaftssystems im Metro-AI-RPG.",
+  "tasks": [
+    {
+      "id": "eco_todo_01",
+      "priority": "hoch",
+      "title": "Verzeichnis und Basisdateien anlegen",
+      "details": [
+        "Leg das economy/-Verzeichnis an (falls nicht vorhanden).",
+        "Erstelle market.json, economy.json und trade_rules.json als zentrale Dateien.",
+        "Lege Templates für Ressourcen, Märkte und Preise an."
+      ],
+      "status": "offen"
+    },
+    {
+      "id": "eco_todo_02",
+      "priority": "hoch",
+      "title": "Ressourcenverwaltung",
+      "details": [
+        "Definiere alle handelbaren Ressourcen in resources/.",
+        "Setze eindeutige resource_ids (r01, r02, ...).",
+        "Pflege Basisdaten: Name, Beschreibung, Wert, Seltenheit, Gewicht, Lagerfähigkeit."
+      ],
+      "status": "offen"
+    },
+    {
+      "id": "eco_todo_03",
+      "priority": "hoch",
+      "title": "Marktplatz & Handel",
+      "details": [
+        "Implementiere market.json als Übersicht aller Handelsplätze.",
+        "Definiere Standort/Sektor, Angebot und Nachfrage, Zugriffsregeln.",
+        "Lege Preislogik und Modifikatoren an."
+      ],
+      "status": "offen"
+    },
+    {
+      "id": "eco_todo_04",
+      "priority": "hoch",
+      "title": "Handelsregeln & Mechanik",
+      "details": [
+        "Definiere globale Handelsregeln in trade_rules.json.",
+        "Implementiere Mechanismen für Preisänderungen, Transaktionslimits, spezielle Ereignisse.",
+        "Lege fest, wer handeln darf (Fraktionen, NPCs, Spieler)."
+      ],
+      "status": "offen"
+    },
+    {
+      "id": "eco_todo_05",
+      "priority": "mittel",
+      "title": "Fraktionsökonomie & Spezialmärkte",
+      "details": [
+        "Ergänze economy-Abschnitte in Fraktionsdateien.",
+        "Definiere Spezialmärkte (Schwarzmarkt, Fraktionsbasen) mit eigenen Regeln."
+      ],
+      "status": "offen"
+    },
+    {
+      "id": "eco_todo_06",
+      "priority": "mittel",
+      "title": "Produktionsketten & Crafting",
+      "details": [
+        "Lege crafting/recipes.json an.",
+        "Definiere Ressourcen-Kombinationen, Produktionszeiten, Anforderungen."
+      ],
+      "status": "offen"
+    },
+    {
+      "id": "eco_todo_07",
+      "priority": "mittel",
+      "title": "Validierung & Automatisierung",
+      "details": [
+        "Ergänze Validierungen für IDs, Referenzen und Datenkonsistenz.",
+        "Nutze Automationsskripte wie update_master_index.py."
+      ],
+      "status": "offen"
+    },
+    {
+      "id": "eco_todo_08",
+      "priority": "niedrig",
+      "title": "Dokumentation & Beispiele",
+      "details": [
+        "Erstelle README für economy/ mit Systembeschreibung und JSON-Beispielen.",
+        "Aktualisiere Dokumentation und Beispiel-Templates."
+      ],
+      "status": "offen"
+    },
+    {
+      "id": "eco_todo_09",
+      "priority": "niedrig",
+      "title": "Erweiterungen & Ausblick",
+      "details": [
+        "Plane zukünftige Features wie Kredit, Inflation, Fraktionswährungen.",
+        "Prüfe externe Markteinflüsse und Ereignisse."
+      ],
+      "status": "offen"
+    }
+  ],
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-07-10T23:56:00+00:00",
+    "version": "1.0"
+  }
+}
