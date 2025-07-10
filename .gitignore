@@ -210,3 +210,4 @@ __marimo__/
 # Rule checker output files (regenerated each time)
 system/todo/rule_check_results.json
 system/todo/rule_check_summary.json
+system/todo/modular_validation.json
