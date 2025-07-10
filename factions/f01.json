@@ -2,19 +2,31 @@
   "id": "f01",
   "name": "Metro-Garde",
   "territory": ["A1", "A2", "B1"],
-  "leader": {
-    "name": "Kommandant Petrow",
-    "traits": ["diszipliniert", "gerecht", "unbestechlich"]
-  },
-  "resources": ["Waffen", "Rationen", "Schutzkleidung", "Trainingsanlagen"],
+  "leader_id": "a02",
+  "resources": [
+    {
+      "type": "military",
+      "items": ["weapons", "armor", "training_facilities"]
+    },
+    {
+      "type": "consumable", 
+      "items": ["rations", "medical_supplies"]
+    }
+  ],
   "relations": {
-    "f02": "misstrauisch",
-    "f03": "neutral", 
-    "f04": "misstrauisch"
+    "f02": -1,
+    "f03": 0, 
+    "f04": -1
   },
-  "objectives": [
-    "Sicherung der Metro vor Chaos und Überfällen",
-    "Erweiterung ihres Einflussgebietes",
-    "Aufrechterhaltung von Ordnung und Gesetz"
-  ]
+  "stats": {
+    "military_strength": 8,
+    "economic_power": 6,
+    "territory_control": 7,
+    "population": 5
+  },
+  "mechanics": {
+    "special_abilities": ["law_enforcement", "territory_patrol"],
+    "faction_type": "paramilitary",
+    "governance_style": "authoritarian"
+  }
 }

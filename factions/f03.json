@@ -2,19 +2,31 @@
   "id": "f03",
   "name": "Händlergilde",
   "territory": ["A2", "C1"],
-  "leader": {
-    "name": "{{leader_name}}",
-    "traits": ["charismatisch", "geschäftstüchtig", "diplomatisch"]
-  },
-  "resources": ["Handelsrouten", "Warenlager", "Kontaktnetzwerke", "Transportmittel"],
+  "leader_id": "a04", 
+  "resources": [
+    {
+      "type": "infrastructure",
+      "items": ["trade_routes", "warehouses", "transport_vehicles"]
+    },
+    {
+      "type": "social",
+      "items": ["contact_networks", "reputation", "agreements"]
+    }
+  ],
   "relations": {
-    "f01": "neutral",
-    "f02": "neutral", 
-    "f04": "verbündet"
+    "f01": 0,
+    "f02": 0,
+    "f04": 1
   },
-  "objectives": [
-    "Ausbau der Handelsrouten zwischen Sektoren",
-    "Monopolisierung des Warenhandels",
-    "Friedliche Beziehungen zu allen Fraktionen"
-  ]
+  "stats": {
+    "military_strength": 3,
+    "economic_power": 9,
+    "territory_control": 5,
+    "population": 6
+  },
+  "mechanics": {
+    "special_abilities": ["trade_negotiation", "resource_acquisition", "diplomatic_immunity"],
+    "faction_type": "merchant_guild",
+    "governance_style": "corporate_council"
+  }
 }

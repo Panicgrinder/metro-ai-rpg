@@ -6,6 +6,32 @@
   "history": "Gegründet aus den Resten der städtischen Polizei und Militärtruppen nach dem Zusammenbruch der Zivilisation. Die Garde hat sich im Laufe der Jahre zu einer der mächtigsten und bestorganisierten Fraktionen der Metro entwickelt.",
   "leader": {
     "name": "Kommandant Petrow",
-    "description": "Ein erfahrener und kompromissloser Veteran, der für seine eiserne Disziplin und strategischen Fähigkeiten bekannt ist."
+    "description": "Ein erfahrener und kompromissloser Veteran, der für seine eiserne Disziplin und strategischen Fähigkeiten bekannt ist.",
+    "personality_traits": ["diszipliniert", "gerecht", "unbestechlich"],
+    "background": "Ehemaliger Polizeikommandant der Oberstadt vor der Katastrophe"
+  },
+  "objectives": [
+    "Sicherung der Metro vor Chaos und Überfällen",
+    "Erweiterung ihres Einflussgebietes", 
+    "Aufrechterhaltung von Ordnung und Gesetz"
+  ],
+  "culture": {
+    "values": ["Ordnung", "Disziplin", "Gerechtigkeit"],
+    "customs": ["Tägliche Waffeninspektion", "Ehrenkodex für Soldaten"],
+    "motto": "Ordnung durch Stärke"
+  },
+  "relationships": {
+    "f02": {
+      "attitude": "misstrauisch",
+      "reason": "Schatten untergaben Gesetz und Ordnung"
+    },
+    "f03": {
+      "attitude": "neutral",
+      "reason": "Respektiert deren Handelsfähigkeiten"
+    },
+    "f04": {
+      "attitude": "misstrauisch", 
+      "reason": "Rivalen um Territoriumskontrolle"
+    }
   }
 }

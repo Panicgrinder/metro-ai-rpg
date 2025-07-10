@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "type": "core_mechanics",
+    "description": "Essential faction mechanics data for AI processing",
+    "version": "1.0",
+    "last_updated": "2025-01-08",
+    "usage": "Always load for faction-related game mechanics"
+  },
+  "factions": {
+    "f01": {
+      "id": "f01",
+      "name": "Metro-Garde",
+      "territory": ["A1", "A2", "B1"],
+      "leader_id": "a02",
+      "stats": {
+        "military_strength": 8,
+        "economic_power": 6,
+        "territory_control": 7,
+        "population": 5
+      },
+      "relations": {
+        "f02": -1,
+        "f03": 0,
+        "f04": -1
+      },
+      "abilities": ["law_enforcement", "territory_patrol"],
+      "type": "paramilitary"
+    },
+    "f02": {
+      "id": "f02", 
+      "name": "Die Schatten",
+      "territory": ["D3"],
+      "leader_id": "a03",
+      "stats": {
+        "military_strength": 4,
+        "economic_power": 7,
+        "territory_control": 3,
+        "population": 3
+      },
+      "relations": {
+        "f01": -1,
+        "f03": 0,
+        "f04": -2
+      },
+      "abilities": ["stealth_operations", "smuggling", "intelligence_gathering"],
+      "type": "criminal_syndicate"
+    },
+    "f03": {
+      "id": "f03",
+      "name": "Händlergilde", 
+      "territory": ["A2", "C1"],
+      "leader_id": "a04",
+      "stats": {
+        "military_strength": 3,
+        "economic_power": 9,
+        "territory_control": 5,
+        "population": 6
+      },
+      "relations": {
+        "f01": 0,
+        "f02": 0,
+        "f04": 1
+      },
+      "abilities": ["trade_negotiation", "resource_acquisition", "diplomatic_immunity"],
+      "type": "merchant_guild"
+    },
+    "f04": {
+      "id": "f04",
+      "name": "Die Wächter",
+      "territory": ["A5", "B5", "B4"],
+      "leader_id": "a05",
+      "stats": {
+        "military_strength": 7,
+        "economic_power": 4,
+        "territory_control": 8,
+        "population": 4
+      },
+      "relations": {
+        "f01": -1,
+        "f02": -2,
+        "f03": 1
+      },
+      "abilities": ["area_control", "law_enforcement", "defensive_fortifications"],
+      "type": "security_force"
+    }
+  }
+}

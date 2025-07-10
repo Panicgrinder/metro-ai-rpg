@@ -2,19 +2,31 @@
   "id": "f04",
   "name": "Die Wächter",
   "territory": ["A5", "B5", "B4"],
-  "leader": {
-    "name": "{{leader_name}}",
-    "traits": ["autoritär", "pflichtbewusst", "strategisch"]
-  },
-  "resources": ["Überwachungsausrüstung", "Befestigungsanlagen", "Patrouilleneinheiten"],
+  "leader_id": "a05",
+  "resources": [
+    {
+      "type": "security",
+      "items": ["surveillance_equipment", "fortifications", "patrol_units"]
+    },
+    {
+      "type": "military",
+      "items": ["defensive_systems", "communications", "checkpoints"]
+    }
+  ],
   "relations": {
-    "f01": "misstrauisch",
-    "f02": "feindlich",
-    "f03": "verbündet"
+    "f01": -1,
+    "f02": -2,
+    "f03": 1
   },
-  "objectives": [
-    "Sicherung der zentralen Metro-Sektoren",
-    "Durchsetzung von Recht und Ordnung",
-    "Schutz vor äußeren Bedrohungen"
-  ]
+  "stats": {
+    "military_strength": 7,
+    "economic_power": 4,
+    "territory_control": 8,
+    "population": 4
+  },
+  "mechanics": {
+    "special_abilities": ["area_control", "law_enforcement", "defensive_fortifications"],
+    "faction_type": "security_force",
+    "governance_style": "military_hierarchy"
+  }
 }

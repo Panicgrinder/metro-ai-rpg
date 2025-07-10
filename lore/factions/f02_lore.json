@@ -6,8 +6,34 @@
   "history": "Entstanden aus Überlebenden, die sich in den entlegenen und gefährlichen Bereichen der Metro angesiedelt haben. Sie entwickelten ein Netzwerk aus geheimen Pfaden und Verstecken.",
   "leader": {
     "name": "{{leader_name}}",
-    "description": "Ein geheimnisvoller Anführer, der die Schatten aus dem Verborgenen heraus leitet."
+    "description": "Ein geheimnisvoller Anführer, der die Schatten aus dem Verborgenen heraus leitet.",
+    "personality_traits": ["heimlich", "geschickt", "misstrauisch"],
+    "background": "Unbekannte Herkunft, vermutlich ehemaliger Geheimagent"
+  },
+  "objectives": [
+    "Kontrolle über Schmuggelrouten",
+    "Informationshandel",
+    "Autonomie in den Dunkelzonen"
+  ],
+  "culture": {
+    "values": ["Freiheit", "Profit", "Geheimnisse"],
+    "customs": ["Verschlüsselte Kommunikation", "Vertrauenscode unter Schmugglern"],
+    "motto": "Im Schatten gedeiht die Wahrheit"
   },
   "influence_zones": ["outer", "dark"],
-  "faction_flags": ["smuggle", "espionage"]
+  "faction_flags": ["smuggle", "espionage"],
+  "relationships": {
+    "f01": {
+      "attitude": "misstrauisch",
+      "reason": "Garde behindert Schmuggeloperationen"
+    },
+    "f03": {
+      "attitude": "neutral",
+      "reason": "Geschäftspartner im Schwarzmarkt"
+    },
+    "f04": {
+      "attitude": "feindlich",
+      "reason": "Wächter sind direkter Feind der Unterwelt"
+    }
+  }
 }

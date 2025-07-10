@@ -2,19 +2,31 @@
   "id": "f02",
   "name": "Die Schatten",
   "territory": ["D3"],
-  "leader": {
-    "name": "{{leader_name}}",
-    "traits": ["heimlich", "geschickt", "misstrauisch"]
-  },
-  "resources": ["Geheimwege", "Informationsnetzwerke", "Schmuggelware"],
+  "leader_id": "a03",
+  "resources": [
+    {
+      "type": "intelligence",
+      "items": ["secret_routes", "information_network", "surveillance"]
+    },
+    {
+      "type": "contraband",
+      "items": ["smuggled_goods", "black_market_access"]
+    }
+  ],
   "relations": {
-    "f01": "misstrauisch",
-    "f03": "neutral",
-    "f04": "feindlich"
+    "f01": -1,
+    "f03": 0,
+    "f04": -2
   },
-  "objectives": [
-    "Kontrolle über Schmuggelrouten",
-    "Informationshandel",
-    "Autonomie in den Dunkelzonen"
-  ]
+  "stats": {
+    "military_strength": 4,
+    "economic_power": 7,
+    "territory_control": 3,
+    "population": 3
+  },
+  "mechanics": {
+    "special_abilities": ["stealth_operations", "smuggling", "intelligence_gathering"],
+    "faction_type": "criminal_syndicate",
+    "governance_style": "shadow_council"
+  }
 }
