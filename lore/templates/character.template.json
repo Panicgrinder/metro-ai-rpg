@@ -1,0 +1,61 @@
+{
+  "is_template": true,
+  "character_id": "{{character_id}}",
+  "name": "{{character_name}}",
+  "title": "{{character_title}}",
+  "faction_affiliation": "{{faction_id}}",
+  "role": "{{character_role}}",
+  "background": "{{character_background}}",
+  "personality": {
+    "traits": ["{{trait_1}}", "{{trait_2}}", "{{trait_3}}"],
+    "motivations": ["{{motivation_1}}", "{{motivation_2}}"],
+    "fears": ["{{fear_1}}", "{{fear_2}}"],
+    "goals": ["{{goal_1}}", "{{goal_2}}"]
+  },
+  "physical_description": {
+    "age": "{{age}}",
+    "appearance": "{{physical_appearance}}",
+    "distinguishing_features": ["{{feature_1}}", "{{feature_2}}"]
+  },
+  "skills": {
+    "combat": "{{combat_skill_level}}",
+    "leadership": "{{leadership_skill_level}}",
+    "diplomacy": "{{diplomacy_skill_level}}",
+    "technical": "{{technical_skill_level}}",
+    "special_abilities": ["{{ability_1}}", "{{ability_2}}"]
+  },
+  "relationships": {
+    "allies": ["{{ally_character_1}}", "{{ally_character_2}}"],
+    "enemies": ["{{enemy_character_1}}", "{{enemy_character_2}}"],
+    "subordinates": ["{{subordinate_1}}", "{{subordinate_2}}"],
+    "superiors": ["{{superior_1}}"]
+  },
+  "equipment": {
+    "weapons": ["{{weapon_1}}", "{{weapon_2}}"],
+    "armor": "{{armor_type}}",
+    "personal_items": ["{{item_1}}", "{{item_2}}"],
+    "faction_insignia": "{{insignia_description}}"
+  },
+  "location": {
+    "home_sector": "{{home_sector}}",
+    "current_location": "{{current_location}}",
+    "frequent_locations": ["{{location_1}}", "{{location_2}}"]
+  },
+  "history": {
+    "origin": "{{character_origin}}",
+    "key_events": ["{{event_1}}", "{{event_2}}", "{{event_3}}"],
+    "career_progression": ["{{career_step_1}}", "{{career_step_2}}"]
+  },
+  "status": {
+    "is_active": true,
+    "health_status": "{{health_status}}",
+    "current_mission": "{{current_mission}}",
+    "availability": "{{availability_status}}"
+  },
+  "meta": {
+    "created_by": "{{creator}}",
+    "created_at": "{{iso_timestamp}}",
+    "version": "1.0",
+    "template_notes": "Template for creating character entries in the Metro-AI-RPG. Replace all {{placeholder}} values with actual character data."
+  }
+}

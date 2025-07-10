@@ -1,0 +1,91 @@
+{
+  "is_template": false,
+  "sector_id": "A5",
+  "coordinates": {
+    "x": "A",
+    "y": "5"
+  },
+  "name": "Central Command District",
+  "description": "The administrative heart of the Watcher-controlled territory, featuring the main command center and primary security facilities.",
+  "sector_type": "military",
+  "control": {
+    "controlling_faction": "watcher",
+    "control_strength": "absolute",
+    "contested": false,
+    "neutral_zone": false
+  },
+  "infrastructure": {
+    "condition": "excellent",
+    "power_grid": "fully_operational",
+    "water_supply": "filtered_and_secure",
+    "ventilation": "enhanced_with_filters",
+    "transport_connections": ["B5_direct_tunnel", "A4_patrol_route"]
+  },
+  "population": {
+    "resident_count": "2500",
+    "population_density": "high",
+    "demographics": {
+      "civilians": "40%",
+      "military": "45%",
+      "traders": "10%",
+      "specialists": "5%"
+    }
+  },
+  "resources": {
+    "natural_resources": ["clean_water_source"],
+    "manufactured_goods": ["security_equipment", "communication_devices"],
+    "strategic_materials": ["ammunition", "armor_plating"],
+    "food_production": "low"
+  },
+  "facilities": {
+    "military_installations": ["central_command_center", "armory", "training_grounds"],
+    "industrial_facilities": ["equipment_workshop", "communication_hub"],
+    "research_centers": ["tactical_planning_center"],
+    "trade_posts": ["authorized_merchant_station"],
+    "residential_areas": ["officer_quarters", "family_housing_block"]
+  },
+  "geography": {
+    "terrain_type": "reinforced_tunnel_junction",
+    "elevation": "standard_metro_level",
+    "special_features": ["natural_water_access", "strategic_chokepoint"],
+    "environmental_hazards": [],
+    "accessibility": "high"
+  },
+  "connections": {
+    "adjacent_sectors": {
+      "north": "A4",
+      "south": "A6",
+      "east": "B5",
+      "west": "restricted"
+    },
+    "tunnel_connections": ["main_line_east", "security_tunnel_north"],
+    "transport_hubs": ["central_platform"],
+    "restricted_passages": ["command_bunker_access"]
+  },
+  "security": {
+    "threat_level": "minimal",
+    "patrol_frequency": "constant",
+    "defense_systems": ["automated_turrets", "checkpoint_barriers"],
+    "checkpoints": ["main_entrance", "tunnel_junction"],
+    "safe_zones": ["civilian_quarter", "emergency_shelter"]
+  },
+  "history": {
+    "founding_date": "Metro Year 1",
+    "original_purpose": "Major subway interchange",
+    "major_events": ["watcher_headquarters_establishment", "first_inter_faction_meeting"],
+    "previous_controllers": ["temporary_survivor_groups"]
+  },
+  "economy": {
+    "economic_activity": "high",
+    "primary_industries": ["security_services", "equipment_maintenance"],
+    "trade_routes": ["merchant_corridor_to_B5", "supply_line_from_A4"],
+    "currency_accepted": ["metro_credits", "trade_goods"]
+  },
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-07-10T19:45:00+00:00",
+    "version": "1.0",
+    "grid_position": "A5",
+    "template_notes": "Example sector created using sector.template.json, represents key Watcher stronghold"
+  }
+}

@@ -1,7 +1,88 @@
 {
-  "is_template": true,
-  "index": [],
+  "is_template": false,
+  "index": [
+    {
+      "id": "00_intro",
+      "title": "The Genesis of the Metro World",
+      "type": "narrative",
+      "file": "00_intro.md",
+      "description": "Foundation document describing the origins and early history of the Metro world"
+    },
+    {
+      "id": "template_usage",
+      "title": "Template Usage Examples", 
+      "type": "documentation",
+      "file": "template_usage_examples.md",
+      "description": "Guide for using lore templates to create actual game content"
+    },
+    {
+      "id": "cross_reference_guide",
+      "title": "Cross-Reference Validation Guide",
+      "type": "documentation", 
+      "file": "cross_reference_validation.md",
+      "description": "Guidelines for maintaining data integrity across the lore system"
+    }
+  ],
+  "templates": [
+    {
+      "id": "faction_template",
+      "name": "Faction Template",
+      "file": "templates/faction.template.json",
+      "description": "Template for creating faction entries with comprehensive faction data"
+    },
+    {
+      "id": "character_template", 
+      "name": "Character Template",
+      "file": "templates/character.template.json",
+      "description": "Template for creating important character entries including faction leaders"
+    },
+    {
+      "id": "faction_relation_template",
+      "name": "Faction Relation Template", 
+      "file": "templates/faction_relation.template.json",
+      "description": "Template for defining relationships between factions"
+    },
+    {
+      "id": "sector_template",
+      "name": "Sector Template",
+      "file": "templates/sector.template.json", 
+      "description": "Template for creating sector entries in the 10x10 Metro grid system"
+    }
+  ],
+  "examples": [
+    {
+      "id": "watcher_faction_example",
+      "name": "Watcher Faction Example",
+      "file": "examples/watcher_faction_example.json",
+      "description": "Complete faction example using the faction template"
+    },
+    {
+      "id": "watcher_commander_example", 
+      "name": "Watcher Commander Character Example",
+      "file": "examples/watcher_commander_character.json",
+      "description": "Complete character example using the character template"
+    },
+    {
+      "id": "sector_a5_example",
+      "name": "Sector A5 Example",
+      "file": "examples/sector_a5_example.json", 
+      "description": "Complete sector example using the sector template"
+    }
+  ],
+  "development": {
+    "todo_file": "TODO.md",
+    "status": "foundation_complete",
+    "next_priorities": [
+      "Create remaining faction leaders using character template",
+      "Define key sectors in the 10x10 grid", 
+      "Establish faction relationships using relation template",
+      "Implement cross-reference validation system"
+    ]
+  },
   "meta": {
-    "last_modified": "2025-07-03T18:27:00+02:00"
+    "last_modified": "2025-07-10T19:50:00+00:00",
+    "created_by": "AI-System",
+    "version": "1.1",
+    "structure_notes": "Complete lore foundation with templates, examples, documentation, and validation guides"
   }
 }

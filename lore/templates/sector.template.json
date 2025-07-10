@@ -1,0 +1,91 @@
+{
+  "is_template": true,
+  "sector_id": "{{sector_id}}",
+  "coordinates": {
+    "x": "{{x_coordinate}}",
+    "y": "{{y_coordinate}}"
+  },
+  "name": "{{sector_name}}",
+  "description": "{{sector_description}}",
+  "sector_type": "{{sector_type}}",
+  "control": {
+    "controlling_faction": "{{controlling_faction_id}}",
+    "control_strength": "{{control_strength}}",
+    "contested": "{{is_contested}}",
+    "neutral_zone": "{{is_neutral}}"
+  },
+  "infrastructure": {
+    "condition": "{{infrastructure_condition}}",
+    "power_grid": "{{power_status}}",
+    "water_supply": "{{water_status}}",
+    "ventilation": "{{ventilation_status}}",
+    "transport_connections": ["{{connection_1}}", "{{connection_2}}"]
+  },
+  "population": {
+    "resident_count": "{{resident_count}}",
+    "population_density": "{{density_level}}",
+    "demographics": {
+      "civilians": "{{civilian_percentage}}",
+      "military": "{{military_percentage}}",
+      "traders": "{{trader_percentage}}",
+      "specialists": "{{specialist_percentage}}"
+    }
+  },
+  "resources": {
+    "natural_resources": ["{{resource_1}}", "{{resource_2}}"],
+    "manufactured_goods": ["{{good_1}}", "{{good_2}}"],
+    "strategic_materials": ["{{material_1}}", "{{material_2}}"],
+    "food_production": "{{food_production_level}}"
+  },
+  "facilities": {
+    "military_installations": ["{{installation_1}}", "{{installation_2}}"],
+    "industrial_facilities": ["{{facility_1}}", "{{facility_2}}"],
+    "research_centers": ["{{research_center_1}}"],
+    "trade_posts": ["{{trade_post_1}}", "{{trade_post_2}}"],
+    "residential_areas": ["{{residential_1}}", "{{residential_2}}"]
+  },
+  "geography": {
+    "terrain_type": "{{terrain_type}}",
+    "elevation": "{{elevation_level}}",
+    "special_features": ["{{feature_1}}", "{{feature_2}}"],
+    "environmental_hazards": ["{{hazard_1}}", "{{hazard_2}}"],
+    "accessibility": "{{accessibility_level}}"
+  },
+  "connections": {
+    "adjacent_sectors": {
+      "north": "{{north_sector}}",
+      "south": "{{south_sector}}",
+      "east": "{{east_sector}}",
+      "west": "{{west_sector}}"
+    },
+    "tunnel_connections": ["{{tunnel_1}}", "{{tunnel_2}}"],
+    "transport_hubs": ["{{hub_1}}"],
+    "restricted_passages": ["{{passage_1}}"]
+  },
+  "security": {
+    "threat_level": "{{threat_level}}",
+    "patrol_frequency": "{{patrol_frequency}}",
+    "defense_systems": ["{{defense_1}}", "{{defense_2}}"],
+    "checkpoints": ["{{checkpoint_1}}", "{{checkpoint_2}}"],
+    "safe_zones": ["{{safe_zone_1}}"]
+  },
+  "history": {
+    "founding_date": "{{founding_date}}",
+    "original_purpose": "{{original_purpose}}",
+    "major_events": ["{{event_1}}", "{{event_2}}"],
+    "previous_controllers": ["{{controller_1}}", "{{controller_2}}"]
+  },
+  "economy": {
+    "economic_activity": "{{economic_activity_level}}",
+    "primary_industries": ["{{industry_1}}", "{{industry_2}}"],
+    "trade_routes": ["{{route_1}}", "{{route_2}}"],
+    "currency_accepted": ["{{currency_1}}", "{{currency_2}}"]
+  },
+  "meta": {
+    "created_by": "{{creator}}",
+    "created_at": "{{iso_timestamp}}",
+    "version": "1.0",
+    "grid_position": "{{grid_reference}}",
+    "template_notes": "Template for creating sector entries in the 10x10 Metro grid system. Coordinates range from A1-J10. Sector types: 'residential', 'industrial', 'military', 'commercial', 'abandoned', 'restricted', 'neutral'."
+  }
+}

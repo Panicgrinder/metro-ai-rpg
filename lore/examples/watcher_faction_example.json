@@ -1,0 +1,38 @@
+{
+  "is_template": false,
+  "faction_id": "watcher",
+  "name": "Die Wächter (The Watchers)",
+  "description": "Former police and military units that maintain security and order in central Metro sectors. They evolved from survivors who had law enforcement or military training before the collapse.",
+  "home_sectors": ["A5", "B5"],
+  "relations": {
+    "allies": ["merchants"],
+    "enemies": ["shadows"],
+    "neutral": ["enlightened", "scientists"]
+  },
+  "influence_zones": ["central", "security"],
+  "leadership": "CHAR_watcher_commander_01",
+  "faction_flags": ["security", "law", "order"],
+  "ideology": "law_and_order",
+  "founding_date": "Metro Year 1",
+  "military_strength": "high",
+  "economic_power": "medium",
+  "technology_level": "standard",
+  "population": "large",
+  "specializations": ["security_operations", "patrol_management", "conflict_resolution"],
+  "territory_control": {
+    "primary_sectors": ["A5", "B5"],
+    "contested_sectors": [],
+    "influence_sectors": ["B4", "A4", "C5"]
+  },
+  "resources": {
+    "controlled_resources": ["security_equipment", "communication_systems"],
+    "trade_goods": ["protection_services", "security_training", "law_enforcement"],
+    "military_assets": ["patrol_units", "defensive_positions", "communication_network"]
+  },
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-07-10T19:35:00+00:00",
+    "version": "1.0",
+    "template_notes": "Enhanced Watcher faction using new comprehensive template structure, based on original faction_watcher.json"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "is_template": true,
+  "relation_id": "{{relation_id}}",
+  "faction_a": "{{faction_a_id}}",
+  "faction_b": "{{faction_b_id}}",
+  "relationship_type": "{{relationship_type}}",
+  "status": "{{current_status}}",
+  "strength": "{{relationship_strength}}",
+  "history": {
+    "established_date": "{{established_date}}",
+    "origin_event": "{{origin_event}}",
+    "key_events": [
+      {
+        "date": "{{event_date_1}}",
+        "event": "{{event_description_1}}",
+        "impact": "{{event_impact_1}}"
+      },
+      {
+        "date": "{{event_date_2}}",
+        "event": "{{event_description_2}}",
+        "impact": "{{event_impact_2}}"
+      }
+    ]
+  },
+  "current_state": {
+    "trust_level": "{{trust_level}}",
+    "cooperation_level": "{{cooperation_level}}",
+    "trade_status": "{{trade_status}}",
+    "military_stance": "{{military_stance}}",
+    "diplomatic_status": "{{diplomatic_status}}"
+  },
+  "interactions": {
+    "regular_meetings": "{{meeting_frequency}}",
+    "trade_agreements": ["{{trade_agreement_1}}", "{{trade_agreement_2}}"],
+    "military_pacts": ["{{military_pact_1}}"],
+    "shared_projects": ["{{project_1}}", "{{project_2}}"],
+    "ongoing_disputes": ["{{dispute_1}}", "{{dispute_2}}"]
+  },
+  "territory": {
+    "border_sectors": ["{{border_sector_1}}", "{{border_sector_2}}"],
+    "contested_areas": ["{{contested_area_1}}"],
+    "shared_facilities": ["{{shared_facility_1}}"],
+    "neutral_zones": ["{{neutral_zone_1}}"]
+  },
+  "key_contacts": {
+    "faction_a_representatives": ["{{rep_a_1}}", "{{rep_a_2}}"],
+    "faction_b_representatives": ["{{rep_b_1}}", "{{rep_b_2}}"],
+    "mediators": ["{{mediator_1}}"]
+  },
+  "future_projections": {
+    "trend": "{{relationship_trend}}",
+    "potential_changes": ["{{potential_change_1}}", "{{potential_change_2}}"],
+    "risk_factors": ["{{risk_factor_1}}", "{{risk_factor_2}}"],
+    "opportunities": ["{{opportunity_1}}", "{{opportunity_2}}"]
+  },
+  "meta": {
+    "created_by": "{{creator}}",
+    "created_at": "{{iso_timestamp}}",
+    "last_updated": "{{last_update_timestamp}}",
+    "version": "1.0",
+    "template_notes": "Template for defining relationships between factions in the Metro-AI-RPG. Relationship types: 'alliance', 'neutral', 'hostile', 'trade_partnership', 'non_aggression_pact', 'vassal', 'overlord'."
+  }
+}
