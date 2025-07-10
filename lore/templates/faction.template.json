@@ -1,0 +1,38 @@
+{
+  "is_template": true,
+  "faction_id": "{{faction_id}}",
+  "name": "{{faction_name}}",
+  "description": "{{faction_description}}",
+  "home_sectors": ["{{sector_1}}", "{{sector_2}}"],
+  "relations": {
+    "allies": ["{{ally_faction_1}}", "{{ally_faction_2}}"],
+    "enemies": ["{{enemy_faction_1}}", "{{enemy_faction_2}}"],
+    "neutral": ["{{neutral_faction_1}}", "{{neutral_faction_2}}"]
+  },
+  "influence_zones": ["{{zone_1}}", "{{zone_2}}"],
+  "leadership": "{{leader_character_id}}",
+  "faction_flags": ["{{flag_1}}", "{{flag_2}}"],
+  "ideology": "{{faction_ideology}}",
+  "founding_date": "{{founding_date}}",
+  "military_strength": "{{strength_level}}",
+  "economic_power": "{{economic_level}}",
+  "technology_level": "{{tech_level}}",
+  "population": "{{population_estimate}}",
+  "specializations": ["{{specialization_1}}", "{{specialization_2}}"],
+  "territory_control": {
+    "primary_sectors": ["{{primary_sector_1}}", "{{primary_sector_2}}"],
+    "contested_sectors": ["{{contested_sector_1}}"],
+    "influence_sectors": ["{{influence_sector_1}}", "{{influence_sector_2}}"]
+  },
+  "resources": {
+    "controlled_resources": ["{{resource_1}}", "{{resource_2}}"],
+    "trade_goods": ["{{trade_good_1}}", "{{trade_good_2}}"],
+    "military_assets": ["{{asset_1}}", "{{asset_2}}"]
+  },
+  "meta": {
+    "created_by": "{{creator}}",
+    "created_at": "{{iso_timestamp}}",
+    "version": "1.0",
+    "template_notes": "Template for creating faction entries in the Metro-AI-RPG. Replace all {{placeholder}} values with actual faction data."
+  }
+}

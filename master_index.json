@@ -85,6 +85,12 @@
       "status": "inactive"
     },
     {
+      "key": "lore",
+      "dir": "lore/",
+      "index": "lore/lore.json",
+      "status": "active"
+    },
+    {
       "key": "assets",
       "dir": "assets/",
       "index": null,
@@ -98,7 +104,8 @@
     }
   ],
   "meta": {
-    "last_modified": "2025-07-03T12:40:00+02:00",
-    "created_by": "licari"
+    "last_modified": "2025-07-10T19:25:00+00:00",
+    "created_by": "licari",
+    "last_updated_by": "AI-System"
   }
 }

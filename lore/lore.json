@@ -1,7 +1,53 @@
 {
-  "is_template": true,
-  "index": [],
+  "is_template": false,
+  "index": [
+    {
+      "id": "00_intro",
+      "title": "The Genesis of the Metro World",
+      "type": "narrative",
+      "file": "00_intro.md",
+      "description": "Foundation document describing the origins and early history of the Metro world"
+    }
+  ],
+  "templates": [
+    {
+      "id": "faction_template",
+      "name": "Faction Template",
+      "file": "templates/faction.template.json",
+      "description": "Template for creating faction entries with comprehensive faction data"
+    },
+    {
+      "id": "character_template", 
+      "name": "Character Template",
+      "file": "templates/character.template.json",
+      "description": "Template for creating important character entries including faction leaders"
+    },
+    {
+      "id": "faction_relation_template",
+      "name": "Faction Relation Template", 
+      "file": "templates/faction_relation.template.json",
+      "description": "Template for defining relationships between factions"
+    },
+    {
+      "id": "sector_template",
+      "name": "Sector Template",
+      "file": "templates/sector.template.json", 
+      "description": "Template for creating sector entries in the 10x10 Metro grid system"
+    }
+  ],
+  "development": {
+    "todo_file": "TODO.md",
+    "status": "foundation_established",
+    "next_priorities": [
+      "Create faction leaders using character template",
+      "Define key sectors in the 10x10 grid", 
+      "Establish faction relationships using relation template"
+    ]
+  },
   "meta": {
-    "last_modified": "2025-07-03T18:27:00+02:00"
+    "last_modified": "2025-07-10T19:20:00+00:00",
+    "created_by": "AI-System",
+    "version": "1.0",
+    "structure_notes": "Lore system now includes narrative content, templates for structured data, and development tracking"
   }
 }
