@@ -1,10 +1,10 @@
 {
   "scan_info": {
-    "timestamp": "2025-07-10T21:10:15.375524",
+    "timestamp": "2025-07-10T21:13:56.358043",
     "repository_root": "/home/runner/work/metro-ai-rpg/metro-ai-rpg",
     "total_files_checked": 58,
-    "total_directories_scanned": 23,
-    "total_violations": 193
+    "total_directories_scanned": 21,
+    "total_violations": 195
   },
   "rules_loaded": {
     "gpt_behavior_rules": 18,
@@ -44,7 +44,7 @@
   },
   "repository_structure": {
     "total_files": 58,
-    "total_directories": 23,
+    "total_directories": 21,
     "file_types": {
       ".json": 46,
       ".txt": 1,
@@ -66,14 +66,14 @@
               "path": "actors/A1.json",
               "size": 466,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             },
             {
               "name": "actors.json",
               "path": "actors/actors.json",
               "size": 316,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             }
           ]
         },
@@ -87,28 +87,28 @@
               "path": "factions/factions.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             },
             {
               "name": "faction_shadows.json",
               "path": "factions/faction_shadows.json",
               "size": 603,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             },
             {
               "name": "faction_merchants.json",
               "path": "factions/faction_merchants.json",
               "size": 603,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             },
             {
               "name": "faction_watcher.json",
               "path": "factions/faction_watcher.json",
               "size": 560,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             }
           ]
         },
@@ -122,14 +122,14 @@
               "path": "events/EVT-001.json",
               "size": 240,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             },
             {
               "name": "events.json",
               "path": "events/events.json",
               "size": 99,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             }
           ]
         },
@@ -143,7 +143,7 @@
               "path": "monsters/monsters.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.681428"
             }
           ]
         },
@@ -157,7 +157,7 @@
               "path": "missions/missions.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.681428"
             }
           ]
         },
@@ -171,7 +171,7 @@
               "path": "encyclopedia/encyclopedia.json",
               "size": 48,
               "extension": ".json",
-              "modified": "2025-07-10T21:03:29.934612"
+              "modified": "2025-07-10T21:13:17.680428"
             }
           ]
         },
@@ -185,15 +185,9 @@
               "path": "quests/quests.json",
               "size": 42,
               "extension": ".json",
-              "modified": "2025-07-10T21:03:21.420453"
+              "modified": "2025-07-10T21:13:17.681428"
             }
           ]
-        },
-        "assets": {
-          "name": "assets",
-          "path": "assets",
-          "subdirectories": {},
-          "files": []
         },
         "economy": {
           "name": "economy",
@@ -205,7 +199,7 @@
               "path": "economy/market.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             }
           ]
         },
@@ -219,7 +213,7 @@
               "path": "resources/resources.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.681428"
             }
           ]
         },
@@ -233,7 +227,7 @@
               "path": "relations/relations.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.681428"
             }
           ]
         },
@@ -241,12 +235,6 @@
           "name": "world",
           "path": "world",
           "subdirectories": {
-            "sectors": {
-              "name": "sectors",
-              "path": "world/sectors",
-              "subdirectories": {},
-              "files": []
-            },
             "locations": {
               "name": "locations",
               "path": "world/locations",
@@ -257,7 +245,7 @@
                   "path": "world/locations/LOC-3001.json",
                   "size": 551,
                   "extension": ".json",
-                  "modified": "2025-07-10T21:00:11.574907"
+                  "modified": "2025-07-10T21:13:17.682428"
                 }
               ]
             }
@@ -268,21 +256,21 @@
               "path": "world/sectors.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.682428"
             },
             {
               "name": "locations.json",
               "path": "world/locations.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.682428"
             },
             {
               "name": "world.json",
               "path": "world/world.json",
               "size": 556,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.682428"
             }
           ]
         },
@@ -296,7 +284,7 @@
               "path": "player_factions/player_factions.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.681428"
             }
           ]
         },
@@ -310,7 +298,7 @@
               "path": "dungeons/dungeons.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             }
           ]
         },
@@ -328,21 +316,21 @@
                   "path": "lore/examples/watcher_commander_character.json",
                   "size": 2461,
                   "extension": ".json",
-                  "modified": "2025-07-10T21:00:11.573907"
+                  "modified": "2025-07-10T21:13:17.680428"
                 },
                 {
                   "name": "watcher_faction_example.json",
                   "path": "lore/examples/watcher_faction_example.json",
                   "size": 1540,
                   "extension": ".json",
-                  "modified": "2025-07-10T21:07:31.845275"
+                  "modified": "2025-07-10T21:13:17.681428"
                 },
                 {
                   "name": "sector_a5_example.json",
                   "path": "lore/examples/sector_a5_example.json",
                   "size": 3126,
                   "extension": ".json",
-                  "modified": "2025-07-10T21:00:11.573907"
+                  "modified": "2025-07-10T21:13:17.680428"
                 }
               ]
             },
@@ -356,28 +344,28 @@
                   "path": "lore/templates/character.template.json",
                   "size": 2163,
                   "extension": ".json",
-                  "modified": "2025-07-10T21:00:11.573907"
+                  "modified": "2025-07-10T21:13:17.681428"
                 },
                 {
                   "name": "faction.template.json",
                   "path": "lore/templates/faction.template.json",
                   "size": 1550,
                   "extension": ".json",
-                  "modified": "2025-07-10T21:00:11.573907"
+                  "modified": "2025-07-10T21:13:17.681428"
                 },
                 {
                   "name": "faction_relation.template.json",
                   "path": "lore/templates/faction_relation.template.json",
                   "size": 2308,
                   "extension": ".json",
-                  "modified": "2025-07-10T21:00:11.573907"
+                  "modified": "2025-07-10T21:13:17.681428"
                 },
                 {
                   "name": "sector.template.json",
                   "path": "lore/templates/sector.template.json",
                   "size": 3384,
                   "extension": ".json",
-                  "modified": "2025-07-10T21:00:11.573907"
+                  "modified": "2025-07-10T21:13:17.681428"
                 }
               ]
             }
@@ -388,35 +376,35 @@
               "path": "lore/00_intro.md",
               "size": 9133,
               "extension": ".md",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.680428"
             },
             {
               "name": "TODO.md",
               "path": "lore/TODO.md",
               "size": 5068,
               "extension": ".md",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.680428"
             },
             {
               "name": "cross_reference_validation.md",
               "path": "lore/cross_reference_validation.md",
               "size": 4746,
               "extension": ".md",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.680428"
             },
             {
               "name": "template_usage_examples.md",
               "path": "lore/template_usage_examples.md",
               "size": 2595,
               "extension": ".md",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.681428"
             },
             {
               "name": "lore.json",
               "path": "lore/lore.json",
               "size": 3003,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.681428"
             }
           ]
         },
@@ -434,28 +422,28 @@
                   "path": "system/todo/README.md",
                   "size": 3822,
                   "extension": ".md",
-                  "modified": "2025-07-10T21:00:11.574907"
+                  "modified": "2025-07-10T21:13:17.682428"
                 },
                 {
                   "name": "repo_rule_checker.py",
                   "path": "system/todo/repo_rule_checker.py",
                   "size": 25241,
                   "extension": ".py",
-                  "modified": "2025-07-10T21:09:28.623533"
+                  "modified": "2025-07-10T21:13:17.682428"
                 },
                 {
                   "name": "update_master_index.py",
                   "path": "system/todo/update_master_index.py",
                   "size": 7919,
                   "extension": ".py",
-                  "modified": "2025-07-10T21:00:11.574907"
+                  "modified": "2025-07-10T21:13:17.682428"
                 },
                 {
                   "name": "rule_check_results.json",
                   "path": "system/todo/rule_check_results.json",
-                  "size": 80975,
+                  "size": 80973,
                   "extension": ".json",
-                  "modified": "2025-07-10T21:09:36.161679"
+                  "modified": "2025-07-10T21:13:17.682428"
                 }
               ]
             }
@@ -466,84 +454,84 @@
               "path": "system/todo.json",
               "size": 325,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.682428"
             },
             {
               "name": "metadata.json",
               "path": "system/metadata.json",
               "size": 1407,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.682428"
             },
             {
               "name": "gpt_behavior.json",
               "path": "system/gpt_behavior.json",
               "size": 4314,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.681428"
             },
             {
               "name": "session_log.json",
               "path": "system/session_log.json",
               "size": 211,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.682428"
             },
             {
               "name": "settings.json",
               "path": "system/settings.json",
               "size": 207,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.682428"
             },
             {
               "name": "engine.json",
               "path": "system/engine.json",
               "size": 268,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.681428"
             },
             {
               "name": "log.json",
               "path": "system/log.json",
               "size": 265,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.682428"
             },
             {
               "name": "gpt_lore.json",
               "path": "system/gpt_lore.json",
               "size": 523,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.681428"
             },
             {
               "name": "environment_status.json",
               "path": "system/environment_status.json",
               "size": 181,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.573907"
+              "modified": "2025-07-10T21:13:17.681428"
             },
             {
               "name": "gpt_zones.json",
               "path": "system/gpt_zones.json",
               "size": 347,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.681428"
             },
             {
               "name": "story_progress.json",
               "path": "system/story_progress.json",
               "size": 327,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.682428"
             },
             {
               "name": "version.json",
               "path": "system/version.json",
               "size": 551,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.574907"
+              "modified": "2025-07-10T21:13:17.682428"
             }
           ]
         },
@@ -557,14 +545,14 @@
               "path": "items/items.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             },
             {
               "name": "key_items.json",
               "path": "items/key_items.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             }
           ]
         },
@@ -578,7 +566,7 @@
               "path": "crafting/recipes.json",
               "size": 106,
               "extension": ".json",
-              "modified": "2025-07-10T21:00:11.572907"
+              "modified": "2025-07-10T21:13:17.680428"
             }
           ]
         }
@@ -589,42 +577,42 @@
           "path": "zusammenfassung_chat.txt",
           "size": 2441,
           "extension": ".txt",
-          "modified": "2025-07-10T21:00:11.575907"
+          "modified": "2025-07-10T21:13:17.682428"
         },
         {
           "name": "RULESET.md",
           "path": "RULESET.md",
           "size": 3002,
           "extension": ".md",
-          "modified": "2025-07-10T21:00:11.572907"
+          "modified": "2025-07-10T21:13:17.680428"
         },
         {
           "name": "README.md",
           "path": "README.md",
           "size": 4083,
           "extension": ".md",
-          "modified": "2025-07-10T21:00:11.572907"
+          "modified": "2025-07-10T21:13:17.679428"
         },
         {
           "name": "master_index.json",
           "path": "master_index.json",
           "size": 2612,
           "extension": ".json",
-          "modified": "2025-07-10T21:00:11.573907"
+          "modified": "2025-07-10T21:13:17.681428"
         },
         {
           "name": "LICENSE",
           "path": "LICENSE",
           "size": 1069,
           "extension": "",
-          "modified": "2025-07-10T21:00:11.572907"
+          "modified": "2025-07-10T21:13:17.679428"
         },
         {
           "name": ".gitignore",
           "path": ".gitignore",
           "size": 4688,
           "extension": "",
-          "modified": "2025-07-10T21:00:11.572907"
+          "modified": "2025-07-10T21:13:17.679428"
         }
       ]
     },
@@ -634,410 +622,426 @@
         "path": "actors/A1.json",
         "size": 466,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "actors.json",
         "path": "actors/actors.json",
         "size": 316,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "factions.json",
         "path": "factions/factions.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "faction_shadows.json",
         "path": "factions/faction_shadows.json",
         "size": 603,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "faction_merchants.json",
         "path": "factions/faction_merchants.json",
         "size": 603,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "faction_watcher.json",
         "path": "factions/faction_watcher.json",
         "size": 560,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "EVT-001.json",
         "path": "events/EVT-001.json",
         "size": 240,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "events.json",
         "path": "events/events.json",
         "size": 99,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "monsters.json",
         "path": "monsters/monsters.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "zusammenfassung_chat.txt",
         "path": "zusammenfassung_chat.txt",
         "size": 2441,
         "extension": ".txt",
-        "modified": "2025-07-10T21:00:11.575907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "missions.json",
         "path": "missions/missions.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "RULESET.md",
         "path": "RULESET.md",
         "size": 3002,
         "extension": ".md",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "README.md",
         "path": "README.md",
         "size": 4083,
         "extension": ".md",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.679428"
       },
       {
         "name": "master_index.json",
         "path": "master_index.json",
         "size": 2612,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "LICENSE",
         "path": "LICENSE",
         "size": 1069,
         "extension": "",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.679428"
       },
       {
         "name": "encyclopedia.json",
         "path": "encyclopedia/encyclopedia.json",
         "size": 48,
         "extension": ".json",
-        "modified": "2025-07-10T21:03:29.934612"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "quests.json",
         "path": "quests/quests.json",
         "size": 42,
         "extension": ".json",
-        "modified": "2025-07-10T21:03:21.420453"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "market.json",
         "path": "economy/market.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "resources.json",
         "path": "resources/resources.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "relations.json",
         "path": "relations/relations.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "sectors.json",
         "path": "world/sectors.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "locations.json",
         "path": "world/locations.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "LOC-3001.json",
         "path": "world/locations/LOC-3001.json",
         "size": 551,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "world.json",
         "path": "world/world.json",
         "size": 556,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "player_factions.json",
         "path": "player_factions/player_factions.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "dungeons.json",
         "path": "dungeons/dungeons.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": ".gitignore",
         "path": ".gitignore",
         "size": 4688,
         "extension": "",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.679428"
       },
       {
         "name": "00_intro.md",
         "path": "lore/00_intro.md",
         "size": 9133,
         "extension": ".md",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "TODO.md",
         "path": "lore/TODO.md",
         "size": 5068,
         "extension": ".md",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "watcher_commander_character.json",
         "path": "lore/examples/watcher_commander_character.json",
         "size": 2461,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "watcher_faction_example.json",
         "path": "lore/examples/watcher_faction_example.json",
         "size": 1540,
         "extension": ".json",
-        "modified": "2025-07-10T21:07:31.845275"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "sector_a5_example.json",
         "path": "lore/examples/sector_a5_example.json",
         "size": 3126,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "character.template.json",
         "path": "lore/templates/character.template.json",
         "size": 2163,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "faction.template.json",
         "path": "lore/templates/faction.template.json",
         "size": 1550,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "faction_relation.template.json",
         "path": "lore/templates/faction_relation.template.json",
         "size": 2308,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "sector.template.json",
         "path": "lore/templates/sector.template.json",
         "size": 3384,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "cross_reference_validation.md",
         "path": "lore/cross_reference_validation.md",
         "size": 4746,
         "extension": ".md",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "template_usage_examples.md",
         "path": "lore/template_usage_examples.md",
         "size": 2595,
         "extension": ".md",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "lore.json",
         "path": "lore/lore.json",
         "size": 3003,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "todo.json",
         "path": "system/todo.json",
         "size": 325,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "README.md",
         "path": "system/todo/README.md",
         "size": 3822,
         "extension": ".md",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "repo_rule_checker.py",
         "path": "system/todo/repo_rule_checker.py",
         "size": 25241,
         "extension": ".py",
-        "modified": "2025-07-10T21:09:28.623533"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "update_master_index.py",
         "path": "system/todo/update_master_index.py",
         "size": 7919,
         "extension": ".py",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "rule_check_results.json",
         "path": "system/todo/rule_check_results.json",
-        "size": 80975,
+        "size": 80973,
         "extension": ".json",
-        "modified": "2025-07-10T21:09:36.161679"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "metadata.json",
         "path": "system/metadata.json",
         "size": 1407,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "gpt_behavior.json",
         "path": "system/gpt_behavior.json",
         "size": 4314,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "session_log.json",
         "path": "system/session_log.json",
         "size": 211,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "settings.json",
         "path": "system/settings.json",
         "size": 207,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "engine.json",
         "path": "system/engine.json",
         "size": 268,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "log.json",
         "path": "system/log.json",
         "size": 265,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "gpt_lore.json",
         "path": "system/gpt_lore.json",
         "size": 523,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "environment_status.json",
         "path": "system/environment_status.json",
         "size": 181,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.573907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "gpt_zones.json",
         "path": "system/gpt_zones.json",
         "size": 347,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.681428"
       },
       {
         "name": "story_progress.json",
         "path": "system/story_progress.json",
         "size": 327,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "version.json",
         "path": "system/version.json",
         "size": 551,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.574907"
+        "modified": "2025-07-10T21:13:17.682428"
       },
       {
         "name": "items.json",
         "path": "items/items.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "key_items.json",
         "path": "items/key_items.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       },
       {
         "name": "recipes.json",
         "path": "crafting/recipes.json",
         "size": 106,
         "extension": ".json",
-        "modified": "2025-07-10T21:00:11.572907"
+        "modified": "2025-07-10T21:13:17.680428"
       }
     ]
   },
   "violations": [
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "master_index.json",
+      "reference": "world/sectors/",
+      "message": "Broken file reference 'world/sectors/' in master_index.json"
+    },
+    {
+      "rule": "crossref_redundancy_check",
+      "type": "broken_file_reference",
+      "severity": "high",
+      "file": "master_index.json",
+      "reference": "assets/",
+      "message": "Broken file reference 'assets/' in master_index.json"
+    },
     {
       "rule": "crossref_redundancy_check",
       "type": "file_analysis_error",
@@ -2614,8 +2618,8 @@
   ],
   "violation_summary": {
     "crossref_redundancy_check": {
-      "total": 2,
-      "high": 0,
+      "total": 4,
+      "high": 2,
       "medium": 0,
       "low": 2
     },
@@ -2694,7 +2698,7 @@
   },
   "compliance_status": {
     "overall": "FAIL",
-    "high_severity_issues": 0,
+    "high_severity_issues": 2,
     "medium_severity_issues": 6,
     "low_severity_issues": 187
   }
