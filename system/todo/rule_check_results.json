@@ -1,15 +1,15 @@
 {
   "scan_info": {
-    "timestamp": "2025-07-10T23:27:06.101057",
+    "timestamp": "2025-07-10T23:30:29.992122",
     "repository_root": "/home/runner/work/metro-ai-rpg/metro-ai-rpg",
     "total_files_checked": 73,
     "total_directories_scanned": 26,
-    "total_violations": 57,
+    "total_violations": 52,
     "master_index_loaded": true
   },
   "compliance_status": {
     "overall": "FAIL",
-    "high_severity_issues": 9,
+    "high_severity_issues": 4,
     "medium_severity_issues": 0,
     "low_severity_issues": 48
   },
@@ -40,51 +40,6 @@
       "other_file": "actors/a01.template.json",
       "id": "{{faction_id}}",
       "message": "Duplicate ID '{{faction_id}}' found in world/locations/l01.template.json (also in actors/a01.template.json)"
-    },
-    {
-      "rule": "id_management",
-      "type": "duplicate_id",
-      "severity": "high",
-      "file": "lore/factions/f04_lore.json",
-      "other_file": "factions/f04.json",
-      "id": "f04",
-      "message": "Duplicate ID 'f04' found in lore/factions/f04_lore.json (also in factions/f04.json)"
-    },
-    {
-      "rule": "id_management",
-      "type": "duplicate_id",
-      "severity": "high",
-      "file": "lore/factions/f02_lore.json",
-      "other_file": "factions/f02.json",
-      "id": "f02",
-      "message": "Duplicate ID 'f02' found in lore/factions/f02_lore.json (also in factions/f02.json)"
-    },
-    {
-      "rule": "id_management",
-      "type": "duplicate_id",
-      "severity": "high",
-      "file": "lore/factions/f01_lore.json",
-      "other_file": "factions/f01.json",
-      "id": "f01",
-      "message": "Duplicate ID 'f01' found in lore/factions/f01_lore.json (also in factions/f01.json)"
-    },
-    {
-      "rule": "id_management",
-      "type": "duplicate_id",
-      "severity": "high",
-      "file": "lore/factions/f03_lore.json",
-      "other_file": "factions/f03.json",
-      "id": "f03",
-      "message": "Duplicate ID 'f03' found in lore/factions/f03_lore.json (also in factions/f03.json)"
-    },
-    {
-      "rule": "id_management",
-      "type": "duplicate_id",
-      "severity": "high",
-      "file": "lore/templates/faction.template.json",
-      "other_file": "actors/a01.template.json",
-      "id": "{{faction_id}}",
-      "message": "Duplicate ID '{{faction_id}}' found in lore/templates/faction.template.json (also in actors/a01.template.json)"
     },
     {
       "rule": "id_management",
@@ -482,8 +437,8 @@
   ],
   "violation_summary": {
     "id_management": {
-      "total": 9,
-      "high": 9,
+      "total": 4,
+      "high": 4,
       "medium": 0,
       "low": 0
     },

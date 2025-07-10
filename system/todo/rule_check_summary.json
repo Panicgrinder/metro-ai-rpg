@@ -1,12 +1,12 @@
 {
   "scan_info": {
-    "timestamp": "2025-07-10T23:27:06.101057",
+    "timestamp": "2025-07-10T23:30:29.992122",
     "total_files_checked": 73,
-    "total_violations": 57,
+    "total_violations": 52,
     "status": "FAIL"
   },
   "priority_violations": {
-    "high_severity": 9,
+    "high_severity": 4,
     "medium_severity": 0,
     "actionable_files": {
       "missions/m01.template.json": [
@@ -39,56 +39,6 @@
           "reference": null
         }
       ],
-      "lore/factions/f04_lore.json": [
-        {
-          "rule": "id_management",
-          "type": "duplicate_id",
-          "severity": "high",
-          "message": "Duplicate ID 'f04' found in lore/factions/f04_lore.json (also in factions/f04.json)",
-          "line": null,
-          "reference": null
-        }
-      ],
-      "lore/factions/f02_lore.json": [
-        {
-          "rule": "id_management",
-          "type": "duplicate_id",
-          "severity": "high",
-          "message": "Duplicate ID 'f02' found in lore/factions/f02_lore.json (also in factions/f02.json)",
-          "line": null,
-          "reference": null
-        }
-      ],
-      "lore/factions/f01_lore.json": [
-        {
-          "rule": "id_management",
-          "type": "duplicate_id",
-          "severity": "high",
-          "message": "Duplicate ID 'f01' found in lore/factions/f01_lore.json (also in factions/f01.json)",
-          "line": null,
-          "reference": null
-        }
-      ],
-      "lore/factions/f03_lore.json": [
-        {
-          "rule": "id_management",
-          "type": "duplicate_id",
-          "severity": "high",
-          "message": "Duplicate ID 'f03' found in lore/factions/f03_lore.json (also in factions/f03.json)",
-          "line": null,
-          "reference": null
-        }
-      ],
-      "lore/templates/faction.template.json": [
-        {
-          "rule": "id_management",
-          "type": "duplicate_id",
-          "severity": "high",
-          "message": "Duplicate ID '{{faction_id}}' found in lore/templates/faction.template.json (also in actors/a01.template.json)",
-          "line": null,
-          "reference": null
-        }
-      ],
       "items/i01.template.json": [
         {
           "rule": "id_management",
@@ -108,8 +58,8 @@
   },
   "violation_breakdown": {
     "id_management": {
-      "total": 9,
-      "high": 9,
+      "total": 4,
+      "high": 4,
       "medium": 0,
       "low": 0
     },

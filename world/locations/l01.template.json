@@ -1,6 +1,6 @@
 {
   "is_template": true,
-  "id": "l01",
+  "id": "location_template",
   "name": "{{location_name}}",
   "sector": "{{sector_id}}",
   "type": "{{location_type}}",

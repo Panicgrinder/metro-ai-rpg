@@ -1,6 +1,6 @@
 {
   "is_template": true,
-  "id": "m01",
+  "id": "mission_template",
   "title": "{{mission_title}}",
   "description": "{{mission_description}}",
   "objectives": ["{{objective}}"],

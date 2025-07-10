@@ -1,5 +1,6 @@
 {
-  "faction_id": "f03",
+  "id": "f03_lore",
+  "references_faction": "f03",
   "name": "Händlergilde",
   "description": "Die Händlergilde organisiert und kontrolliert den Handel zwischen den Sektoren. Sie besitzen viele Kontakte und sichern Nachschub für die Metro.",
   "history": "Gegründet von überlebenden Geschäftsleuten und Händlern, die ihre kommerziellen Fähigkeiten nutzen, um das Überleben in der Metro durch organisierten Handel zu sichern.",
