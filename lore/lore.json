@@ -7,6 +7,20 @@
       "type": "narrative",
       "file": "00_intro.md",
       "description": "Foundation document describing the origins and early history of the Metro world"
+    },
+    {
+      "id": "template_usage",
+      "title": "Template Usage Examples", 
+      "type": "documentation",
+      "file": "template_usage_examples.md",
+      "description": "Guide for using lore templates to create actual game content"
+    },
+    {
+      "id": "cross_reference_guide",
+      "title": "Cross-Reference Validation Guide",
+      "type": "documentation", 
+      "file": "cross_reference_validation.md",
+      "description": "Guidelines for maintaining data integrity across the lore system"
     }
   ],
   "templates": [
@@ -35,19 +49,40 @@
       "description": "Template for creating sector entries in the 10x10 Metro grid system"
     }
   ],
+  "examples": [
+    {
+      "id": "watcher_faction_example",
+      "name": "Watcher Faction Example",
+      "file": "examples/watcher_faction_example.json",
+      "description": "Complete faction example using the faction template"
+    },
+    {
+      "id": "watcher_commander_example", 
+      "name": "Watcher Commander Character Example",
+      "file": "examples/watcher_commander_character.json",
+      "description": "Complete character example using the character template"
+    },
+    {
+      "id": "sector_a5_example",
+      "name": "Sector A5 Example",
+      "file": "examples/sector_a5_example.json", 
+      "description": "Complete sector example using the sector template"
+    }
+  ],
   "development": {
     "todo_file": "TODO.md",
-    "status": "foundation_established",
+    "status": "foundation_complete",
     "next_priorities": [
-      "Create faction leaders using character template",
+      "Create remaining faction leaders using character template",
       "Define key sectors in the 10x10 grid", 
-      "Establish faction relationships using relation template"
+      "Establish faction relationships using relation template",
+      "Implement cross-reference validation system"
     ]
   },
   "meta": {
-    "last_modified": "2025-07-10T19:20:00+00:00",
+    "last_modified": "2025-07-10T19:50:00+00:00",
     "created_by": "AI-System",
-    "version": "1.0",
-    "structure_notes": "Lore system now includes narrative content, templates for structured data, and development tracking"
+    "version": "1.1",
+    "structure_notes": "Complete lore foundation with templates, examples, documentation, and validation guides"
   }
 }

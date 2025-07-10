@@ -1,0 +1,61 @@
+{
+  "is_template": false,
+  "character_id": "CHAR_watcher_commander_01",
+  "name": "Marcus Steelwright",
+  "title": "Commander of the Central Guard",
+  "faction_affiliation": "watcher",
+  "role": "faction_leader",
+  "background": "Former metropolitan police chief who was conducting an underground inspection when the collapse occurred. Organized the first security patrols and established the Watcher protocol.",
+  "personality": {
+    "traits": ["disciplined", "protective", "pragmatic"],
+    "motivations": ["maintain_order", "protect_civilians"],
+    "fears": ["total_chaos", "loss_of_innocent_life"],
+    "goals": ["expand_security_coverage", "train_new_guards"]
+  },
+  "physical_description": {
+    "age": "52",
+    "appearance": "Tall, broad-shouldered man with graying hair and stern gray eyes. Bears scars from early tunnel conflicts.",
+    "distinguishing_features": ["police_badge_tattoo", "commander_insignia"]
+  },
+  "skills": {
+    "combat": "expert",
+    "leadership": "master",
+    "diplomacy": "advanced",
+    "technical": "intermediate",
+    "special_abilities": ["tactical_planning", "crowd_control"]
+  },
+  "relationships": {
+    "allies": ["CHAR_merchant_liaison", "CHAR_sector_captain_b5"],
+    "enemies": ["CHAR_shadow_infiltrator"],
+    "subordinates": ["CHAR_patrol_sergeant_01", "CHAR_communications_officer"],
+    "superiors": []
+  },
+  "equipment": {
+    "weapons": ["service_pistol", "tactical_baton"],
+    "armor": "reinforced_vest",
+    "personal_items": ["command_radio", "sector_maps"],
+    "faction_insignia": "Watcher commander badge with metro tunnel emblem"
+  },
+  "location": {
+    "home_sector": "A5",
+    "current_location": "A5_command_center",
+    "frequent_locations": ["B5_patrol_station", "central_council_chamber"]
+  },
+  "history": {
+    "origin": "Surface police chief caught underground during collapse",
+    "key_events": ["first_patrol_establishment", "shadow_conflict_resolution", "merchant_alliance_formation"],
+    "career_progression": ["patrol_organizer", "security_coordinator", "faction_commander"]
+  },
+  "status": {
+    "is_active": true,
+    "health_status": "good",
+    "current_mission": "expanding_patrol_coverage",
+    "availability": "high_priority_only"
+  },
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-07-10T19:40:00+00:00",
+    "version": "1.0",
+    "template_notes": "Example character created using character.template.json, serves as leader for Watcher faction"
+  }
+}
