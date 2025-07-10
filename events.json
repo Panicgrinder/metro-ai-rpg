@@ -1,0 +1,8 @@
+{
+  "is_template": true,
+  "events": [
+    {
+      "file": "events/{{event_file}}.json"
+    }
+  ]
+}

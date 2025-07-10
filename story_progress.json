@@ -1,0 +1,14 @@
+{
+  "is_template": true,
+  "story_arcs": [
+    {
+      "id": "{{arc_id}}",
+      "title": "{{arc_title}}",
+      "status": "{{arc_status}}",
+      "progress": "{{arc_progress}}",
+      "current_event": "{{current_event_id}}",
+      "events": ["{{event_id_1}}", "{{event_id_2}}"]
+    }
+  ],
+  "active_arc": "{{active_arc_id}}"
+}

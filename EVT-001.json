@@ -1,0 +1,9 @@
+{
+  "is_template": true,
+  "event_id": "{{event_id}}",
+  "title": "{{event_title}}",
+  "description": "{{event_description}}",
+  "location": "{{event_location}}",
+  "actors": ["{{player_id}}", "{{npc_id}}"],
+  "status": "{{event_status}}"
+}

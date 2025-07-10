@@ -1,0 +1,14 @@
+{
+  "is_template": true,
+  "engine_version": "0.1.1a",
+  "date_created": "2025-07-01T00:00:00Z",
+  "compatible_with": ["0.1.x"],
+  "core_ruleset": "postapo_standard_v1",
+  "structure_hash": "system+world+character+missions+economy+systems_v1",
+  "changelog": [
+    {
+      "date": "2025-07-01",
+      "description": "Initial modular system and module indexing introduced. Core rule set and cross-referencing defined. Machine-optimized file structure. Strict English for all system files. Versioning managed only in this admin environment."
+    }
+  ]
+}

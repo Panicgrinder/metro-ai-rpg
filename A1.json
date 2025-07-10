@@ -1,0 +1,17 @@
+{
+  "is_template": true,
+  "sector_id": "A1",
+  "status": "{{sector_status}}",
+  "environmental_flags": ["{{flag}}"],
+  "last_visited": "{{iso_timestamp}}",
+  "available_exits": ["{{sector_id}}"],
+  "special_features": ["{{feature}}"],
+  "locations": ["{{location_id}}"],
+  "active_events": ["{{event_id}}"],
+  "unlock_requires": ["{{requirement_id}}"],
+  "admin_notes": "",
+  "meta": {
+    "created_by": "GPT-4o",
+    "created_at": "{{iso_timestamp_created}}"
+  }
+}
