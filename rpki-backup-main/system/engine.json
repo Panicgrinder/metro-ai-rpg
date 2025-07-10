@@ -1,0 +1,9 @@
+{
+  "engine_name": "{{engine_name}}",
+  "engine": "0.1.1a",
+  "engine_author": "Licari, ChatGPT 4.1",
+  "modules_index": "system/modules_index.json",
+  "version_file": "system/version.json",
+  "ruleset_file": "system/ruleset_file.json",
+  "timezone": "Europe/Berlin"
+}

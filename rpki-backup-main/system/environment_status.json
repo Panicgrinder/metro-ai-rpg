@@ -1,0 +1,8 @@
+{
+  "is_template": true,
+  "weather": "{{weather_type}}",
+  "temperature": "{{temperature_c}}",
+  "time_of_day": "{{time_of_day}}",
+  "location": "{{location_id}}",
+  "alerts": []
+}

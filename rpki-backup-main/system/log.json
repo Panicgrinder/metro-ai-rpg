@@ -1,0 +1,12 @@
+{
+  "is_template": true,
+  "entries": [
+    // {
+    //   "timestamp": "{{iso_timestamp}}",
+    //   "user": "{{user_id}}",
+    //   "action": "{{action_type}}",
+    //   "target": "{{file_or_entity}}",
+    //   "description": "{{short_description}}"
+    // }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "is_template": true,
+  "id": "LOC-3001",
+  "name": "{{location_name}}",
+  "sector": "A1",
+  "type": "{{location_type}}",
+  "description": "{{location_description}}",
+  "coordinates": "{{coordinates}}",
+  "linked_events": ["{{event_id}}"],
+  "faction": "{{faction_id}}",
+  "status": "{{status}}",
+  "last_visited": "{{iso_timestamp}}",
+  "special_features": ["{{feature}}"],
+  "active_events": ["{{event_id}}"],
+  "unlock_requires": ["{{requirement_id}}"],
+  "meta": {
+    "created_by": "GPT-4o",
+    "created_at": "{{iso_timestamp_created}}"
+  }
+}
