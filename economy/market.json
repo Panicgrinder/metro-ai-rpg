@@ -1,7 +1,62 @@
 {
-  "is_template": true,
-  "index": [],
+  "is_template": false,
+  "economy_system": "metro_ai_rpg_economy",
+  "description": "Metro AI RPG Economy System - Resources, Trade Rules, and Market Management",
+  "resources": [
+    {
+      "id": "r01",
+      "name": "Wasser",
+      "file": "resources/r01.json",
+      "category": "basic",
+      "is_currency": false,
+      "lore_file": "../lore/resources/r01.lore.md"
+    },
+    {
+      "id": "r02", 
+      "name": "Nahrung",
+      "file": "resources/r02.json",
+      "category": "basic",
+      "is_currency": false,
+      "lore_file": "../lore/resources/r02.lore.md"
+    },
+    {
+      "id": "r03",
+      "name": "Military-Grade Ammo",
+      "file": "resources/r03.json", 
+      "category": "currency",
+      "is_currency": true,
+      "symbol": "MGR",
+      "lore_file": "../lore/resources/r03.lore.md"
+    },
+    {
+      "id": "r04",
+      "name": "Handmade Rounds",
+      "file": "resources/r04.json",
+      "category": "currency", 
+      "is_currency": true,
+      "symbol": "HMR",
+      "lore_file": "../lore/resources/r04.lore.md"
+    }
+  ],
+  "trade_system": {
+    "rules_file": "trade_rules.json",
+    "controller": "gpt",
+    "status": "active"
+  },
+  "development": {
+    "todo_file": "economy_todo.json", 
+    "status": "foundation_complete",
+    "next_priorities": [
+      "Implement market locations and NPCs",
+      "Add dynamic pricing mechanisms", 
+      "Create faction-specific trading rules",
+      "Integrate with crafting system"
+    ]
+  },
   "meta": {
-    "last_modified": "2025-07-03T18:27:00+02:00"
+    "last_modified": "2025-07-11T00:20:00+00:00",
+    "created_by": "AI-System",
+    "version": "1.0",
+    "system_notes": "Complete economy foundation with resources, trade rules, and lore integration"
   }
 }
