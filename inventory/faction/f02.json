@@ -1,0 +1,11 @@
+{
+  "owner_id": "f02", 
+  "resources": [
+    { "resource_id": "r01", "amount": 80 },
+    { "resource_id": "r02", "amount": 100 },
+    { "resource_id": "r06", "amount": 50 },
+    { "resource_id": "r08", "amount": 80 },
+    { "resource_id": "r05", "amount": 60 }
+  ],
+  "last_updated": "2025-01-11T00:00:00Z"
+}

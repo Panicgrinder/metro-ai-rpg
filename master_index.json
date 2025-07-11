@@ -113,10 +113,16 @@
       "dir": "docs/",
       "index": null,
       "status": "inactive"
+    },
+    {
+      "key": "inventory",
+      "dir": "inventory/",
+      "index": "inventory/inventory.json",
+      "status": "active"
     }
   ],
   "meta": {
-    "last_modified": "2025-07-11T01:07:17.234204+00:00",
+    "last_modified": "2025-07-11T01:09:59.712751+00:00",
     "created_by": "licari",
     "last_updated_by": "AI-System"
   }

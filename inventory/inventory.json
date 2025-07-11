@@ -1,0 +1,60 @@
+{
+  "is_template": false,
+  "type": "inventory_index",
+  "title": "Zentrales Inventarsystem",
+  "description": "Übersicht aller Inventare für Spieler, Fraktionen und NPCs im Metro-AI-RPG.",
+  "structure": {
+    "player_inventories": "inventory/player/",
+    "faction_inventories": "inventory/faction/", 
+    "npc_inventories": "inventory/npc/"
+  },
+  "inventory_files": [
+    {
+      "type": "player",
+      "owner_id": "player_001",
+      "file": "inventory/player/player_001.json"
+    },
+    {
+      "type": "faction",
+      "owner_id": "f01",
+      "file": "inventory/faction/f01.json"
+    },
+    {
+      "type": "faction", 
+      "owner_id": "f02",
+      "file": "inventory/faction/f02.json"
+    },
+    {
+      "type": "faction",
+      "owner_id": "f03", 
+      "file": "inventory/faction/f03.json"
+    },
+    {
+      "type": "faction",
+      "owner_id": "f04",
+      "file": "inventory/faction/f04.json"
+    },
+    {
+      "type": "faction",
+      "owner_id": "faction_redline",
+      "file": "inventory/faction/faction_redline.json"
+    },
+    {
+      "type": "npc",
+      "owner_id": "npc_trader_01",
+      "file": "inventory/npc/npc_trader_01.json"
+    }
+  ],
+  "schema": {
+    "required_fields": ["owner_id", "resources", "last_updated"],
+    "resource_format": {
+      "resource_id": "string (format: r01, r02, etc.)",
+      "amount": "number (positive integer)"
+    }
+  },
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z",
+    "version": "1.0"
+  }
+}

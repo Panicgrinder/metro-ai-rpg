@@ -9,7 +9,7 @@
     "technical": "{{technical_skill}}",
     "social": "{{social_skill}}"
   },
-  "inventory": ["{{item_id}}"],
+  "inventory_ref": "{{inventory_ref}}",
   "faction_id": "{{faction_id}}",
   "location_id": "{{location_id}}",
   "status": "{{actor_status}}",

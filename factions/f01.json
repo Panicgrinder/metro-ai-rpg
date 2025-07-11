@@ -1,6 +1,7 @@
 {
   "id": "f01",
   "name": "Metro-Garde",
+  "inventory_ref": "/inventory/faction/f01.json",
   "territory": ["A1", "A2", "B1"],
   "leader_id": "a02",
   "resources": [

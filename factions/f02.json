@@ -1,6 +1,7 @@
 {
   "id": "f02",
   "name": "Die Schatten",
+  "inventory_ref": "/inventory/faction/f02.json",
   "territory": ["D3"],
   "leader_id": "a03",
   "resources": [

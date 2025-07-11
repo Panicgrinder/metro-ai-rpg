@@ -1,6 +1,7 @@
 {
   "id": "f04",
   "name": "Die Wächter",
+  "inventory_ref": "/inventory/faction/f04.json",
   "territory": ["A5", "B5", "B4"],
   "leader_id": "a05",
   "resources": [
