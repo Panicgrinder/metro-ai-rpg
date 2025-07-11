@@ -1,0 +1,15 @@
+{
+  "id": "r20",
+  "name": "Mutantenreste",
+  "type": "special",
+  "description": "Verwertbare Teile von Mutanten. Gefährlich zu beschaffen, aber wertvoll für spezielle Zwecke.",
+  "base_value": 30,
+  "availability": "rare",
+  "sources": ["mutant_hunting", "dangerous_expeditions", "combat_salvage"],
+  "used_in": ["alchemy", "research", "weapon_crafting", "medicine"],
+  "faction_id": null,
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z"
+  }
+}

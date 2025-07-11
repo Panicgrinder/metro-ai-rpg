@@ -1,0 +1,15 @@
+{
+  "id": "r21",
+  "name": "Relikte der Oberfläche",
+  "type": "artifact",
+  "description": "Seltene Gegenstände von der verseuchten Oberfläche. Zeugen der vergangenen Welt.",
+  "base_value": 45,
+  "availability": "very_rare",
+  "sources": ["surface_expeditions", "artifact_hunters", "ruins_exploration"],
+  "used_in": ["collection", "research", "high_value_trade", "cultural_value"],
+  "faction_id": null,
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z"
+  }
+}

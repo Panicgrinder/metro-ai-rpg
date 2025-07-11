@@ -1,0 +1,15 @@
+{
+  "id": "r11",
+  "name": "Batterien",
+  "type": "technology",
+  "description": "Energiespeicher für elektronische Geräte. Macht den Unterschied zwischen funktionierender und toter Technik.",
+  "base_value": 18,
+  "availability": "uncommon",
+  "sources": ["electronics_salvage", "abandoned_offices", "power_stations"],
+  "used_in": ["device_power", "lighting", "communication_equipment"],
+  "faction_id": null,
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z"
+  }
+}

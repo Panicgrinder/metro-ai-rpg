@@ -1,0 +1,15 @@
+{
+  "id": "r24",
+  "name": "Werkzeugteile",
+  "type": "material",
+  "description": "Ersatzteile und Komponenten für Werkzeuge. Essentiell für Reparaturen und Wartung.",
+  "base_value": 9,
+  "availability": "common",
+  "sources": ["machine_shops", "industrial_areas", "salvage_operations"],
+  "used_in": ["tool_repair", "equipment_maintenance", "crafting_upgrades"],
+  "faction_id": null,
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z"
+  }
+}
