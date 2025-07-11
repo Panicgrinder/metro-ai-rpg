@@ -56,6 +56,153 @@
       "type": "consumable",
       "base_value": 6,
       "availability": "uncommon"
+    },
+    {
+      "id": "r09",
+      "name": "Filtermasken",
+      "type": "equipment",
+      "base_value": 20,
+      "availability": "uncommon"
+    },
+    {
+      "id": "r10",
+      "name": "Filterpatronen",
+      "type": "consumable",
+      "base_value": 15,
+      "availability": "rare"
+    },
+    {
+      "id": "r11",
+      "name": "Batterien",
+      "type": "technology",
+      "base_value": 18,
+      "availability": "uncommon"
+    },
+    {
+      "id": "r12",
+      "name": "Bücher & Wissen",
+      "type": "knowledge",
+      "base_value": 25,
+      "availability": "rare"
+    },
+    {
+      "id": "r13",
+      "name": "Werkzeuge",
+      "type": "equipment",
+      "base_value": 22,
+      "availability": "uncommon"
+    },
+    {
+      "id": "r14",
+      "name": "Handlampen",
+      "type": "equipment",
+      "base_value": 16,
+      "availability": "common"
+    },
+    {
+      "id": "r15",
+      "name": "Spielzeug",
+      "type": "luxury",
+      "base_value": 8,
+      "availability": "uncommon"
+    },
+    {
+      "id": "r16",
+      "name": "Alkohol",
+      "type": "luxury",
+      "base_value": 10,
+      "availability": "rare"
+    },
+    {
+      "id": "r17",
+      "name": "Zigaretten",
+      "type": "luxury",
+      "base_value": 7,
+      "availability": "uncommon"
+    },
+    {
+      "id": "r18",
+      "name": "Saatgut",
+      "type": "material",
+      "base_value": 12,
+      "availability": "rare"
+    },
+    {
+      "id": "r19",
+      "name": "Pilze",
+      "type": "food",
+      "base_value": 4,
+      "availability": "common"
+    },
+    {
+      "id": "r20",
+      "name": "Mutantenreste",
+      "type": "special",
+      "base_value": 30,
+      "availability": "rare"
+    },
+    {
+      "id": "r21",
+      "name": "Relikte der Oberfläche",
+      "type": "artifact",
+      "base_value": 45,
+      "availability": "very_rare"
+    },
+    {
+      "id": "r22",
+      "name": "Kommunikationsgeräte",
+      "type": "equipment",
+      "base_value": 35,
+      "availability": "rare"
+    },
+    {
+      "id": "r23",
+      "name": "Uniformen",
+      "type": "equipment",
+      "base_value": 14,
+      "availability": "uncommon"
+    },
+    {
+      "id": "r24",
+      "name": "Werkzeugteile",
+      "type": "material",
+      "base_value": 9,
+      "availability": "common"
+    },
+    {
+      "id": "r25",
+      "name": "Chemikalien",
+      "type": "chemical",
+      "base_value": 28,
+      "availability": "rare"
+    },
+    {
+      "id": "r26",
+      "name": "Sprengstoffe",
+      "type": "equipment",
+      "base_value": 40,
+      "availability": "very_rare"
+    },
+    {
+      "id": "r27",
+      "name": "Schmuckstücke",
+      "type": "luxury",
+      "base_value": 32,
+      "availability": "rare"
+    },
+    {
+      "id": "r28",
+      "name": "Medikamente (speziell)",
+      "type": "medical",
+      "base_value": 38,
+      "availability": "very_rare"
+    },
+    {
+      "id": "r29",
+      "name": "Tauschmarken (Token)",
+      "type": "currency",
+      "base_value": 5,
+      "availability": "uncommon"
     }
   ],
   "meta": {

@@ -1,0 +1,15 @@
+{
+  "id": "r16",
+  "name": "Alkohol",
+  "type": "luxury",
+  "description": "Hochprozentiger Alkohol als Luxusgut und Zahlungsmittel. Wertvoller als der gewöhnliche Alkohol.",
+  "base_value": 10,
+  "availability": "rare",
+  "sources": ["premium_distilleries", "pre_war_stockpiles", "black_market"],
+  "used_in": ["luxury_trade", "diplomatic_gifts", "high_value_transactions"],
+  "faction_id": null,
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z"
+  }
+}

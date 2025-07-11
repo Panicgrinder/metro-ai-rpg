@@ -1,0 +1,15 @@
+{
+  "id": "r17",
+  "name": "Zigaretten",
+  "type": "luxury",
+  "description": "Tabakwaren als Luxusgut und alternative Währung. Begehrt für Entspannung und Handel.",
+  "base_value": 7,
+  "availability": "uncommon",
+  "sources": ["tobacco_shops", "personal_stockpiles", "smuggling"],
+  "used_in": ["stress_relief", "small_transactions", "social_currency"],
+  "faction_id": null,
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z"
+  }
+}

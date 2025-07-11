@@ -1,0 +1,15 @@
+{
+  "id": "r10",
+  "name": "Filterpatronen",
+  "type": "consumable",
+  "description": "Ersatzfilter für Gasmasken und Atemschutzgeräte. Lebensnotwendig in verseuchten Gebieten.",
+  "base_value": 15,
+  "availability": "rare",
+  "sources": ["military_stockpiles", "scavenging", "tech_traders"],
+  "used_in": ["gas_mask_maintenance", "air_filtration", "survival_equipment"],
+  "faction_id": null,
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z"
+  }
+}
