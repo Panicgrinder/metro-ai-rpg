@@ -28,5 +28,22 @@
     "special_abilities": ["stealth_operations", "smuggling", "intelligence_gathering"],
     "faction_type": "criminal_syndicate",
     "governance_style": "shadow_council"
+  },
+  "starting_conditions": {
+    "resources": {
+      "r01": 80,
+      "r02": 100,
+      "r06": 50,
+      "r08": 80,
+      "r05": 60
+    },
+    "items": {
+      "i01": 35,
+      "i02": 50,
+      "i03": 12,
+      "i06": 15
+    },
+    "total_value": 3400,
+    "specialization": "stealth_intelligence"
   }
 }

@@ -1,0 +1,15 @@
+{
+  "id": "r05",
+  "name": "Schrott",
+  "type": "material",
+  "description": "Metallschrott für Reparaturen und Handwerk.",
+  "base_value": 2,
+  "availability": "common",
+  "sources": ["abandoned_areas", "demolished_structures"],
+  "used_in": ["crafting", "repairs", "construction"],
+  "faction_id": null,
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z"
+  }
+}

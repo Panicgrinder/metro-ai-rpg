@@ -1,0 +1,15 @@
+{
+  "id": "r08",
+  "name": "Alkohol",
+  "type": "consumable",
+  "description": "Selbstgebrauter Alkohol, wertvoll für Tausch und Moral.",
+  "base_value": 6,
+  "availability": "uncommon",
+  "sources": ["distilleries", "home_brewing"],
+  "used_in": ["trade", "medicine", "morale"],
+  "faction_id": null,
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z"
+  }
+}

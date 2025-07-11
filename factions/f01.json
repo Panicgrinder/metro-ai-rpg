@@ -28,5 +28,23 @@
     "special_abilities": ["law_enforcement", "territory_patrol"],
     "faction_type": "paramilitary",
     "governance_style": "authoritarian"
+  },
+  "starting_conditions": {
+    "resources": {
+      "r01": 150,
+      "r02": 200,
+      "r03": 50,
+      "r04": 30,
+      "r05": 100
+    },
+    "items": {
+      "i01": 20,
+      "i02": 100,
+      "i04": 15,
+      "i05": 10,
+      "i06": 8
+    },
+    "total_value": 3400,
+    "specialization": "military_security"
   }
 }

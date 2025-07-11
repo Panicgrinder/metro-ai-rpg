@@ -1,7 +1,38 @@
 {
-  "is_template": true,
-  "index": [],
+  "is_template": false,
+  "index": [
+    {
+      "id": "f01",
+      "name": "Metro-Garde",
+      "type": "paramilitary",
+      "economic_power": 6,
+      "military_strength": 8
+    },
+    {
+      "id": "f02",
+      "name": "Die Schatten",
+      "type": "criminal_syndicate", 
+      "economic_power": 7,
+      "military_strength": 4
+    },
+    {
+      "id": "f03",
+      "name": "Händlergilde",
+      "type": "merchant_guild",
+      "economic_power": 9,
+      "military_strength": 3
+    },
+    {
+      "id": "f04",
+      "name": "Die Wächter",
+      "type": "security_force",
+      "economic_power": 4,
+      "military_strength": 7
+    }
+  ],
   "meta": {
-    "last_modified": "2025-07-03T18:27:00+02:00"
+    "last_modified": "2025-01-11T00:00:00Z",
+    "created_by": "AI-System",
+    "last_updated_by": "AI-System"
   }
 }
