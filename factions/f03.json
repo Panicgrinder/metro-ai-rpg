@@ -1,7 +1,6 @@
 {
   "id": "f03",
   "name": "Händlergilde",
-  "inventory_ref": "/inventory/faction/f03.json",
   "territory": ["A2", "C1"],
   "leader_id": "a04", 
   "resources": [

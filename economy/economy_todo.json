@@ -103,10 +103,10 @@
       "priority": "hoch",
       "title": "Zentrales Inventarsystem für Spieler, Fraktionen und NPCs implementieren",
       "details": [
-        "Erstelle /inventory/ Verzeichnisstruktur mit Unterordnern für player/, faction/, npc/.",
+        "Erstelle /inventory/ Verzeichnisstruktur mit Unterordnern für player/ und npc/.",
         "Implementiere maschinenlesbare JSON-Inventare mit owner_id, resources und last_updated.",
-        "Ergänze inventory_ref Felder in allen Akteurs-Definitionen.",
-        "Gewährleiste Konsistenz zwischen bestehenden starting_conditions und neuen Inventaren."
+        "Nutze bestehende starting_conditions.resources in Fraktionsdateien für Fraktions-Inventare.",
+        "Eliminiere Redundanz durch schlanke, zentrale Struktur."
       ],
       "status": "abgeschlossen"
     }

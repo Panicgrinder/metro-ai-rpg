@@ -1,8 +1,0 @@
-{
-  "owner_id": "faction_redline",
-  "resources": [
-    { "resource_id": "r02", "amount": 100 },
-    { "resource_id": "r04", "amount": 50 }
-  ],
-  "last_updated": "2025-07-11T01:04:24Z"
-}
