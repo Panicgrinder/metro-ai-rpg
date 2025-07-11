@@ -1,0 +1,10 @@
+{
+  "id": "r02",
+  "name": "Nahrung",
+  "category": "basic",
+  "description": "Essbare Vorräte verschiedener Herkunft.",
+  "is_currency": false,
+  "symbol": null,
+  "value_base": 8,
+  "tradable": true
+}

@@ -1,0 +1,11 @@
+{
+  "id": "r03",
+  "name": "Military-Grade Ammo",
+  "category": "currency",
+  "description": "Seltene, hochwertige Munition. Dient als Premiumwährung und kann im Kampf eingesetzt werden.",
+  "is_currency": true,
+  "symbol": "MGR",
+  "value_base": 10,
+  "tradable": true,
+  "usable_in_combat": true
+}
