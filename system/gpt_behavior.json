@@ -89,6 +89,36 @@
       "id": "audit_trail",
       "target": "system-wide",
       "description": "All critical file and game state changes are recorded in an immutable audit log, reviewed regularly for suspicious activity."
+    },
+    {
+      "id": "character_creation_startup",
+      "target": "gpt",
+      "description": "When no previous game state or character is detected, GPT must automatically initiate a new interactive character creation process. No game may begin without a properly created character."
+    },
+    {
+      "id": "character_creation_dialogue",
+      "target": "gpt",
+      "description": "Character creation is conducted as an interactive dialogue where GPT asks targeted questions about the character's name, identity, origin, motivation, abilities, weaknesses, relationships, and appearance. GPT processes each answer individually, responds appropriately, and asks follow-up questions to develop character details."
+    },
+    {
+      "id": "character_creation_context",
+      "target": "gpt",
+      "description": "Before each character creation question, GPT may optionally explain the context or significance of the upcoming decision to enhance immersion and help players understand the impact of their choices."
+    },
+    {
+      "id": "character_sheet_generation",
+      "target": "gpt",
+      "description": "Upon completion of the character creation dialogue, GPT automatically generates a complete character sheet in JSON format plus associated lore documentation. This process is mandatory and occurs without requiring additional player input."
+    },
+    {
+      "id": "character_creation_validation",
+      "target": "gpt",
+      "description": "GPT validates that all essential character information has been collected before proceeding to character sheet generation. If any critical information is missing, GPT asks appropriate follow-up questions."
+    },
+    {
+      "id": "game_start_prevention",
+      "target": "gpt",
+      "description": "GPT must prevent any game session from starting if no valid character exists. This rule applies to all game modes and ensures consistent character-driven gameplay experience."
     }
   ]
 }
