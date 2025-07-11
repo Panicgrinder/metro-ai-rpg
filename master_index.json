@@ -64,7 +64,7 @@
       "key": "quests",
       "dir": "quests/",
       "index": "quests/quests.json",
-      "status": "inactive"
+      "status": "active"
     },
     {
       "key": "dungeons",
@@ -88,7 +88,7 @@
       "key": "encyclopedia",
       "dir": "encyclopedia/",
       "index": "encyclopedia/encyclopedia.json",
-      "status": "inactive"
+      "status": "active"
     },
     {
       "key": "missions",
@@ -101,10 +101,28 @@
       "dir": "world/",
       "index": "world/world.json",
       "status": "active"
+    },
+    {
+      "key": "data",
+      "dir": "data/",
+      "index": null,
+      "status": "inactive"
+    },
+    {
+      "key": "docs",
+      "dir": "docs/",
+      "index": null,
+      "status": "inactive"
+    },
+    {
+      "key": "inventory",
+      "dir": "inventory/",
+      "index": "inventory/inventory.json",
+      "status": "active"
     }
   ],
   "meta": {
-    "last_modified": "2025-07-10T20:31:13.811280+00:00",
+    "last_modified": "2025-07-11T01:20:23.182733+00:00",
     "created_by": "licari",
     "last_updated_by": "AI-System"
   }

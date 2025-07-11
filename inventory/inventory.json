@@ -1,0 +1,36 @@
+{
+  "is_template": false,
+  "type": "inventory_index",
+  "title": "Zentrales Inventarsystem",
+  "description": "Übersicht der zentralen Inventare für Spieler und NPCs im Metro-AI-RPG. Fraktions-Inventare werden in den jeweiligen Fraktionsdateien unter 'starting_conditions.resources' verwaltet.",
+  "structure": {
+    "player_inventories": "inventory/player/",
+    "faction_inventories": "See factions/*.json starting_conditions.resources", 
+    "npc_inventories": "inventory/npc/"
+  },
+  "inventory_files": [
+    {
+      "type": "player",
+      "owner_id": "player_001",
+      "file": "inventory/player/player_001.json"
+    },
+    {
+      "type": "npc",
+      "owner_id": "npc_trader_01",
+      "file": "inventory/npc/npc_trader_01.json"
+    }
+  ],
+  "schema": {
+    "description": "Schema für Spieler- und NPC-Inventare. Fraktions-Inventare folgen demselben Format, befinden sich aber in factions/*.json unter 'starting_conditions.resources'.",
+    "required_fields": ["owner_id", "resources", "last_updated"],
+    "resource_format": {
+      "resource_id": "string (format: r01, r02, etc.)",
+      "amount": "number (positive integer)"
+    }
+  },
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T10:30:00Z",
+    "version": "1.0"
+  }
+}

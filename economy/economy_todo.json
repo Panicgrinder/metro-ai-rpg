@@ -97,6 +97,18 @@
         "Prüfe externe Markteinflüsse und Ereignisse."
       ],
       "status": "offen"
+    },
+    {
+      "id": "eco_todo_10",
+      "priority": "hoch",
+      "title": "Zentrales Inventarsystem für Spieler, Fraktionen und NPCs implementieren",
+      "details": [
+        "Erstelle /inventory/ Verzeichnisstruktur mit Unterordnern für player/ und npc/.",
+        "Implementiere maschinenlesbare JSON-Inventare mit owner_id, resources und last_updated.",
+        "Nutze bestehende starting_conditions.resources in Fraktionsdateien für Fraktions-Inventare.",
+        "Eliminiere Redundanz durch schlanke, zentrale Struktur."
+      ],
+      "status": "abgeschlossen"
     }
   ],
   "meta": {
