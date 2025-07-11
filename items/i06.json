@@ -1,0 +1,16 @@
+{
+  "id": "i06",
+  "name": "Medkit",
+  "type": "medical",
+  "description": "Notfall-Medizinset für Erste Hilfe.",
+  "value": 30,
+  "weight": 0.5,
+  "rarity": "uncommon",
+  "properties": ["healing", "consumable"],
+  "faction_id": null,
+  "location_id": null,
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z"
+  }
+}

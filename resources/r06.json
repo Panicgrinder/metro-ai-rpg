@@ -1,0 +1,15 @@
+{
+  "id": "r06",
+  "name": "Elektronik",
+  "type": "technology",
+  "description": "Seltene elektronische Bauteile und Geräte.",
+  "base_value": 20,
+  "availability": "rare",
+  "sources": ["technical_facilities", "abandoned_electronics"],
+  "used_in": ["communications", "repairs", "crafting"],
+  "faction_id": null,
+  "meta": {
+    "created_by": "AI-System",
+    "created_at": "2025-01-11T00:00:00Z"
+  }
+}

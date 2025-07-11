@@ -1,7 +1,66 @@
 {
-  "is_template": true,
-  "index": [],
+  "is_template": false,
+  "index": [
+    {
+      "id": "r01",
+      "name": "Wasser",
+      "type": "consumable",
+      "base_value": 5,
+      "availability": "scarce"
+    },
+    {
+      "id": "r02",
+      "name": "Nahrung",
+      "type": "consumable", 
+      "base_value": 8,
+      "availability": "scarce"
+    },
+    {
+      "id": "r03",
+      "name": "Filter",
+      "type": "equipment",
+      "base_value": 15,
+      "availability": "rare"
+    },
+    {
+      "id": "r04",
+      "name": "Medikamente",
+      "type": "medical",
+      "base_value": 12,
+      "availability": "rare"
+    },
+    {
+      "id": "r05",
+      "name": "Schrott",
+      "type": "material",
+      "base_value": 2,
+      "availability": "common"
+    },
+    {
+      "id": "r06",
+      "name": "Elektronik",
+      "type": "technology",
+      "base_value": 20,
+      "availability": "rare"
+    },
+    {
+      "id": "r07",
+      "name": "Pilze",
+      "type": "food",
+      "base_value": 3,
+      "availability": "common"
+    },
+    {
+      "id": "r08",
+      "name": "Alkohol",
+      "type": "consumable",
+      "base_value": 6,
+      "availability": "uncommon"
+    }
+  ],
   "meta": {
-    "last_modified": "2025-07-03T18:27:00+02:00"
+    "last_modified": "2025-01-11T00:00:00Z",
+    "created_by": "AI-System",
+    "last_updated_by": "AI-System"
   }
 }

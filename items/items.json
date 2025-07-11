@@ -1,7 +1,52 @@
 {
-  "is_template": true,
-  "index": [],
+  "is_template": false,
+  "index": [
+    {
+      "id": "i01",
+      "name": "Military-Grade Ammo",
+      "type": "currency",
+      "value": 10,
+      "rarity": "rare"
+    },
+    {
+      "id": "i02",
+      "name": "Handmade Rounds",
+      "type": "currency",
+      "value": 1,
+      "rarity": "common"
+    },
+    {
+      "id": "i03",
+      "name": "Gasmaske",
+      "type": "equipment",
+      "value": 50,
+      "rarity": "uncommon"
+    },
+    {
+      "id": "i04",
+      "name": "Kalashnikov",
+      "type": "weapon",
+      "value": 200,
+      "rarity": "uncommon"
+    },
+    {
+      "id": "i05",
+      "name": "Kevlar-Weste",
+      "type": "armor",
+      "value": 150,
+      "rarity": "rare"
+    },
+    {
+      "id": "i06",
+      "name": "Medkit",
+      "type": "medical",
+      "value": 30,
+      "rarity": "uncommon"
+    }
+  ],
   "meta": {
-    "last_modified": "2025-07-03T18:27:00+02:00"
+    "last_modified": "2025-01-11T00:00:00Z",
+    "created_by": "AI-System",
+    "last_updated_by": "AI-System"
   }
 }

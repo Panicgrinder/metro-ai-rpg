@@ -3,7 +3,8 @@
   "economy_controller": "gpt",
   "description": "Globale Handelsregeln, GPT-gesteuerte dynamische Ökonomie.",
   "allowed_actors": ["player", "npc", "faction"],
-  "allowed_resources": ["r01", "r02", "r03", "r04"],
+  "allowed_resources": ["r01", "r02", "r03", "r04", "r05", "r06", "r07", "r08"],
+  "allowed_items": ["i01", "i02", "i03", "i04", "i05", "i06"],
   "transaction_limits": {
     "daily_per_actor": 10,
     "daily_per_market": 100

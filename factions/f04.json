@@ -28,5 +28,24 @@
     "special_abilities": ["area_control", "law_enforcement", "defensive_fortifications"],
     "faction_type": "security_force",
     "governance_style": "military_hierarchy"
+  },
+  "starting_conditions": {
+    "resources": {
+      "r01": 120,
+      "r02": 160,
+      "r03": 60,
+      "r04": 35,
+      "r06": 40
+    },
+    "items": {
+      "i01": 25,
+      "i02": 70,
+      "i03": 15,
+      "i04": 12,
+      "i05": 8,
+      "i06": 10
+    },
+    "total_value": 3400,
+    "specialization": "security_defense"
   }
 }

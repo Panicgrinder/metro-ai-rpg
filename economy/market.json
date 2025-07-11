@@ -6,36 +6,84 @@
     {
       "id": "r01",
       "name": "Wasser",
-      "file": "resources/r01.json",
-      "category": "basic",
-      "is_currency": false,
+      "file": "../resources/r01.json",
+      "type": "consumable",
+      "is_tradable": true,
       "lore_file": "../lore/resources/r01.lore.md"
     },
     {
       "id": "r02", 
       "name": "Nahrung",
-      "file": "resources/r02.json",
-      "category": "basic",
-      "is_currency": false,
+      "file": "../resources/r02.json",
+      "type": "consumable",
+      "is_tradable": true,
       "lore_file": "../lore/resources/r02.lore.md"
     },
     {
       "id": "r03",
-      "name": "Military-Grade Ammo",
-      "file": "resources/r03.json", 
-      "category": "currency",
-      "is_currency": true,
-      "symbol": "MGR",
+      "name": "Filter",
+      "file": "../resources/r03.json",
+      "type": "equipment", 
+      "is_tradable": true,
       "lore_file": "../lore/resources/r03.lore.md"
     },
     {
       "id": "r04",
-      "name": "Handmade Rounds",
-      "file": "resources/r04.json",
-      "category": "currency", 
-      "is_currency": true,
-      "symbol": "HMR",
+      "name": "Medikamente",
+      "file": "../resources/r04.json",
+      "type": "medical",
+      "is_tradable": true,
       "lore_file": "../lore/resources/r04.lore.md"
+    },
+    {
+      "id": "r05",
+      "name": "Schrott",
+      "file": "../resources/r05.json",
+      "type": "material",
+      "is_tradable": true,
+      "lore_file": "../lore/resources/r05.lore.md"
+    },
+    {
+      "id": "r06",
+      "name": "Elektronik",
+      "file": "../resources/r06.json",
+      "type": "technology",
+      "is_tradable": true,
+      "lore_file": "../lore/resources/r06.lore.md"
+    },
+    {
+      "id": "r07",
+      "name": "Pilze",
+      "file": "../resources/r07.json",
+      "type": "food",
+      "is_tradable": true,
+      "lore_file": "../lore/resources/r07.lore.md"
+    },
+    {
+      "id": "r08",
+      "name": "Alkohol",
+      "file": "../resources/r08.json",
+      "type": "consumable",
+      "is_tradable": true,
+      "lore_file": "../lore/resources/r08.lore.md"
+    }
+  ],
+  "currencies": [
+    {
+      "id": "i01",
+      "name": "Military-Grade Ammo",
+      "file": "../items/i01.json",
+      "symbol": "MGR",
+      "base_value": 10,
+      "is_premium": true
+    },
+    {
+      "id": "i02",
+      "name": "Handmade Rounds", 
+      "file": "../items/i02.json",
+      "symbol": "HMR",
+      "base_value": 1,
+      "is_premium": false
     }
   ],
   "trade_system": {

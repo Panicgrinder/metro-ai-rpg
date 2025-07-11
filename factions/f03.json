@@ -28,5 +28,25 @@
     "special_abilities": ["trade_negotiation", "resource_acquisition", "diplomatic_immunity"],
     "faction_type": "merchant_guild",
     "governance_style": "corporate_council"
+  },
+  "starting_conditions": {
+    "resources": {
+      "r01": 100,
+      "r02": 150,
+      "r03": 40,
+      "r04": 25,
+      "r05": 80,
+      "r06": 30,
+      "r07": 120,
+      "r08": 60
+    },
+    "items": {
+      "i01": 30,
+      "i02": 80,
+      "i03": 8,
+      "i06": 12
+    },
+    "total_value": 3400,
+    "specialization": "trade_commerce"
   }
 }
