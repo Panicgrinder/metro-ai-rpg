@@ -1,34 +1,45 @@
 openapi: 3.1.0
 info:
-  title: Metro AI RPG – GitHub GPT Access
-  description: GPT erhält Lese- und Schreibzugriff auf Steuer-, Daten- und Regeldateien des Rollenspielsystems. Anpassbar über master_index.json.
+  title: Metro AI RPG GitHub Access
   version: 1.0.0
+  description: GPT kann über diese API auf dein metro-ai-rpg GitHub-Repo zugreifen.
 servers:
   - url: https://api.github.com
     description: GitHub REST API
-paths:
 
-  /repos/Panicgrinder/metro-ai-rpg/contents/master_index.json:
+paths:
+  /repos/Panicgrinder/metro-ai-rpg/contents/system/{file}:
     get:
-      operationId: getMasterIndex
-      summary: Lese master_index.json
+      operationId: getSystemFile
+      summary: Lese Datei im /system/-Verzeichnis
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
-          description: Datei erfolgreich gelesen
+          description: OK
           content:
             application/json:
               schema:
                 type: object
     put:
-      operationId: updateMasterIndex
-      summary: Aktualisiere master_index.json
+      operationId: updateSystemFile
+      summary: Schreibe Datei in /system/-Verzeichnis
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [message, content]
               properties:
                 message:
                   type: string
@@ -36,37 +47,15 @@ paths:
                   type: string
                 sha:
                   type: string
-                branch:
-                  type: string
       responses:
         '200':
-          description: Datei aktualisiert
-        '201':
-          description: Datei erstellt
+          description: Datei erfolgreich aktualisiert
 
-  /repos/Panicgrinder/metro-ai-rpg/contents/system/{file}:
-    get:
-      operationId: getSystemFile
-      summary: Lese eine Datei aus dem /system/-Verzeichnis
-      parameters:
-        - name: file
-          in: path
-          required: true
-          schema:
-            type: string
-          description: Beispiel: gpt_behavior.json
-      responses:
-        '200':
-          description: Datei erfolgreich gelesen
-          content:
-            application/json:
-              schema:
-                type: object
-    put:
-      operationId: updateSystemFile
-      summary: Aktualisiere Datei im /system/-Verzeichnis
-      parameters:
-        - name: file
-          in: path
-          required: true
-          schema
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+
+security:
+  - bearerAuth: []
