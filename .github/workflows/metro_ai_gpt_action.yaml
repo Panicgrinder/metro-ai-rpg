@@ -1,5 +1,19 @@
 name: Metro AI GPT Action
 
+# AI-Driven RPG Automation Workflow
+# This workflow demonstrates GitHub API integration for AI agents working with the Metro AI RPG repository
+# 
+# For AI Integration:
+# - OpenAPI specification available at: /system/metro_ai_github_openapi.yaml
+# - Authentication: Use GPT_GITHUB_API_TOKEN secret for GitHub API access
+# - Target endpoints: GitHub REST API for reading/writing repository files
+# - Primary use case: AI agents managing RPG game state and content
+#
+# For Developers:
+# - This workflow showcases automated file management via GitHub API
+# - Demonstrates secure token usage and API interactions
+# - Provides examples for integrating AI systems with GitHub repositories
+
 # Workflow triggers
 on:
   workflow_dispatch:
@@ -22,6 +36,8 @@ on:
       - '.github/workflows/metro_ai_gpt_action.yaml'
 
 # GitHub API permissions matching GPT GitHub API token requirements
+# These permissions align with the OpenAPI specification in /system/metro_ai_github_openapi.yaml
+# Required for AI agents to read/write repository content and manage workflow automation
 permissions:
   actions: write
   contents: write
@@ -32,7 +48,9 @@ permissions:
   statuses: read
   workflows: write
 
-# Environment variables
+# Environment variables for AI-driven RPG automation
+# GITHUB_API_BASE: Base URL for GitHub REST API (matches OpenAPI spec)
+# REPO_OWNER/REPO_NAME: Dynamic repository identification for flexible AI integration
 env:
   REPO_OWNER: ${{ github.repository_owner }}
   REPO_NAME: ${{ github.event.repository.name }}
@@ -52,7 +70,7 @@ jobs:
           fetch-depth: 1
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      # Step 2: List repository files
+      # Step 2: List repository files (includes OpenAPI specification location)
       - name: List Repository Files
         id: list_files
         run: |
@@ -63,14 +81,22 @@ jobs:
           echo "=== Root Directory Contents ==="
           ls -la
           echo ""
-          echo "=== System Directory Contents ==="
+          echo "=== System Directory Contents (includes OpenAPI spec) ==="
           ls -la system/ 2>/dev/null || echo "System directory not found"
+          echo ""
+          echo "=== OpenAPI Specification Check ==="
+          if [ -f "system/metro_ai_github_openapi.yaml" ]; then
+            echo "✅ OpenAPI specification found at: system/metro_ai_github_openapi.yaml"
+          else
+            echo "❌ OpenAPI specification not found"
+          fi
       
-      # Step 3: Read README.md via GitHub API
+      # Step 3: Read README.md via GitHub API (demonstrates AI integration pattern)
       - name: Read README via GitHub API
         id: read_readme_api
         run: |
           echo "=== Reading README.md via GitHub API ==="
+          echo "This demonstrates the same API pattern defined in /system/metro_ai_github_openapi.yaml"
           README_RESPONSE=$(curl -s \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
@@ -103,10 +129,13 @@ jobs:
         run: |
           pip install requests base64-python
       
-      # Step 6: Edit README.md via Python using GITHUB_TOKEN
+      # Step 6: Edit README.md via Python using GITHUB_TOKEN (AI automation example)
       - name: Edit README via Python GitHub API
         id: edit_readme_python
         run: |
+          echo "=== AI-Driven Content Management Example ==="
+          echo "This step demonstrates automated file updates using GitHub API"
+          echo "Following the patterns defined in /system/metro_ai_github_openapi.yaml"
           python3 << 'EOF'
           import os
           import requests
@@ -114,8 +143,8 @@ jobs:
           import json
           from datetime import datetime
           
-          # Configuration
-          github_token = os.environ['GITHUB_TOKEN']
+          # Configuration - demonstrates secure token usage for AI agents
+          github_token = os.environ['GITHUB_TOKEN']  # Use GPT_GITHUB_API_TOKEN in production AI setups
           repo_owner = os.environ['REPO_OWNER']
           repo_name = os.environ['REPO_NAME']
           readme_sha = os.environ['README_SHA']
@@ -209,11 +238,13 @@ jobs:
         run: |
           echo "=== Metro AI GPT Action Summary ==="
           echo "✅ Repository checkout completed"
-          echo "✅ File listing completed"
-          echo "✅ README.md read via GitHub API"
+          echo "✅ File listing completed (OpenAPI spec verified)"
+          echo "✅ README.md read via GitHub API (following OpenAPI patterns)"
           echo "✅ README.md updated via Python GitHub API"
           echo "✅ Changes verified"
           echo ""
-          echo "Workflow completed successfully! 🎉"
-          echo "Repository: ${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}"
-          echo "Execution time: $(date)"
+          echo "🤖 AI Integration Ready!"
+          echo "📄 OpenAPI Spec: /system/metro_ai_github_openapi.yaml"
+          echo "🔑 Token Usage: GPT_GITHUB_API_TOKEN for AI agents"
+          echo "🎮 Repository: ${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}"
+          echo "⏰ Execution time: $(date)"
