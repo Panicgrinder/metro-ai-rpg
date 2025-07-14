@@ -3,6 +3,7 @@ info:
   title: Metro AI RPG GitHub Access
   version: 1.0.0
   description: GPT kann über diese API auf dein metro-ai-rpg GitHub-Repo zugreifen.
+
 servers:
   - url: https://api.github.com
     description: GitHub REST API
@@ -20,11 +21,55 @@ paths:
             type: string
       responses:
         '200':
-          description: OK
+          description: Datei erfolgreich gelesen
           content:
             application/json:
               schema:
                 type: object
+                properties:
+                  name:
+                    type: string
+                    description: Name der Datei
+                  path:
+                    type: string
+                    description: Pfad zur Datei
+                  sha:
+                    type: string
+                    description: SHA-Hash der Datei
+                  size:
+                    type: integer
+                    description: Dateigröße in Bytes
+                  url:
+                    type: string
+                    description: API-URL zur Datei
+                  html_url:
+                    type: string
+                    description: Web-URL zur Datei
+                  git_url:
+                    type: string
+                    description: Git-URL zur Datei
+                  download_url:
+                    type: string
+                    description: Direkter Download-Link
+                  type:
+                    type: string
+                    description: Typ (z.B. file)
+                  content:
+                    type: string
+                    description: Dateiinhalt (Base64-kodiert)
+                  encoding:
+                    type: string
+                    description: Kodierung des Inhalts
+                required:
+                  - name
+                  - path
+                  - sha
+                  - size
+                  - url
+                  - type
+                  - content
+                  - encoding
+
     put:
       operationId: updateSystemFile
       summary: Schreibe Datei in /system/-Verzeichnis
@@ -43,13 +88,77 @@ paths:
               properties:
                 message:
                   type: string
+                  description: Commit-Beschreibung
                 content:
                   type: string
+                  description: Neuer Dateiinhalt (Base64-kodiert)
                 sha:
                   type: string
+                  description: SHA-Hash der Datei (für Updates)
+              required:
+                - message
+                - content
+                - sha
       responses:
         '200':
           description: Datei erfolgreich aktualisiert
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      path:
+                        type: string
+                      sha:
+                        type: string
+                      size:
+                        type: integer
+                      url:
+                        type: string
+                      html_url:
+                        type: string
+                      git_url:
+                        type: string
+                      download_url:
+                        type: string
+                      type:
+                        type: string
+                      content:
+                        type: string
+                      encoding:
+                        type: string
+                  commit:
+                    type: object
+                    properties:
+                      sha:
+                        type: string
+                      message:
+                        type: string
+                      url:
+                        type: string
+                      author:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          email:
+                            type: string
+                          date:
+                            type: string
+                      committer:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          email:
+                            type: string
+                          date:
+                            type: string
 
 components:
   securitySchemes:
