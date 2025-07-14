@@ -1,7 +1,20 @@
+# Metro AI GPT Action Workflow
+#
+# This workflow automates RPG tasks via GitHub API for the Metro AI RPG project.
+#
+# API Contract: See OpenAPI specification at /metro_ai_gpt_action.yaml
+# This specification defines all available endpoints and operations for
+# interacting with the Metro AI RPG repository programmatically.
+#
+# Designed for: Personal GitHub API tokens and beginner-friendly automation
+# Use cases: README updates, file management, API access testing
+#
+---
 name: Metro AI GPT Action
 
-# Workflow triggers
+# Workflow triggers - when this automation runs
 on:
+  # Manual trigger - run workflow manually with custom parameters
   workflow_dispatch:
     inputs:
       action_type:
@@ -13,6 +26,7 @@ on:
           - api_access_test
           - readme_update
           - file_management
+  # Automatic trigger - run on pushes to main branch for specific files
   push:
     branches:
       - main
@@ -22,42 +36,46 @@ on:
       - '.github/workflows/metro_ai_gpt_action.yaml'
 
 # GitHub API permissions matching GPT GitHub API token requirements
+# These permissions allow the workflow to interact with repository content,
+# issues, pull requests, and other GitHub features needed for RPG automation
 permissions:
-  actions: write
-  contents: write
-  issues: write
-  metadata: read
-  pages: write
-  pull-requests: write
-  statuses: read
-  workflows: write
+  actions: write      # Manage workflow runs
+  contents: write     # Read/write repository files and content
+  issues: write       # Create/update issues for RPG events
+  metadata: read      # Access repository metadata
+  pages: write        # Update GitHub Pages if used for RPG documentation
+  pull-requests: write  # Create/manage PRs for automated changes
+  statuses: read      # Read commit status information
+  workflows: write    # Modify workflow files
 
-# Environment variables
+# Environment variables - automatically set for all workflow steps
+# These make GitHub API calls easier by providing repository context
 env:
-  REPO_OWNER: ${{ github.repository_owner }}
-  REPO_NAME: ${{ github.event.repository.name }}
-  GITHUB_API_BASE: https://api.github.com
+  REPO_OWNER: ${{ github.repository_owner }}  # Repository owner name
+  REPO_NAME: ${{ github.event.repository.name }}  # Repository name
+  GITHUB_API_BASE: https://api.github.com  # GitHub REST API base URL
 
 jobs:
   metro_ai_gpt_operations:
     name: Metro AI GPT Operations
     runs-on: ubuntu-latest
-    
+
     steps:
-      # Step 1: Checkout repository
+      # Step 1: Checkout repository - download repository files to workflow
       - name: Checkout Repository
         id: checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
-          token: ${{ secrets.GITHUB_TOKEN }}
-      
-      # Step 2: List repository files
+          fetch-depth: 1  # Only get latest commit for efficiency
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use built-in GitHub token
+
+      # Step 2: List repository files - discover RPG data structure
       - name: List Repository Files
         id: list_files
         run: |
-          echo "=== Repository File Structure ===" 
-          find . -type f -name "*.json" -o -name "*.md" -o -name "*.yaml" -o -name "*.yml" | \
+          echo "=== Repository File Structure ==="
+          find . -type f -name "*.json" -o -name "*.md" \
+            -o -name "*.yaml" -o -name "*.yml" | \
             grep -v "/.git/" | sort
           echo ""
           echo "=== Root Directory Contents ==="
@@ -65,8 +83,8 @@ jobs:
           echo ""
           echo "=== System Directory Contents ==="
           ls -la system/ 2>/dev/null || echo "System directory not found"
-      
-      # Step 3: Read README.md via GitHub API
+
+      # Step 3: Read README.md via GitHub API - demonstrate API access
       - name: Read README via GitHub API
         id: read_readme_api
         run: |
@@ -75,35 +93,37 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "${{ env.GITHUB_API_BASE }}/repos/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}/contents/README.md")
-          
+
           # Extract content and decode from base64
-          README_CONTENT=$(echo "$README_RESPONSE" | jq -r '.content' | base64 -d)
+          README_CONTENT=$(echo "$README_RESPONSE" | jq -r '.content' | \
+            base64 -d)
           README_SHA=$(echo "$README_RESPONSE" | jq -r '.sha')
-          
+
           # Store in environment for next step
           echo "README_SHA=$README_SHA" >> $GITHUB_ENV
-          
+
           # Display first few lines
           echo "=== README.md Content Preview (first 10 lines) ==="
           echo "$README_CONTENT" | head -10
-          
+
           # Store content for next step
           echo "$README_CONTENT" > /tmp/current_readme.md
-      
-      # Step 4: Setup Python environment
+
+      # Step 4: Setup Python environment - prepare for GitHub API scripting
       - name: Setup Python Environment
         id: setup_python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
-      
-      # Step 5: Install Python dependencies
+          python-version: '3.11'  # Latest stable Python version
+
+      # Step 5: Install Python dependencies - tools for GitHub API interaction
       - name: Install Python Dependencies
         id: install_deps
         run: |
           pip install requests base64-python
-      
+
       # Step 6: Edit README.md via Python using GITHUB_TOKEN
+      # This demonstrates programmatic file updates via GitHub API
       - name: Edit README via Python GitHub API
         id: edit_readme_python
         run: |
@@ -113,21 +133,21 @@ jobs:
           import base64
           import json
           from datetime import datetime
-          
-          # Configuration
+
+          # Configuration - using environment variables from workflow
           github_token = os.environ['GITHUB_TOKEN']
           repo_owner = os.environ['REPO_OWNER']
           repo_name = os.environ['REPO_NAME']
           readme_sha = os.environ['README_SHA']
-          
+
           # Read current README content
           with open('/tmp/current_readme.md', 'r') as f:
               current_content = f.read()
-          
-          # Add workflow execution timestamp
+
+          # Add workflow execution timestamp as example modification
           timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')
           workflow_note = f"\n\n<!-- Last workflow execution: {timestamp} -->"
-          
+
           # Check if workflow note already exists and update or append
           if "<!-- Last workflow execution:" in current_content:
               import re
@@ -138,33 +158,36 @@ jobs:
               )
           else:
               updated_content = current_content + workflow_note
-          
-          # Prepare API request
+
+          # Prepare API request headers
           headers = {
               'Authorization': f'Bearer {github_token}',
               'Accept': 'application/vnd.github.v3+json',
               'Content-Type': 'application/json'
           }
-          
-          # Encode content to base64
-          encoded_content = base64.b64encode(updated_content.encode('utf-8')).decode('utf-8')
-          
+
+          # Encode content to base64 (required by GitHub API)
+          encoded_content = base64.b64encode(
+              updated_content.encode('utf-8')
+          ).decode('utf-8')
+
           # Prepare update payload
           payload = {
               'message': f'Auto-update README.md via Metro AI GPT Action - {timestamp}',
               'content': encoded_content,
               'sha': readme_sha
           }
-          
+
           # Make API request to update README
           api_url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/README.md'
-          
+
           print(f"=== Updating README.md via GitHub API ===")
           print(f"API URL: {api_url}")
           print(f"Content length: {len(updated_content)} characters")
-          
-          response = requests.put(api_url, headers=headers, data=json.dumps(payload))
-          
+
+          response = requests.put(api_url, headers=headers, \
+                               data=json.dumps(payload))
+
           if response.status_code == 200:
               print("✅ README.md successfully updated!")
               result = response.json()
@@ -178,21 +201,22 @@ jobs:
           EOF
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      # Step 7: Verify changes
+
+      # Step 7: Verify changes - confirm the API update was successful
       - name: Verify README Changes
         id: verify_changes
         run: |
           echo "=== Verifying README.md Changes ==="
-          
+
           # Read updated README via API
           UPDATED_README=$(curl -s \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "${{ env.GITHUB_API_BASE }}/repos/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}/contents/README.md")
-          
-          UPDATED_CONTENT=$(echo "$UPDATED_README" | jq -r '.content' | base64 -d)
-          
+
+          UPDATED_CONTENT=$(echo "$UPDATED_README" | jq -r '.content' | \
+            base64 -d)
+
           # Check for workflow timestamp
           if echo "$UPDATED_CONTENT" | grep -q "Last workflow execution:"; then
               echo "✅ Workflow timestamp found in README.md"
@@ -202,8 +226,8 @@ jobs:
               echo "❌ Workflow timestamp not found in README.md"
               exit 1
           fi
-      
-      # Step 8: Output summary
+
+      # Step 8: Output summary - report what was accomplished
       - name: Operation Summary
         id: summary
         run: |
